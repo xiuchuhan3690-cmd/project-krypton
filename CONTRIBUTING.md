@@ -15,7 +15,7 @@ python -m venv .venv
 .venv\Scripts\python -m pytest -q
 ```
 
-On POSIX systems use `.venv/bin/python`. Run `python scripts/verify_public_boundary.py` and `python scripts/verify_task7a_private_candidate.py` before proposing a change. Packaging changes should also run `python scripts/verify_distribution.py` after rebuilding the candidate wheel and sdist.
+On POSIX systems use `.venv/bin/python`. Run `python scripts/verify_public_boundary.py` and the retained historical-boundary check `python scripts/verify_task7a_private_candidate.py` before proposing a change. Packaging changes should also run `python scripts/verify_distribution.py` after rebuilding the wheel and sdist.
 
 ## Public/private data rule
 
@@ -41,4 +41,4 @@ No CLA or DCO is required at this stage. By contributing, you must have authorit
 
 ## Issues and reports
 
-The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton> and remains private during pre-publication validation. After publication, use its issue templates for reproducible software bugs, documentation problems, and feature discussions. A verified confidential security-reporting mechanism is a hard visibility gate and must be activated before public reader access; never use a public issue for security, secret, or external-data exposure. No contact address is inferred in advance.
+The canonical public repository is <https://github.com/xiuchuhan3690-cmd/project-krypton>. Use its issue templates for reproducible software bugs, documentation problems, and feature discussions. For vulnerabilities, secrets, or external-data exposure, use the repository Security tab's **Report a vulnerability** route as described in `SECURITY.md`; never use a public issue.

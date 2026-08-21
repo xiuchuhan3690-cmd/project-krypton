@@ -13,6 +13,13 @@ CITATION = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
 def test_readme_version_matches_release_and_citation() -> None:
     assert README.startswith("# Project Krypton 1.0.0")
     assert "software_version: 1.0.0" in METADATA
+    assert "visibility: PUBLIC" in METADATA
+    assert "tag_created: true" in METADATA
+    assert "github_release_created: true" in METADATA
+    assert "pypi_published: false" in METADATA
+    assert "doi_created: false" in METADATA
+    assert "zenodo_deposited: false" in METADATA
+    assert "security_reporting: GITHUB_PRIVATE_VULNERABILITY_REPORTING_ENABLED" in METADATA
     assert "version: 1.0.0" in CITATION
 
 
@@ -99,9 +106,10 @@ def test_citation_is_versioned_with_real_repository_and_no_invented_doi() -> Non
 def test_release_notes_and_changelog_are_consistent() -> None:
     notes = (ROOT / "docs" / "release-notes-v1.0.0.md").read_text(encoding="utf-8")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-    assert "Project Krypton 1.0.0 draft release notes" in notes
-    assert "## 1.0.0 — release candidate" in changelog
-    assert "Publication checksums will be frozen" in notes
+    assert "Project Krypton 1.0.0 release notes" in notes
+    assert "## 1.0.0" in changelog
+    assert "`SHA256SUMS.txt` in the GitHub Release" in notes
+    assert "No DOI or Zenodo deposition has been created" in notes
 
 
 def test_representative_demo_is_documented_as_synthetic_and_stable() -> None:

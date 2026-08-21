@@ -5,7 +5,7 @@
 - [`../krypton_v1_release_metadata.yaml`](../krypton_v1_release_metadata.yaml) — primary current-release authority for v1.0.0 identity, scientific state, current test counts, platform status, repository state, and local-pack policy. Its packaged resource copy is byte-equivalent.
 - [`scientific-scope.md`](scientific-scope.md) — plain-language interpretation of the frozen scientific scope and validation debt.
 - [`../CHANGELOG.md`](../CHANGELOG.md) — public distribution changes.
-- [`release-notes-v1.0.0.md`](release-notes-v1.0.0.md) — draft release notes.
+- [`release-notes-v1.0.0.md`](release-notes-v1.0.0.md) — v1.0.0 release notes.
 
 ## Rights and source boundary
 

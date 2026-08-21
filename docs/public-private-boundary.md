@@ -1,7 +1,7 @@
 # Public/private architecture boundary
 
 The private canonical scientific repository is the complete research record. The separate
-private GitHub release-candidate repository exists with a new public-candidate history and contains only the generic public kernel,
+public GitHub repository has its own rights-safe history and contains only the generic public kernel,
 synthetic architecture fixtures, public metadata, and local-pack validation.
 
 The following remain private: C1-C3B evidence records containing scientific

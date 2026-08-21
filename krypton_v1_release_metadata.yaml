@@ -59,12 +59,14 @@ supported_platforms:
   linux_arm64: UNVERIFIED
 repository_state:
   exists: true
-  visibility: PRIVATE
+  visibility: PUBLIC
   public_candidate_history_exists: true
-  tag_created: false
-  github_release_created: false
+  tag_created: true
+  github_release_created: true
   pypi_published: false
-  security_reporting: SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS
+  doi_created: false
+  zenodo_deposited: false
+  security_reporting: GITHUB_PRIVATE_VULNERABILITY_REPORTING_ENABLED
 distribution_strategy: HYBRID
 distribution_components:
   repository: complete rights-safe public software and tests
@@ -80,4 +82,4 @@ project_urls:
 citation:
   file: CITATION.cff
   author_representation: structured family and given names
-  archival_doi: pending public release and deposition
+  archival_doi: not_created

@@ -1,6 +1,6 @@
-# Project Krypton 1.0.0 draft release notes
+# Project Krypton 1.0.0 release notes
 
-Status: draft for a future public release. The canonical GitHub repository exists and remains private. No GitHub Release, v1.0.0 tag, DOI, Zenodo deposition, or PyPI publication has been created.
+Status: released publicly on GitHub as v1.0.0. No DOI or Zenodo deposition has been created, and Project Krypton is not published on PyPI.
 
 ## Included
 
@@ -30,7 +30,7 @@ python -m krypton
 python -m krypton.demo
 ```
 
-The wheel may instead be installed from the local candidate artifact. The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton> and remains private; no PyPI location is claimed.
+The wheel may instead be installed from the v1.0.0 GitHub Release asset. The canonical public repository is <https://github.com/xiuchuhan3690-cmd/project-krypton>; no PyPI location is claimed.
 
 ## Verification status
 
@@ -51,4 +51,4 @@ No external scientific data are distributed. Full C1-C3B reproduction requires l
 
 ## Checksums
 
-Private remediation candidate artifacts are audited for structure and boundary. Publication checksums will be frozen only for the exact assets later selected for release; CI or draft artifact hashes are not final release identifiers.
+`SHA256SUMS.txt` in the GitHub Release records the exact SHA-256 values of the uploaded v1.0.0 wheel and sdist. CI or earlier candidate artifact hashes are not release identifiers.

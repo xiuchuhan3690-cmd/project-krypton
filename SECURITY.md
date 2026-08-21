@@ -4,11 +4,11 @@ Project Krypton 1.0.0 is a research-software prototype. Security reports may con
 
 ## Supported versions
 
-Only the current public 1.0.x release line is planned for security fixes. No support promise is made for unreleased branches or private scientific artifacts. This policy will be revised when a public release supersedes 1.0.x.
+Only the current public 1.0.x release line is planned for security fixes. No support promise is made for unreleased branches or private scientific artifacts.
 
 ## Reporting
 
-The repository exists at <https://github.com/xiuchuhan3690-cmd/project-krypton> but remains private during pre-publication validation. Its final confidential reporting mechanism is not yet active: `SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS`. Activating and verifying GitHub Private Vulnerability Reporting, or another owner-approved private route, is a hard Task-7B visibility gate. Until that gate passes, the repository must not become publicly readable. Do not post sensitive details publicly; retain the report securely and use only a verified private channel published by the project owner. A dedicated email address is not published and is not fabricated here.
+Report a vulnerability confidentially through GitHub Private Vulnerability Reporting: open the repository's **Security** tab and choose **Report a vulnerability**. Do not disclose sensitive details in a public issue, discussion, or pull request. No dedicated security email address is published.
 
 Include the affected version, platform, minimal reproduction, impact, and whether the report may involve a secret or external-data leak. Remove or redact sensitive payloads unless a secure reporting channel explicitly requests them.
 

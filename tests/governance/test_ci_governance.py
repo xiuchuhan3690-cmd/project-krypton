@@ -84,7 +84,7 @@ def test_governance_preserves_frozen_scientific_state() -> None:
         assert state in GOVERNANCE
 
 
-def test_contribution_and_security_policies_keep_owner_placeholders_honest() -> None:
+def test_contribution_and_security_policies_publish_actionable_routes() -> None:
     contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
     security = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
     assert "No CLA or DCO is required" in contributing
@@ -93,8 +93,11 @@ def test_contribution_and_security_policies_keep_owner_placeholders_honest() -> 
     assert "python scripts/verify_task7a_private_candidate.py" in contributing
     assert "python scripts/verify_distribution.py" in contributing
     assert "python scripts/verify_task6_prepublication.py" not in contributing
-    assert "SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS" in security
-    assert "not fabricated" in security
+    assert "canonical public repository" in contributing
+    assert "remains private during pre-publication" not in contributing
+    assert "Report a vulnerability" in security
+    assert "GitHub Private Vulnerability Reporting" in security
+    assert "SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS" not in security
 
 
 def test_docker_uses_an_explicit_full_test_stage_and_minimal_runtime_stage() -> None:

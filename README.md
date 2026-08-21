@@ -94,7 +94,7 @@ These Linux results are deliberately narrow: they do not claim verification of e
 
 ## Installation
 
-The canonical repository URL is <https://github.com/xiuchuhan3690-cmd/project-krypton>. Access remains private during the Task-7A pre-publication validation stage.
+The canonical public repository URL is <https://github.com/xiuchuhan3690-cmd/project-krypton>.
 
 ### Source checkout
 
@@ -115,14 +115,14 @@ On a POSIX shell, the equivalent interpreter path is `.venv/bin/python`; that pa
 
 ### Built wheel
 
-From the directory containing the current private remediation candidate wheel:
+From the directory containing the wheel downloaded from the v1.0.0 GitHub Release:
 
 ```text
 python -m venv .venv
 .venv\Scripts\python -m pip install dist/project_krypton-1.0.0-py3-none-any.whl
 ```
 
-The wheel contains the generic public core, synthetic demo resources, public schemas, and release metadata. It does not contain the source test suite or external scientific data. No PyPI location is claimed for this release candidate.
+The wheel contains the generic public core, synthetic demo resources, public schemas, and release metadata. It does not contain the source test suite or external scientific data. Project Krypton is not published on PyPI; use the GitHub Release asset or build from the public source tree.
 
 ## Quick start
 
@@ -177,7 +177,7 @@ Mechanistic research pipelines can mix biological assumptions, evidence qualific
 
 Citation metadata is provided in [`CITATION.cff`](CITATION.cff). No DOI exists yet.
 
-> Chuhan Xiu. *Project Krypton*, version 1.0.0. Archival DOI pending public release/deposition.
+> Chuhan Xiu. *Project Krypton*, version 1.0.0. GitHub release; no archival DOI assigned.
 
 The public author identity is frozen as XIU CHUHAN (family name Xiu, given name Chuhan). The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton>. ORCID, affiliation, public contact, and DOI remain absent until separately decided or created.
 
@@ -186,7 +186,7 @@ The public author identity is frozen as XIU CHUHAN (family name Xiu, given name 
 - [Contributing](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 - [Changelog](CHANGELOG.md)
-- [Draft v1.0.0 release notes](docs/release-notes-v1.0.0.md)
+- [v1.0.0 release notes](docs/release-notes-v1.0.0.md)
 - [Public artifact index](docs/artifact-index.md)
 
 ## License
