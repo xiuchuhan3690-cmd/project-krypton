@@ -21,6 +21,7 @@ FROM package AS test
 
 COPY Dockerfile ./Dockerfile
 COPY tests ./tests
+COPY scripts/verify_distribution.py ./scripts/verify_distribution.py
 COPY examples ./examples
 COPY CITATION.cff CONTRIBUTING.md SECURITY.md CHANGELOG.md GOVERNANCE.md ./
 COPY krypton_v1_documentation_test_manifest.yaml krypton_v1_public_migration_manifest.yaml krypton_v1_dependency_boundary.yaml krypton_v1_package_contents_manifest.yaml krypton_v1_packaging_test_manifest.yaml krypton_v1_public_test_manifest.yaml ./

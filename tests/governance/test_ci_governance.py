@@ -98,6 +98,7 @@ def test_docker_uses_an_explicit_full_test_stage_and_minimal_runtime_stage() -> 
     assert "FROM package AS runtime" in DOCKERFILE
     for resource in (
         "COPY tests ./tests",
+        "COPY scripts/verify_distribution.py ./scripts/verify_distribution.py",
         "COPY examples ./examples",
         "COPY CITATION.cff CONTRIBUTING.md SECURITY.md CHANGELOG.md GOVERNANCE.md ./",
         "COPY docs ./docs",
