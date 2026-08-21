@@ -19,7 +19,7 @@ A change that crosses classes uses the stricter gate. C and D changes may not be
 
 Pull requests must be scoped, explain their class, pass CI, and disclose provenance, rights, compatibility, and scientific-claim effects. Self-merge by the single owner is permitted only after the applicable gate is evidenced. Contributors cannot weaken fail-closed data, unit, applicability, provenance, or counterfactual-invariance checks merely to make a test pass.
 
-Recommended future branch protection for `main` is: require pull requests; require all CI jobs; require conversation resolution; block force pushes and deletion; apply rules to administrators; and require a current branch before merge. These controls are recommendations only until the public repository exists. `CODEOWNERS` is deferred because the public account identity is not frozen.
+Recommended future branch protection for `main` is: require pull requests; require all CI jobs; require conversation resolution; block force pushes and deletion; apply rules to administrators; and require a current branch before merge. The repository exists and remains private; the private-plan API returned `PRIVATE_BRANCH_PROTECTION_PLAN_LIMITATION`, so these controls must be re-evaluated at the Task-7B visibility transition. `CODEOWNERS` is deferred because the public account identity is not frozen.
 
 ## Scientific and publication state
 

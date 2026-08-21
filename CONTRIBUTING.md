@@ -41,4 +41,4 @@ No CLA or DCO is required at this stage. By contributing, you must have authorit
 
 ## Issues and reports
 
-The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton> and remains private during pre-publication validation. After publication, use its issue templates for reproducible software bugs, documentation problems, and feature discussions. Use a verified private security-reporting mechanism—not a public issue—for security, secret, or external-data exposure once the owner enables that mechanism. No contact address is inferred in advance.
+The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton> and remains private during pre-publication validation. After publication, use its issue templates for reproducible software bugs, documentation problems, and feature discussions. A verified confidential security-reporting mechanism is a hard visibility gate and must be activated before public reader access; never use a public issue for security, secret, or external-data exposure. No contact address is inferred in advance.

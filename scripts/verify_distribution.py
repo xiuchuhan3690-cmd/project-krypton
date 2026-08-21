@@ -13,6 +13,7 @@ from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).parents[1]
 DIST = ROOT / "dist"
+CONTRACT = ROOT / "krypton_v1_package_contents_manifest.yaml"
 TEXT_SUFFIXES = {"", ".csv", ".ini", ".json", ".lock", ".md", ".py", ".toml", ".txt", ".yaml", ".yml"}
 FORBIDDEN_PARTS = {".git", ".venv", ".venv-build", ".venv-wheel", "artifacts", "evidence", "vocabularies", "__pycache__"}
 LEAK_PATTERNS = {
@@ -27,6 +28,34 @@ LEAK_PATTERNS = {
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_contract(path: Path = CONTRACT) -> dict[str, object]:
+    """Load the current JSON-compatible YAML distribution contract."""
+
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def normalize_sdist_name(name: str) -> str:
+    """Remove the versioned archive root before contract comparison."""
+
+    path = PurePosixPath(name)
+    return PurePosixPath(*path.parts[1:]).as_posix()
+
+
+def member_set_digest(names: set[str] | list[str]) -> str:
+    """Digest an exact normalized archive-member set without hashing archive bytes."""
+
+    canonical = "\n".join(sorted(names)) + "\n"
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def member_set_matches(
+    names: set[str] | list[str], *, expected_count: int, expected_digest: str
+) -> bool:
+    """Require both measured count and exact member-set identity."""
+
+    return len(names) == expected_count and member_set_digest(names) == expected_digest
 
 
 def inspect_names(names: list[str], read_bytes) -> list[dict[str, str]]:
@@ -51,6 +80,7 @@ def inspect_names(names: list[str], read_bytes) -> list[dict[str, str]]:
 
 
 def main() -> None:
+    contract = load_contract()
     wheels = sorted(DIST.glob("project_krypton-1.0.0-*.whl"))
     sdists = sorted(DIST.glob("project_krypton-1.0.0.tar.gz"))
     if len(wheels) != 1 or len(sdists) != 1:
@@ -79,6 +109,13 @@ def main() -> None:
             findings.append({"kind": "metadata-license", "path": metadata_name})
         if any(name in " ".join(requirements).lower() for name in ("numpy", "scipy")):
             findings.append({"kind": "private-dependency", "path": metadata_name})
+        wheel_contract = contract["wheel"]  # type: ignore[assignment]
+        if not member_set_matches(
+            wheel_names,
+            expected_count=wheel_contract["expected_file_count"],  # type: ignore[index]
+            expected_digest=wheel_contract["expected_member_set_sha256"],  # type: ignore[index]
+        ):
+            findings.append({"kind": "wheel-member-set-contract-mismatch", "path": wheel.name})
     with tarfile.open(sdist) as archive:
         sdist_members = [member for member in archive.getmembers() if member.isfile()]
         sdist_names = [member.name for member in sdist_members]
@@ -89,6 +126,16 @@ def main() -> None:
                 lambda name: archive.extractfile(member_map[name]).read(),  # type: ignore[union-attr]
             )
         )
+        normalized_sdist_names = {normalize_sdist_name(name) for name in sdist_names}
+        sdist_contract = contract["sdist"]  # type: ignore[assignment]
+        if not member_set_matches(
+            normalized_sdist_names,
+            expected_count=sdist_contract["expected_file_count"],  # type: ignore[index]
+            expected_digest=sdist_contract["expected_member_set_sha256"],  # type: ignore[index]
+        ):
+            findings.append(
+                {"kind": "unexpected-unclassified-sdist-member-set", "path": sdist.name}
+            )
     report = {
         "status": "PASS" if not findings and not missing else "FAIL",
         "wheel": {

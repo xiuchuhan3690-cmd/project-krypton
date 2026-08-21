@@ -37,7 +37,8 @@ def test_rows_30_and_31_are_visible_blocked_debt() -> None:
 
 
 def test_public_and_private_test_counts_are_not_conflated() -> None:
-    assert "Public distribution test suite:       225" in README
+    assert "Public distribution test suite:       228" in README
+    assert "Packaging tests:                      13" in README
     assert "Documentation tests:                  12" in README
     assert "Resource parity tests:                  7" in README
     assert "CI/governance tests:                   11" in README
@@ -45,6 +46,8 @@ def test_public_and_private_test_counts_are_not_conflated() -> None:
     assert "public_total_after_task_3: 207" in METADATA
     assert "public_total_after_task_4r: 211" in METADATA
     assert "public_total_after_task_5: 221" in METADATA
+    assert "public_total_after_task_7a_r: 225" in METADATA
+    assert "public_total_after_task_7a_f: 228" in METADATA
 
 
 def test_external_data_and_pack_policy_are_prominent() -> None:
@@ -75,10 +78,12 @@ def test_prohibited_positive_overclaims_are_absent() -> None:
 
 def test_platform_and_docker_status_match_metadata() -> None:
     assert "Windows x86-64 CPU: **VERIFIED**" in README
-    assert "Linux amd64 Docker: **UNVERIFIED**" in README
+    assert "GitHub-hosted Ubuntu 24.04 / Python 3.12: **VERIFIED**" in README
+    assert "GitHub-hosted Linux amd64 Docker: **VERIFIED**" in README
     assert "macOS: **UNVERIFIED**" in README
     assert "ARM platforms: **UNVERIFIED**" in README
-    assert "UNVERIFIED_DOCKER_NOT_AVAILABLE_ON_TASK2_HOST" in METADATA
+    assert "github_ubuntu_24_04_python_3_12: VERIFIED_CURRENT_PUBLIC_CI_SUITE" in METADATA
+    assert "github_linux_amd64_docker_cpu: VERIFIED_CURRENT_DOCKER_CI_CONFIGURATION" in METADATA
 
 
 def test_citation_is_versioned_with_real_repository_and_no_invented_doi() -> None:
@@ -96,7 +101,7 @@ def test_release_notes_and_changelog_are_consistent() -> None:
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     assert "Project Krypton 1.0.0 draft release notes" in notes
     assert "## 1.0.0 — release candidate" in changelog
-    assert "publication checksums will be rebuilt and frozen" in notes
+    assert "Publication checksums will be frozen" in notes
 
 
 def test_representative_demo_is_documented_as_synthetic_and_stable() -> None:

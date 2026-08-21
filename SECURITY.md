@@ -8,7 +8,7 @@ Only the current public 1.0.x release line is planned for security fixes. No sup
 
 ## Reporting
 
-The repository exists at <https://github.com/xiuchuhan3690-cmd/project-krypton> but remains private during pre-publication validation. Use its private security-advisory reporting mechanism once the owner enables it. The final private reporting path/contact remains an explicit pre-publication owner action. Until that path is frozen, do not post sensitive details publicly; retain the report securely and use only a verified private channel published by the project owner. A dedicated email address is not yet published and is not fabricated here.
+The repository exists at <https://github.com/xiuchuhan3690-cmd/project-krypton> but remains private during pre-publication validation. Its final confidential reporting mechanism is not yet active: `SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS`. Activating and verifying GitHub Private Vulnerability Reporting, or another owner-approved private route, is a hard Task-7B visibility gate. Until that gate passes, the repository must not become publicly readable. Do not post sensitive details publicly; retain the report securely and use only a verified private channel published by the project owner. A dedicated email address is not published and is not fabricated here.
 
 Include the affected version, platform, minimal reproduction, impact, and whether the report may involve a secret or external-data leak. Remove or redact sensitive payloads unless a secure reporting channel explicitly requests them.
 

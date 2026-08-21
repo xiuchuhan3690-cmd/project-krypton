@@ -2,7 +2,7 @@
 
 ## Release and scientific status
 
-- [`../krypton_v1_release_metadata.yaml`](../krypton_v1_release_metadata.yaml) — authoritative v1.0.0 identity, scientific state, test counts, platform status, and local-pack policy.
+- [`../krypton_v1_release_metadata.yaml`](../krypton_v1_release_metadata.yaml) — primary current-release authority for v1.0.0 identity, scientific state, current test counts, platform status, repository state, and local-pack policy. Its packaged resource copy is byte-equivalent.
 - [`scientific-scope.md`](scientific-scope.md) — plain-language interpretation of the frozen scientific scope and validation debt.
 - [`../CHANGELOG.md`](../CHANGELOG.md) — public distribution changes.
 - [`release-notes-v1.0.0.md`](release-notes-v1.0.0.md) — draft release notes.
@@ -17,15 +17,17 @@
 
 ## Packaging and dependencies
 
-- [`../krypton_v1_package_contents_manifest.yaml`](../krypton_v1_package_contents_manifest.yaml) — wheel/sdist allowlist and inventory policy.
+- [`../krypton_v1_package_contents_manifest.yaml`](../krypton_v1_package_contents_manifest.yaml) — authoritative current distribution contract, including exact expected wheel/sdist member sets and counts.
 - [`../krypton_v1_dependency_boundary.yaml`](../krypton_v1_dependency_boundary.yaml) — runtime/test/build/private dependency classification.
-- [`../krypton_v1_packaging_test_manifest.yaml`](../krypton_v1_packaging_test_manifest.yaml) — Task-2 packaging evidence.
+- [`../krypton_v1_packaging_test_manifest.yaml`](../krypton_v1_packaging_test_manifest.yaml) — immutable historical Task-2 packaging evidence; not current release state.
 - [`packaging.md`](packaging.md) — installable distribution boundary.
 
 ## Tests and documentation
 
-- [`../krypton_v1_public_test_manifest.yaml`](../krypton_v1_public_test_manifest.yaml) — Task-1 public/private test classification.
-- [`../krypton_v1_documentation_test_manifest.yaml`](../krypton_v1_documentation_test_manifest.yaml) — Task-3 test counts and documentation checks.
+- [`../krypton_v1_public_test_manifest.yaml`](../krypton_v1_public_test_manifest.yaml) — immutable historical Task-1 public/private test classification; not the current test-count authority.
+- [`../krypton_v1_documentation_test_manifest.yaml`](../krypton_v1_documentation_test_manifest.yaml) — immutable historical Task-3 test counts and documentation checks; not the current test-count authority.
+
+Task-numbered manifests and the Task-4/4R/5/6 publication, clean-room, and freeze manifests preserve checkpoint-specific provenance. Their historical counts, repository state, platform state, and archive hashes must not be interpreted as current v1.0 release facts.
 - [`architecture.md`](architecture.md) — public implementation architecture.
 - [`scientific-reproduction.md`](scientific-reproduction.md) — fail-closed local evidence-pack workflow.
 

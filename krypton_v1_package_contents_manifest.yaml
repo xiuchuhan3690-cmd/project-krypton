@@ -1,44 +1,51 @@
-schema_version: krypton-v1-package-contents-manifest-1
-software_version: 1.0.0
-distribution_strategy: HYBRID
-wheel:
-  filename_pattern: project_krypton-1.0.0-py3-none-any.whl
-  purpose: repository-independent generic public-core package
-  included:
-    - krypton Python package
-    - package-owned runtime resource tree shared by editable and wheel installs
-    - synthetic C0 fixtures
-    - synthetic mock model registry entry
-    - eleven public Draft 2020-12 schemas
-    - public release metadata
-    - exact developer/reproduction lock used by synthetic provenance
-    - Apache-2.0 LICENSE, NOTICE, and THIRD_PARTY_NOTICES in dist-info/licenses
-  excluded:
-    - external scientific data and source-specific values
-    - evidence, artifacts, vocabularies, calibrations, and scientific registries
-    - C1-C3B private workflows and regression fixtures
-    - tests, docs, scripts, private Git history, local evidence packs, build environments
-  expected_file_count: 72
-  content_inventory: dist/distribution-audit.json
-sdist:
-  filename_pattern: project_krypton-1.0.0.tar.gz
-  purpose: complete rights-safe public source distribution
-  included:
-    - public source, tests, schemas, scripts, examples, docs, audit/reference metadata, Dockerfile, and packaging metadata
-  excluded:
-    - external scientific data
-    - canonical private artifacts and Git history
-    - local environments, caches, and build outputs
-    - Task-4R and final Task-4 checksum sidecars that accompany and freeze the archives
-  expected_file_count: 131
-  content_inventory: dist/distribution-audit.json
-repository:
-  public_git_history_present: false
-  external_data_directory_policy: deny-by-default
-  build_artifacts_committed: false
-allowlist_authority:
-  wheel: pyproject.toml package src/krypton, including its physical resources tree
-  sdist: pyproject.toml tool.hatch.build.targets.sdist.include
-validation:
-  verifier: scripts/verify_distribution.py
-  status: PASS
+{
+  "schema_version": "krypton-v1-package-contents-manifest-2",
+  "authority": "CURRENT_DISTRIBUTION_CONTRACT",
+  "software_version": "1.0.0",
+  "distribution_strategy": "HYBRID",
+  "archive_hash_policy": "STRUCTURE_ONLY_NOT_FINAL_RELEASE_ASSET_CHECKSUM_FREEZE",
+  "member_set_canonicalization": "SHA-256 of UTF-8 lexicographically sorted normalized member paths, one path per line with final LF",
+  "wheel": {
+    "filename_pattern": "project_krypton-1.0.0-py3-none-any.whl",
+    "purpose": "repository-independent generic public-core package",
+    "expected_file_count": 72,
+    "expected_member_set_sha256": "439767abdf6a3189ab0ba542a01c0b1c5e9d9370ec88933e152daea32802be45",
+    "required_package_resources": [
+      "krypton/resources/krypton_v1_release_metadata.yaml",
+      "krypton/resources/requirements.lock",
+      "krypton/resources/registry/models/mock_pk_v1.json",
+      "krypton/resources/fixtures/valid/keg_mock_v0.json",
+      "krypton/resources/schemas/quantity-value.schema.json"
+    ],
+    "excluded": [
+      "external scientific data and source-derived values",
+      "private evidence packs and canonical scientific artifacts",
+      "tests, docs, scripts, private Git history, and build environments"
+    ]
+  },
+  "sdist": {
+    "filename_pattern": "project_krypton-1.0.0.tar.gz",
+    "purpose": "complete rights-safe public source distribution",
+    "expected_file_count": 149,
+    "member_paths_are_relative_to_versioned_archive_root": true,
+    "expected_member_set_sha256": "9cd1ea7611f4d990f0d9db1b13581357055315b6031a7eb60b98cab70cda871c",
+    "excluded": [
+      "external scientific data",
+      "canonical private artifacts and Git history",
+      "local environments, caches, and build outputs",
+      "historical and publication checksum sidecars excluded by pyproject.toml"
+    ]
+  },
+  "distribution_boundary": {
+    "repository": "complete rights-safe public software and tests",
+    "wheel": "generic Krypton public core plus synthetic resources",
+    "sdist": "reviewed public source set only",
+    "local_evidence_pack": "external, user-supplied, and fail-closed"
+  },
+  "validation": {
+    "verifier": "scripts/verify_distribution.py",
+    "unexpected_member_policy": "FAIL_CLOSED_ON_COUNT_OR_MEMBER_SET_DIGEST_MISMATCH",
+    "content_inventory": "dist/distribution-audit.json",
+    "status": "PASS"
+  }
+}

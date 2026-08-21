@@ -1,6 +1,6 @@
 # Project Krypton 1.0.0 draft release notes
 
-Status: draft for a future public release. No GitHub release, tag, repository, DOI, or deposition has been created.
+Status: draft for a future public release. The canonical GitHub repository exists and remains private. No GitHub Release, v1.0.0 tag, DOI, Zenodo deposition, or PyPI publication has been created.
 
 ## Included
 
@@ -30,15 +30,16 @@ python -m krypton
 python -m krypton.demo
 ```
 
-The wheel may instead be installed from the local candidate artifact. No PyPI or repository URL is claimed yet.
+The wheel may instead be installed from the local candidate artifact. The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton> and remains private; no PyPI location is claimed.
 
 ## Verification status
 
-- Public suite: 225 tests, including portable-digest, source/installed resource-parity, and CI/governance regression coverage.
+- Public suite: 228 tests, including strict distribution-membership, portable-digest, source/installed resource-parity, and CI/governance regression coverage.
 - Private canonical scientific reference: 1,184 tests; not distributed or runnable from the public tree.
 - Windows x86-64 CPU / Python 3.12: verified.
-- Linux amd64 Docker, macOS, and ARM: unverified.
-- Dockerfile boundary: statically verified; Docker runtime not verified.
+- GitHub-hosted Ubuntu 24.04 / Python 3.12: verified for the current public CI suite.
+- GitHub-hosted Linux amd64 Docker: verified for the current Docker CI configuration.
+- macOS and ARM: unverified.
 
 ## Scientific limitations
 
@@ -50,4 +51,4 @@ No external scientific data are distributed. Full C1-C3B reproduction requires l
 
 ## Checksums
 
-Task-2 candidate artifacts were audited, but publication checksums will be rebuilt and frozen during a later artifact-publication task. Do not treat draft checksums as final release identifiers.
+Private remediation candidate artifacts are audited for structure and boundary. Publication checksums will be frozen only for the exact assets later selected for release; CI or draft artifact hashes are not final release identifiers.

@@ -85,11 +85,12 @@ Full C1-C3B scientific execution therefore requires a lawfully constructed local
 
 - Python 3.12: **VERIFIED**
 - Windows x86-64 CPU: **VERIFIED**
-- Linux amd64 Docker: **UNVERIFIED** (Docker was unavailable in the Task-2 validation environment)
+- GitHub-hosted Ubuntu 24.04 / Python 3.12: **VERIFIED** for the current public CI suite
+- GitHub-hosted Linux amd64 Docker: **VERIFIED** for the current Docker CI configuration
 - macOS: **UNVERIFIED**
 - ARM platforms: **UNVERIFIED**
 
-Docker runtime verification remains pending a Docker-enabled release-validation environment. The Dockerfile has only undergone static base-image, version, and rights-boundary validation.
+These Linux results are deliberately narrow: they do not claim verification of every Linux distribution, Docker configuration, or architecture.
 
 ## Installation
 
@@ -110,11 +111,11 @@ python -m venv .venv
 .venv\Scripts\python -m pytest -q
 ```
 
-On a POSIX shell, the equivalent interpreter path is `.venv/bin/python`; that platform path was not independently verified in Task 2.
+On a POSIX shell, the equivalent interpreter path is `.venv/bin/python`; that path is exercised by the current GitHub-hosted Ubuntu CI configuration.
 
 ### Built wheel
 
-From the directory containing the Task-2 candidate wheel:
+From the directory containing the current private remediation candidate wheel:
 
 ```text
 python -m venv .venv
@@ -155,10 +156,10 @@ More detail is available in [Representative demo](docs/representative-demo.md).
 The two suites have different scopes and must not be conflated:
 
 ```text
-Public distribution test suite:       225
+Public distribution test suite:       228
   Public core:                         176
   Migration guards:                      9
-  Packaging tests:                      10
+  Packaging tests:                      13
   Documentation tests:                  12
   Resource parity tests:                  7
   CI/governance tests:                   11

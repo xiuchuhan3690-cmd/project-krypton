@@ -31,16 +31,17 @@ scientific_state:
 public_test_counts:
   public_core: 176
   migration_guards: 9
-  packaging: 10
+  packaging: 13
   documentation: 12
-  resource_parity: 4
-  ci_governance: 10
+  resource_parity: 7
+  ci_governance: 11
   public_total_before_task_2: 185
   public_total_after_task_2: 195
   public_total_after_task_3: 207
   public_total_after_task_4r: 211
   public_total_after_task_5: 221
   public_total_after_task_7a_r: 225
+  public_total_after_task_7a_f: 228
 private_reference_test_count: 1184
 external_data_policy: no external scientific data is distributed, including redistributable sources
 local_evidence_pack_policy:
@@ -52,9 +53,18 @@ local_evidence_pack_policy:
 supported_python: '>=3.12,<3.13'
 supported_platforms:
   windows_x86_64_cpu: VERIFIED
-  linux_amd64_docker_cpu: UNVERIFIED_DOCKER_NOT_AVAILABLE_ON_TASK2_HOST
+  github_ubuntu_24_04_python_3_12: VERIFIED_CURRENT_PUBLIC_CI_SUITE
+  github_linux_amd64_docker_cpu: VERIFIED_CURRENT_DOCKER_CI_CONFIGURATION
   macos: UNVERIFIED
   linux_arm64: UNVERIFIED
+repository_state:
+  exists: true
+  visibility: PRIVATE
+  public_candidate_history_exists: true
+  tag_created: false
+  github_release_created: false
+  pypi_published: false
+  security_reporting: SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS
 distribution_strategy: HYBRID
 distribution_components:
   repository: complete rights-safe public software and tests
