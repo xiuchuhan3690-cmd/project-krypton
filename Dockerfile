@@ -23,6 +23,8 @@ COPY Dockerfile ./Dockerfile
 COPY tests ./tests
 COPY examples ./examples
 COPY CITATION.cff CONTRIBUTING.md SECURITY.md CHANGELOG.md GOVERNANCE.md ./
+COPY krypton_v1_documentation_test_manifest.yaml krypton_v1_public_migration_manifest.yaml krypton_v1_dependency_boundary.yaml krypton_v1_package_contents_manifest.yaml krypton_v1_packaging_test_manifest.yaml krypton_v1_public_test_manifest.yaml ./
+COPY evidence_metadata/krypton_v1_external_source_reference_manifest.yaml ./evidence_metadata/
 COPY docs ./docs
 COPY .github ./.github
 
