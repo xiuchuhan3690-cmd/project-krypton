@@ -81,7 +81,29 @@ class C0MockWorkflowResult(BaseModel):
         return _canonical_json(self.model_dump(mode="json"))
 
     def digest(self) -> str:
+        """Digest the complete execution artifact, including runtime provenance."""
         return hashlib.sha256(self.canonical_json().encode("utf-8")).hexdigest()
+
+    def semantic_canonical_json(self) -> str:
+        """Canonicalize the portable scientific/software result identity.
+
+        Execution provenance remains available through the provenance field,
+        canonical_json and digest. It is deliberately excluded here, together with
+        the derived provenance reference embedded in the consequence, because Git
+        state and runtime metadata do not change the synthetic workflow result.
+        """
+
+        payload = self.model_dump(mode="json")
+        payload.pop("provenance")
+        payload["consequence"].pop("provenance_reference")
+        return _canonical_json(payload)
+
+    def semantic_digest(self) -> str:
+        """Return the cross-installation, cross-platform semantic workflow digest."""
+
+        return hashlib.sha256(
+            self.semantic_canonical_json().encode("utf-8")
+        ).hexdigest()
 
 
 class C0MockWorkflow:

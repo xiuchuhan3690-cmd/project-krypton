@@ -36,8 +36,10 @@ def test_demo_uses_the_public_resource_contract_and_preserves_output() -> None:
         "delta_mg_h_per_L": 15.0,
     }
     assert summary["workflow_digest"] == (
-        "65463be3bbf2709324c6ebeeeebe7915776232a882ffdcc809e05bb8455b4bfc"
+        "a2784df7b4f5d0e559e20d9e299f81859825557c42ac9a8e0c9d4059a811eee9"
     )
+    assert len(summary["execution_digest"]) == 64
+    assert summary["execution_digest"] != summary["workflow_digest"]
 
 
 def test_repository_root_has_no_obsolete_runtime_resource_trees() -> None:

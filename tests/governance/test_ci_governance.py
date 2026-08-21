@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).parents[2]
 WORKFLOW = (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
 GOVERNANCE = (ROOT / "GOVERNANCE.md").read_text(encoding="utf-8")
+DOCKERFILE = (ROOT / "Dockerfile").read_text(encoding="utf-8")
 
 
 def test_ci_events_and_permissions_are_minimal() -> None:
@@ -90,3 +91,17 @@ def test_contribution_and_security_policies_keep_owner_placeholders_honest() -> 
     assert "AI-assisted work" in contributing
     assert "final private reporting path/contact remains" in security
     assert "not fabricated" in security
+
+
+def test_docker_uses_an_explicit_full_test_stage_and_minimal_runtime_stage() -> None:
+    assert "FROM package AS test" in DOCKERFILE
+    assert "FROM package AS runtime" in DOCKERFILE
+    for resource in (
+        "COPY tests ./tests",
+        "COPY examples ./examples",
+        "COPY CITATION.cff CONTRIBUTING.md SECURITY.md CHANGELOG.md GOVERNANCE.md ./",
+        "COPY docs ./docs",
+        "COPY .github ./.github",
+    ):
+        assert resource in DOCKERFILE
+    assert "docker build --target test" in WORKFLOW

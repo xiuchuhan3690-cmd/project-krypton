@@ -37,7 +37,8 @@ def demo_summary() -> dict[str, object]:
             item.parameter_id for item in result.pair_result.difference_report.unexpected
         ],
         "provenance_reference": result.consequence.provenance_reference,
-        "workflow_digest": result.digest(),
+        "workflow_digest": result.semantic_digest(),
+        "execution_digest": result.digest(),
     }
 
 

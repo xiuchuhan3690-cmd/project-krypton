@@ -130,7 +130,7 @@ jobs:
       - name: Check out public source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Build pinned-base image
-        run: docker build --tag project-krypton-ci:1.0.0 .
+        run: docker build --target test --tag project-krypton-ci:1.0.0 .
       - name: Run public tests in image
         run: docker run --rm project-krypton-ci:1.0.0 python -m pytest -q
       - name: Run synthetic demo in image

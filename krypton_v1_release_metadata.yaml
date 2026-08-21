@@ -40,6 +40,7 @@ public_test_counts:
   public_total_after_task_3: 207
   public_total_after_task_4r: 211
   public_total_after_task_5: 221
+  public_total_after_task_7a_r: 225
 private_reference_test_count: 1184
 external_data_policy: no external scientific data is distributed, including redistributable sources
 local_evidence_pack_policy:

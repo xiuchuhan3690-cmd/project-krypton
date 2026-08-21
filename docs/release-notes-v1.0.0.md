@@ -34,7 +34,7 @@ The wheel may instead be installed from the local candidate artifact. No PyPI or
 
 ## Verification status
 
-- Public suite: 221 tests, including source/installed resource-parity and CI/governance regression coverage.
+- Public suite: 225 tests, including portable-digest, source/installed resource-parity, and CI/governance regression coverage.
 - Private canonical scientific reference: 1,184 tests; not distributed or runnable from the public tree.
 - Windows x86-64 CPU / Python 3.12: verified.
 - Linux amd64 Docker, macOS, and ARM: unverified.

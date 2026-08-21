@@ -37,10 +37,10 @@ def test_rows_30_and_31_are_visible_blocked_debt() -> None:
 
 
 def test_public_and_private_test_counts_are_not_conflated() -> None:
-    assert "Public distribution test suite:       221" in README
+    assert "Public distribution test suite:       225" in README
     assert "Documentation tests:                  12" in README
-    assert "Resource parity tests:                  4" in README
-    assert "CI/governance tests:                   10" in README
+    assert "Resource parity tests:                  7" in README
+    assert "CI/governance tests:                   11" in README
     assert "Private canonical scientific reference suite: 1184" in README
     assert "public_total_after_task_3: 207" in METADATA
     assert "public_total_after_task_4r: 211" in METADATA

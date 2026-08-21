@@ -155,13 +155,13 @@ More detail is available in [Representative demo](docs/representative-demo.md).
 The two suites have different scopes and must not be conflated:
 
 ```text
-Public distribution test suite:       221
+Public distribution test suite:       225
   Public core:                         176
   Migration guards:                      9
   Packaging tests:                      10
   Documentation tests:                  12
-  Resource parity tests:                  4
-  CI/governance tests:                   10
+  Resource parity tests:                  7
+  CI/governance tests:                   11
 
 Private canonical scientific reference suite: 1184
 ```
