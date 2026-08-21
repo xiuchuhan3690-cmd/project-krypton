@@ -1,0 +1,28 @@
+schema_version: krypton-v1-task2-artifact-digests-1
+algorithm: sha256
+scope: Task-2 public release metadata, packaging code, and distribution boundary
+task1_relationship:
+  baseline_verification_before_task2: 19/19 PASS
+  unchanged_task1_artifacts: 18
+  intentionally_superseded_task1_artifacts: 1
+  superseded:
+    path: NOTICE
+    task1_public_metadata_hash: 1c3587b8cbc309e38fd32e27734807249676ab671db3f13c8838f49da60ff8a4
+    task2_public_metadata_hash: f23ff0c3bc8656f703c97bb8f078cf3be495727bd5e31db20f9b4a89d58b7a4f
+    reason: formal v1.0.0 identity and confirmed Apache-2.0/public-scientific boundary
+  private_canonical_hashes_changed: false
+artifacts:
+  pyproject.toml: 951795550954828f7d3a97d1f850cdf7bb00ca1480724aa93d00026c31d1de25
+  src/krypton/_version.py: e85d598945f419fec89b0a715206b3970e7c109f6c8eefde7b011d064c92ba6d
+  src/krypton/resources.py: e4c0ec0b13a9277f5285e4d177b975d3da61e800e76c167868b4890c2752ddd1
+  src/krypton/demo.py: 09aa8a1ffbc05602f8a9356ad5e8e02656e09f5bf8cf795a488e3f45d2fce8ac
+  src/krypton/__main__.py: 177f7d22c9d1880f32b680411f2d817e43f2176ed859a524c6f6501583f2528f
+  requirements.lock: 3958e1e95a3fdcb360dc5895ff6029c1bd5e6bc9afa47bc8e131c1f61f0831b8
+  Dockerfile: 59fcaa12cf5dd9546d7f15faf457e78e7f9ad090b42600e32cc9066d96c52a56
+  NOTICE: f23ff0c3bc8656f703c97bb8f078cf3be495727bd5e31db20f9b4a89d58b7a4f
+  krypton_v1_release_metadata.yaml: de47f34ba83ff64baf123ceb5fc9a79abc41c0c21533c241dfba69ada2f34e02
+  krypton_v1_dependency_boundary.yaml: 5c70961d8ef627a22088168a78c1f778ce3fd7cab8d177340f1fc66f5294ac24
+  krypton_v1_package_contents_manifest.yaml: b2a6e1b8bc7e0b54fe8f2cf4a7ad264b0266a34fe419eae50025f439134a2c9d
+  krypton_v1_packaging_test_manifest.yaml: c7b585d9fa3547f955ba22f289e479dd97a5031719881183782923c97618a2ae
+  scripts/verify_distribution.py: afea2ca814d985bb670ef8c0f2462da33cfb2862d210537528605ec4e02193f2
+  scripts/verify_task2_artifact_digests.py: 67298c1994bf78f906750e1abfe7f60262e66e8a20ce3fe0d4125fe6fccefaab

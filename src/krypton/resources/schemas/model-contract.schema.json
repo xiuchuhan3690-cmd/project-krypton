@@ -1,0 +1,363 @@
+{
+  "$defs": {
+    "AgeRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_years": {
+          "minimum": 0,
+          "title": "Maximum Years",
+          "type": "number"
+        },
+        "minimum_years": {
+          "minimum": 0,
+          "title": "Minimum Years",
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum_years",
+        "maximum_years"
+      ],
+      "title": "AgeRange",
+      "type": "object"
+    },
+    "ApplicabilityContext": {
+      "additionalProperties": false,
+      "description": "A set of allowed labels/ranges, or a candidate context for assessment.",
+      "properties": {
+        "age_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AgeRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "developmental_stage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Developmental Stage",
+          "type": "array"
+        },
+        "disease_status": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Disease Status",
+          "type": "array"
+        },
+        "environmental_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Environmental Tags",
+          "type": "array"
+        },
+        "experimental_system": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Experimental System",
+          "type": "array"
+        },
+        "medications": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Medications",
+          "type": "array"
+        },
+        "population_ancestry": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Population Ancestry",
+          "type": "array"
+        },
+        "sex": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sex",
+          "type": "array"
+        },
+        "tissue": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Tissue",
+          "type": "array"
+        }
+      },
+      "title": "ApplicabilityContext",
+      "type": "object"
+    },
+    "ModelInputSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "biological_meaning": {
+          "minLength": 1,
+          "title": "Biological Meaning",
+          "type": "string"
+        },
+        "canonical_unit": {
+          "minLength": 1,
+          "title": "Canonical Unit",
+          "type": "string"
+        },
+        "data_type": {
+          "$ref": "#/$defs/ParameterType"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "physical_dimension": {
+          "minLength": 1,
+          "title": "Physical Dimension",
+          "type": "string"
+        },
+        "quantity_kind": {
+          "minLength": 1,
+          "title": "Quantity Kind",
+          "type": "string"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "valid_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NumericRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "biological_meaning",
+        "quantity_kind",
+        "canonical_unit",
+        "physical_dimension",
+        "data_type"
+      ],
+      "title": "ModelInputSpec",
+      "type": "object"
+    },
+    "ModelMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "applicability": {
+          "$ref": "#/$defs/ApplicabilityContext"
+        },
+        "artifact_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Digest",
+          "type": "string"
+        },
+        "license": {
+          "minLength": 1,
+          "title": "License",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "model_name": {
+          "minLength": 1,
+          "title": "Model Name",
+          "type": "string"
+        },
+        "model_version": {
+          "minLength": 1,
+          "title": "Model Version",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "validation_scope": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Validation Scope",
+          "type": "array"
+        }
+      },
+      "required": [
+        "model_name",
+        "model_version",
+        "source",
+        "artifact_digest",
+        "license",
+        "validation_scope",
+        "limitations",
+        "applicability"
+      ],
+      "title": "ModelMetadata",
+      "type": "object"
+    },
+    "ModelOutputSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "biological_meaning": {
+          "minLength": 1,
+          "title": "Biological Meaning",
+          "type": "string"
+        },
+        "canonical_unit": {
+          "minLength": 1,
+          "title": "Canonical Unit",
+          "type": "string"
+        },
+        "data_type": {
+          "$ref": "#/$defs/ParameterType",
+          "default": "float"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "physical_dimension": {
+          "minLength": 1,
+          "title": "Physical Dimension",
+          "type": "string"
+        },
+        "quantity_kind": {
+          "minLength": 1,
+          "title": "Quantity Kind",
+          "type": "string"
+        },
+        "time_semantics": {
+          "minLength": 1,
+          "title": "Time Semantics",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "biological_meaning",
+        "quantity_kind",
+        "canonical_unit",
+        "physical_dimension",
+        "time_semantics"
+      ],
+      "title": "ModelOutputSpec",
+      "type": "object"
+    },
+    "NumericRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maximum"
+        },
+        "maximum_inclusive": {
+          "default": true,
+          "title": "Maximum Inclusive",
+          "type": "boolean"
+        },
+        "minimum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum"
+        },
+        "minimum_inclusive": {
+          "default": true,
+          "title": "Minimum Inclusive",
+          "type": "boolean"
+        }
+      },
+      "title": "NumericRange",
+      "type": "object"
+    },
+    "ParameterType": {
+      "enum": [
+        "float",
+        "integer"
+      ],
+      "title": "ParameterType",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "inputs": {
+      "items": {
+        "$ref": "#/$defs/ModelInputSpec"
+      },
+      "title": "Inputs",
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/$defs/ModelMetadata"
+    },
+    "outputs": {
+      "items": {
+        "$ref": "#/$defs/ModelOutputSpec"
+      },
+      "title": "Outputs",
+      "type": "array"
+    },
+    "schema_version": {
+      "default": "model-contract-v0",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "metadata",
+    "inputs",
+    "outputs"
+  ],
+  "title": "ModelContract",
+  "type": "object"
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "krypton-v1-task5-ci-verification-1",
+  "verification_date": "2026-08-21",
+  "local_ci_simulation": {
+    "status": "LOCAL_COMMAND_VERIFIED",
+    "python": "3.12.13",
+    "environment": "fresh venv created from bundled Python; pinned public requirements installed from network; no canonical venv or global packages used"
+  },
+  "github_actions": {
+    "status": "GITHUB_ACTIONS_NOT_YET_EXECUTED",
+    "reason": "public GitHub repository does not yet exist"
+  },
+  "docker": {
+    "ci_status": "CONFIGURED_NOT_EXECUTED_ON_GITHUB",
+    "local_status": "DOCKER_RUNTIME_UNAVAILABLE",
+    "detection": [
+      "Get-Command docker: not found",
+      "C:/Program Files/Docker/Docker/resources/bin/docker.exe: absent",
+      "C:/Program Files/Docker/Docker/Docker Desktop.exe: absent",
+      "C:/ProgramData/DockerDesktop/version-bin/docker.exe: absent"
+    ]
+  },
+  "distribution_lineage": {
+    "pre_task5_wheel_sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469",
+    "pre_task5_sdist_sha256": "3ed9a075c88fbda86c52d13a21ed8616be80c1693fb952dde65e6a354c8eacc8",
+    "post_task5_wheel_sha256": "57500cd0c2edc0a008e9ef2f890acb5c570392c4d9cb4862383b004960a6d3fd",
+    "post_task5_sdist_sha256": "374e2087f137dd0bd2e92fc04fa9bb3077fd493c032c0dd469c869573517dfc1",
+    "post_task5_distribution_audit_sha256": "8027fedbf489465f6e1e3db73d3ceed91db73d43742a7e672dca09e7ed0f7131",
+    "wheel_members": 72,
+    "sdist_members": 144
+  },
+  "commands": [
+    "python -m pip install --upgrade pip",
+    "python -m pip install --requirement requirements.lock",
+    "python -m pip install -e .[test]",
+    "python -m pip check",
+    "python -m pytest -q --basetemp <workspace-temp>",
+    "python scripts/verify_public_boundary.py",
+    "python scripts/export_public_schemas.py plus byte comparison",
+    "python -m krypton.demo",
+    "cffconvert --validate --infile CITATION.cff",
+    "python -m hatchling build",
+    "python scripts/verify_distribution.py",
+    "isolated-wheel-python -m pytest -q <public-tests>",
+    "isolated-wheel-python -m krypton",
+    "isolated-wheel-python -m krypton.demo"
+  ],
+  "results": {
+    "focused_ci_governance_tests": "10 passed",
+    "source_public_suite": "221 passed",
+    "installed_wheel_public_suite": "221 passed",
+    "extracted_sdist_public_suite": "221 passed",
+    "dependency_check_source": "PASS",
+    "dependency_check_installed_wheel": "PASS",
+    "public_boundary": "PASS; 156 files scanned before generated-cache cleanup",
+    "schema_parity": "PASS; 11 schemas",
+    "github_yaml_parse": "PASS; 5 YAML files",
+    "cff_1_2_0": "PASS; cffconvert 2.0.0",
+    "distribution_verifier": "PASS",
+    "synthetic_demo": "PASS; baseline 10.0, edited 25.0, delta +15.0 mg*h/L; digest 65463be3bbf2709324c6ebeeeebe7915776232a882ffdcc809e05bb8455b4bfc",
+    "pre_task5_rights_artifacts": "UNCHANGED",
+    "pre_task5_distributions": "UNCHANGED",
+    "task5_rights_self_audit": "PASS"
+  }
+}

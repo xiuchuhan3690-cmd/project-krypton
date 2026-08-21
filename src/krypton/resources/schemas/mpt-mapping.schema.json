@@ -1,0 +1,315 @@
+{
+  "$defs": {
+    "AgeRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_years": {
+          "minimum": 0,
+          "title": "Maximum Years",
+          "type": "number"
+        },
+        "minimum_years": {
+          "minimum": 0,
+          "title": "Minimum Years",
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum_years",
+        "maximum_years"
+      ],
+      "title": "AgeRange",
+      "type": "object"
+    },
+    "ApplicabilityContext": {
+      "additionalProperties": false,
+      "description": "A set of allowed labels/ranges, or a candidate context for assessment.",
+      "properties": {
+        "age_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AgeRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "developmental_stage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Developmental Stage",
+          "type": "array"
+        },
+        "disease_status": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Disease Status",
+          "type": "array"
+        },
+        "environmental_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Environmental Tags",
+          "type": "array"
+        },
+        "experimental_system": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Experimental System",
+          "type": "array"
+        },
+        "medications": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Medications",
+          "type": "array"
+        },
+        "population_ancestry": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Population Ancestry",
+          "type": "array"
+        },
+        "sex": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sex",
+          "type": "array"
+        },
+        "tissue": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Tissue",
+          "type": "array"
+        }
+      },
+      "title": "ApplicabilityContext",
+      "type": "object"
+    },
+    "LookupEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "source_value": {
+          "title": "Source Value",
+          "type": "number"
+        },
+        "target_value": {
+          "title": "Target Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "source_value",
+        "target_value"
+      ],
+      "title": "LookupEntry",
+      "type": "object"
+    },
+    "MappingType": {
+      "enum": [
+        "identity",
+        "scale",
+        "lookup",
+        "callable"
+      ],
+      "title": "MappingType",
+      "type": "string"
+    },
+    "ParameterRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maximum"
+        },
+        "minimum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum"
+        }
+      },
+      "title": "ParameterRange",
+      "type": "object"
+    },
+    "TargetParameterReference": {
+      "additionalProperties": false,
+      "description": "MPT's narrow boundary reference to a future model contract parameter.",
+      "properties": {
+        "biological_meaning": {
+          "minLength": 1,
+          "title": "Biological Meaning",
+          "type": "string"
+        },
+        "canonical_unit": {
+          "minLength": 1,
+          "title": "Canonical Unit",
+          "type": "string"
+        },
+        "contract_id": {
+          "minLength": 1,
+          "title": "Contract Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "minLength": 1,
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "parameter_id": {
+          "minLength": 1,
+          "title": "Parameter Id",
+          "type": "string"
+        },
+        "physical_dimension": {
+          "minLength": 1,
+          "title": "Physical Dimension",
+          "type": "string"
+        },
+        "quantity_kind": {
+          "minLength": 1,
+          "title": "Quantity Kind",
+          "type": "string"
+        },
+        "valid_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ParameterRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "contract_id",
+        "contract_version",
+        "parameter_id",
+        "biological_meaning",
+        "quantity_kind",
+        "canonical_unit",
+        "physical_dimension"
+      ],
+      "title": "TargetParameterReference",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "applicability": {
+      "$ref": "#/$defs/ApplicabilityContext"
+    },
+    "callable_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Callable Name"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "lookup_entries": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/LookupEntry"
+      },
+      "title": "Lookup Entries",
+      "type": "array"
+    },
+    "mapping_type": {
+      "$ref": "#/$defs/MappingType"
+    },
+    "scale_factor": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scale Factor"
+    },
+    "source_quantity_kind": {
+      "minLength": 1,
+      "title": "Source Quantity Kind",
+      "type": "string"
+    },
+    "source_unit": {
+      "minLength": 1,
+      "title": "Source Unit",
+      "type": "string"
+    },
+    "target": {
+      "$ref": "#/$defs/TargetParameterReference"
+    },
+    "version": {
+      "minLength": 1,
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "mapping_type",
+    "source_quantity_kind",
+    "source_unit",
+    "target",
+    "evidence_ids",
+    "applicability"
+  ],
+  "title": "MPTMappingDefinition",
+  "type": "object"
+}

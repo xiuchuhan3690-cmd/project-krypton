@@ -1,0 +1,20 @@
+{
+  "mapping_id": "mapping:activity-clearance",
+  "baseline": {
+    "distribution": "fixed",
+    "unit": "dimensionless",
+    "semantic_kind": "relative_activity",
+    "value": 1.0
+  },
+  "edited": {
+    "distribution": "fixed",
+    "unit": "dimensionless",
+    "semantic_kind": "relative_activity",
+    "value": 0.4
+  },
+  "context": {
+    "tissue": ["liver"],
+    "experimental_system": ["internal_mock"]
+  },
+  "evidence": []
+}

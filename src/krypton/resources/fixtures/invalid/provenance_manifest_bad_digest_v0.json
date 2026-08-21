@@ -1,0 +1,17 @@
+{
+  "schema_version": "provenance-manifest-v0",
+  "run_id": "run:invalid",
+  "timestamp": "2026-08-16T00:00:00",
+  "krypton_package_version": "1.0.0",
+  "git_commit": "not-a-commit",
+  "dirty_worktree": true,
+  "edit_object": {"id": "edit:x", "version": "v0", "digest": "bad"},
+  "keg": {"id": "keg:x", "version": "v0", "digest": "bad"},
+  "mpt": {"id": "mpt:x", "version": "v0", "digest": "bad"},
+  "model_artifact": {"id": "model:x", "version": "v0", "digest": "bad"},
+  "pair_run_spec": {"id": "pair:x", "version": "v0", "digest": "bad"},
+  "environment_digest": "bad",
+  "python_version": "3.12",
+  "dependency_lock_digest": "bad",
+  "random_seed": 1
+}

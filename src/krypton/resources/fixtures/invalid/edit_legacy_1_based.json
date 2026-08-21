@@ -1,0 +1,15 @@
+{
+  "id": "edit:legacy-snv",
+  "assembly": "GRCh38",
+  "sequence_id": "chr22",
+  "position": 100001,
+  "reference_allele": "A",
+  "edited_allele": "G",
+  "edit_type": "snv",
+  "zygosity": "heterozygous",
+  "mode": "germline",
+  "edited_tissues": ["all"],
+  "cell_fraction": 1.0,
+  "delivery_modeled": false,
+  "off_target_modeled": false
+}

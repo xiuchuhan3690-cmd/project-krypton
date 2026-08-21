@@ -1,0 +1,125 @@
+{
+  "schema_version": "krypton-v1-task5-ci-governance-manifest-1",
+  "software_version": "1.0.0",
+  "gate": "RELEASE_TASK5_PASS_WITH_RESTRICTIONS",
+  "baseline": {
+    "canonical_branch": "main",
+    "canonical_commit": "8c03ec5d129bb438dfddf4b54f974349a76bf224",
+    "canonical_worktree": "clean",
+    "pre_task5_public_tests": 211,
+    "canonical_private_reference_tests": 1184,
+    "rights_gate": "PUBLICATION_RIGHTS_AUDIT_PASS_WITH_ACTIONS"
+  },
+  "ci": {
+    "events": ["pull_request", "push:main"],
+    "python": {"declared": ">=3.12,<3.13", "configured": ["3.12"]},
+    "jobs": ["source", "distribution", "installed-wheel", "citation", "docker-build"],
+    "permissions": {"contents": "read"},
+    "repository_secrets_required": 0,
+    "publishing": false,
+    "artifact_uploads": false,
+    "cache_scope": "pip_downloads_only",
+    "main_runs_cancelled": false
+  },
+  "actions": [
+    {
+      "name": "actions/checkout",
+      "publisher": "GitHub",
+      "purpose": "read public source",
+      "pin": "11bd71901bbe5b1630ceea73d27597364c9af683",
+      "release_comment": "v4.2.2",
+      "permissions": ["contents:read"]
+    },
+    {
+      "name": "actions/setup-python",
+      "publisher": "GitHub",
+      "purpose": "install Python 3.12 and cache pip downloads",
+      "pin": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "release_comment": "v5.6.0",
+      "permissions": []
+    }
+  ],
+  "governance": {
+    "authority": "single_project_owner",
+    "change_classes": ["A", "B", "C", "D"],
+    "dependabot": "weekly_human_review_no_auto_merge",
+    "codeowners": "DEFERRED_UNTIL_PUBLIC_ACCOUNT_IDENTITY_IS_FROZEN",
+    "code_of_conduct": "DEFERRED_UNTIL_COMMUNITY_PARTICIPATION_AND_ENFORCEMENT_PROCESS_EXIST",
+    "branch_protection": "RECOMMENDATIONS_ONLY_NOT_APPLIED",
+    "versioning": "SEMVER_WITH_SEPARATE_SCIENTIFIC_SEMANTIC_REVIEW",
+    "artifact_signing": "NOT_CONFIGURED_NO_IDENTITY_OR_KEY_CREATED"
+  },
+  "frozen_scientific_state": {
+    "C0": "COMPLETE",
+    "C1": "COMPLETE",
+    "C2": "COMPLETE",
+    "C3A": "COMPLETE",
+    "C3B": "RESTRICTED_COMPLETE",
+    "route_gate": "USABLE_WITH_STATED_SCOPE",
+    "validation_maturity": "EXTERNAL_DESCRIPTIVE_SUPPORT",
+    "row_30": "BLOCKED",
+    "row_31": "BLOCKED",
+    "model_contradiction": "NO",
+    "C4": "NOT_INCLUDED"
+  },
+  "rights_lineage": {
+    "baseline": "PRE_TASK5_RIGHTS_AUDITED_BASELINE",
+    "task5_additions": "PROJECT_AUTHORED_GOVERNANCE_TEXT_AND_CONFIGURATION",
+    "third_party_text_copied": false,
+    "third_party_code_vendored": false,
+    "external_scientific_data_added": false,
+    "actions_are_remote_references_not_redistributed_payload": true
+  },
+  "task5_change_inventory": {
+    "new_repository_files": [
+      ".github/workflows/ci.yml",
+      ".github/dependabot.yml",
+      ".github/pull_request_template.md",
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      ".github/ISSUE_TEMPLATE/documentation.yml",
+      ".github/ISSUE_TEMPLATE/scientific_scope.yml",
+      "GOVERNANCE.md",
+      "scripts/verify_task5_ci_governance.py",
+      "tests/governance/test_ci_governance.py"
+    ],
+    "modified_repository_files": [
+      "README.md",
+      "CONTRIBUTING.md",
+      "SECURITY.md",
+      "docs/release-notes-v1.0.0.md",
+      "pyproject.toml",
+      "krypton_v1_documentation_test_manifest.yaml",
+      "krypton_v1_release_metadata.yaml",
+      "src/krypton/resources/krypton_v1_release_metadata.yaml"
+    ],
+    "machine_sidecars": [
+      "krypton_v1_task5_ci_governance_manifest.yaml",
+      "krypton_v1_task5_ci_verification.yaml",
+      "krypton_v1_task5_digests.yaml"
+    ],
+    "post_task5_artifacts": [
+      "post_task5_dist/project_krypton-1.0.0-py3-none-any.whl",
+      "post_task5_dist/project_krypton-1.0.0.tar.gz",
+      "post_task5_dist/distribution-audit.json"
+    ]
+  },
+  "task5_rights_self_audit": {
+    "result": "PASS",
+    "project_authored_configuration_and_text": true,
+    "unlicensed_copied_text": false,
+    "vendored_code": false,
+    "external_scientific_data": false,
+    "secret_or_personal_email": false,
+    "private_local_path": false,
+    "fake_identity": false,
+    "unsupported_scientific_claim": false,
+    "third_party_references": "official GitHub Actions identifiers and a pinned external CFF validation tool; no payload is redistributed"
+  },
+  "restrictions": [
+    "GITHUB_ACTIONS_NOT_YET_EXECUTED",
+    "BRANCH_PROTECTION_NOT_YET_APPLIED",
+    "PUBLIC_REPOSITORY_NOT_YET_CREATED",
+    "FINAL_OWNER_IDENTITY_AND_SECURITY_CONTACT_PENDING"
+  ],
+  "next_authorized_technical_task": "Release Task 6 — Public Repository Initialization and Pre-Publication Freeze"
+}

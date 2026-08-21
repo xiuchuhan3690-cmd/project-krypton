@@ -1,0 +1,43 @@
+{
+  "registry_version": "model-registry-v0",
+  "mechanisms": ["invalid_test"],
+  "contract": {
+    "schema_version": "model-contract-v0",
+    "id": "contract:unknown-adapter",
+    "metadata": {
+      "model_name": "Unknown adapter fixture",
+      "model_version": "1.0.0",
+      "source": "internal-test",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "license": "Internal test",
+      "validation_scope": ["Negative fixture"],
+      "limitations": ["Intentionally unregistered adapter"],
+      "applicability": {}
+    },
+    "inputs": [
+      {
+        "id": "input",
+        "biological_meaning": "Input",
+        "quantity_kind": "input",
+        "data_type": "float",
+        "canonical_unit": "dimensionless",
+        "physical_dimension": "dimensionless",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "biological_meaning": "Output",
+        "quantity_kind": "output",
+        "canonical_unit": "dimensionless",
+        "physical_dimension": "dimensionless",
+        "time_semantics": "instantaneous"
+      }
+    ]
+  },
+  "adapter": {
+    "entry_point": "untrusted.module:Adapter",
+    "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}

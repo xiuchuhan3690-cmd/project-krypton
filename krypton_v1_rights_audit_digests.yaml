@@ -1,0 +1,42 @@
+{
+  "schema_version": "krypton-v1-independent-rights-audit-digests-1",
+  "audit_date": "2026-08-21",
+  "algorithm": "sha256",
+  "audited_release_payload": {
+    "file_count": 140,
+    "canonical_path_digest_inventory_sha256": "ce605abd08187f17a70c32b5b8981f6b6086ecc0d965dd3733c6a5a9d3ef1f9f",
+    "coverage": {
+      "task4_source_inventory": {
+        "path": "krypton_v1_task4_publication_digests.yaml",
+        "file_count": 136,
+        "inventory_sha256": "ce21d8b29230b31bd08dc3b906b9f614b53023924eedc55da3886f5f49690907",
+        "manifest_sha256": "bc0109d23d50ee7aa537c1f6502e5943d22342024a6169deed64a8be7c9d5abd"
+      },
+      "distribution_audit": {
+        "path": "dist/distribution-audit.json",
+        "sha256": "835c87843dab70a51cc3d84877a1ac4540ffd23b58c1c0266162bbee3c8b7e74"
+      },
+      "wheel": {
+        "path": "dist/project_krypton-1.0.0-py3-none-any.whl",
+        "file_count": 72,
+        "size_bytes": 87215,
+        "sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469"
+      },
+      "sdist": {
+        "path": "dist/project_krypton-1.0.0.tar.gz",
+        "file_count": 131,
+        "size_bytes": 98493,
+        "sha256": "3ed9a075c88fbda86c52d13a21ed8616be80c1693fb952dde65e6a354c8eacc8"
+      }
+    },
+    "coverage_explanation": "The Task-4 manifest freezes 136 non-dist source files; its own hash plus the three dist files accounts for all 140 pre-existing candidate files. The independent canonical path/digest inventory was also captured before audit artifacts were added."
+  },
+  "new_audit_artifacts": {
+    "krypton_v1_independent_rights_audit.yaml": "a119a9c3323e24528856c242821dcbfdf77d78ef822792eda8cf61f7e640b588",
+    "krypton_v1_file_rights_inventory.yaml": "b6ccb0a07856d7abad0bdd7cf34bc1975ab225dd352fee8a44c951d5b0bba9c5",
+    "krypton_v1_dependency_license_audit.yaml": "d077d9bcaf8ec681b5df951f6afef731f1404df72662dc87a64500ccb64aa2fa"
+  },
+  "self_digest_policy": "This digest file is excluded from its own contents to avoid self-reference; its SHA-256 is recorded in the external Markdown audit report.",
+  "historical_digest_artifacts_overwritten": false,
+  "candidate_files_modified": false
+}

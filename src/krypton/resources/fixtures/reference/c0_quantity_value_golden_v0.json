@@ -1,0 +1,14 @@
+{
+  "distribution": "fixed",
+  "unit": "dimensionless",
+  "semantic_kind": "relative_activity",
+  "value": 1.0,
+  "lower": null,
+  "upper": null,
+  "mean": null,
+  "standard_deviation": null,
+  "alpha": null,
+  "beta": null,
+  "uncertainty": [],
+  "correlation_group": null
+}

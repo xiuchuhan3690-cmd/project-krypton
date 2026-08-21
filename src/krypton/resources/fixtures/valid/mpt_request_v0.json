@@ -1,0 +1,37 @@
+{
+  "mapping_id": "mapping:activity-clearance",
+  "baseline": {
+    "distribution": "fixed",
+    "unit": "dimensionless",
+    "semantic_kind": "relative_activity",
+    "value": 1.0
+  },
+  "edited": {
+    "distribution": "fixed",
+    "unit": "dimensionless",
+    "semantic_kind": "relative_activity",
+    "value": 0.4
+  },
+  "context": {
+    "tissue": ["liver"],
+    "experimental_system": ["internal_mock"]
+  },
+  "evidence": [
+    {
+      "id": "evidence:mock",
+      "evidence_class": "mechanistic_model_assumption",
+      "source": "internal-mock",
+      "identifier": "mock-activity-clearance",
+      "version": "1.0.0",
+      "claim": "Relative activity scales artificial clearance.",
+      "applicability_reference": "applicability:mock",
+      "confidence": "low",
+      "limitations": ["Architecture test only; not biological evidence."],
+      "retrieval_timestamp": "2026-08-16T00:00:00Z",
+      "curation": {
+        "curator": "project-krypton",
+        "curated_at": "2026-08-16T00:00:00Z"
+      }
+    }
+  ]
+}

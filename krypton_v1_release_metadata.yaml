@@ -1,0 +1,72 @@
+schema_version: krypton-v1-release-metadata-1
+software_name: Project Krypton
+software_version: 1.0.0
+version_meaning: first public release of the rights-safe Project Krypton research-software prototype
+distribution_name: project-krypton
+import_name: krypton
+license:
+  project_authored_material: Apache-2.0
+  external_scientific_data: NOT_DISTRIBUTED
+  external_source_metadata: REFERENCE_AND_PROVENANCE_ONLY_NOT_RELICENSED
+  dependencies: ORIGINAL_UPSTREAM_LICENSES
+authorship:
+  public_attribution: XIU CHUHAN
+  family_name: Xiu
+  given_name: Chuhan
+  basis: OWNER_SELECTED_PUBLICATION_IDENTITY
+  personal_or_legal_name_disclosed: true
+scientific_scope: restricted research prototype
+scientific_state:
+  C0: COMPLETE
+  C1: COMPLETE
+  C2: COMPLETE
+  C3A: COMPLETE
+  C3B: RESTRICTED_COMPLETE
+  route_gate: USABLE_WITH_STATED_SCOPE
+  validation_maturity: EXTERNAL_DESCRIPTIVE_SUPPORT
+  row_30: BLOCKED
+  row_31: BLOCKED
+  model_contradiction: false
+  C4: NOT_INCLUDED
+public_test_counts:
+  public_core: 176
+  migration_guards: 9
+  packaging: 10
+  documentation: 12
+  resource_parity: 4
+  ci_governance: 10
+  public_total_before_task_2: 185
+  public_total_after_task_2: 195
+  public_total_after_task_3: 207
+  public_total_after_task_4r: 211
+  public_total_after_task_5: 221
+private_reference_test_count: 1184
+external_data_policy: no external scientific data is distributed, including redistributable sources
+local_evidence_pack_policy:
+  environment_variable: KRYPTON_LOCAL_EVIDENCE_PACK
+  bundled_in_distribution: false
+  generic_public_functionality_without_pack: available
+  external_scientific_routes_without_pack: EVIDENCE_PACK_REQUIRED
+  fallback: forbidden
+supported_python: '>=3.12,<3.13'
+supported_platforms:
+  windows_x86_64_cpu: VERIFIED
+  linux_amd64_docker_cpu: UNVERIFIED_DOCKER_NOT_AVAILABLE_ON_TASK2_HOST
+  macos: UNVERIFIED
+  linux_arm64: UNVERIFIED
+distribution_strategy: HYBRID
+distribution_components:
+  repository: complete rights-safe public software and tests
+  docker: reproducible public-core environment
+  wheel: generic Krypton public-core plus synthetic resources
+  local_evidence_pack: external, user-supplied, fail-closed scientific inputs
+canonical_private_provenance_reference:
+  type: private_research_provenance_identifier
+  commit: 8c03ec5d129bb438dfddf4b54f974349a76bf224
+  present_in_public_history: false
+project_urls:
+  repository: https://github.com/xiuchuhan3690-cmd/project-krypton
+citation:
+  file: CITATION.cff
+  author_representation: structured family and given names
+  archival_doi: pending public release and deposition

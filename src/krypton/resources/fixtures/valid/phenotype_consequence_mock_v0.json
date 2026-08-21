@@ -1,0 +1,45 @@
+{
+  "schema_version": "phenotype-consequence-v0",
+  "id": "consequence:mock-auc",
+  "endpoint": "mock_auc",
+  "baseline": {
+    "distribution": "fixed",
+    "unit": "mg*h/L",
+    "semantic_kind": "auc",
+    "value": 10.0
+  },
+  "edited": {
+    "distribution": "fixed",
+    "unit": "mg*h/L",
+    "semantic_kind": "auc",
+    "value": 25.0
+  },
+  "delta": {
+    "distribution": "fixed",
+    "unit": "mg*h/L",
+    "semantic_kind": "auc",
+    "value": 15.0
+  },
+  "delta_propagated": true,
+  "predicted_direction": "increase",
+  "time_horizon": "mock total exposure",
+  "confidence": "moderate",
+  "applicability_assessment": "in_domain",
+  "major_uncertainties": ["Artificial equation with no biological interpretation"],
+  "evidence_path": [
+    {
+      "evidence_id": "evidence:mock",
+      "evidence_class": "mechanistic_model_assumption"
+    }
+  ],
+  "model_versions": [
+    {
+      "model_name": "Krypton Mock PK",
+      "model_version": "1.0.0",
+      "contract_id": "contract:mock-pk",
+      "artifact_digest": "09b1bbefaef9b9a44abea8422d3c504b17e26f2b7436fb82340a12a905a63b5e"
+    }
+  ],
+  "out_of_domain_flags": [],
+  "provenance_reference": "provenance:run-mock"
+}

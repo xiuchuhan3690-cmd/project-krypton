@@ -1,0 +1,23 @@
+schema_version: krypton-v1-public-test-manifest-1
+canonical_head: 8c03ec5d129bb438dfddf4b54f974349a76bf224
+counts:
+  CANONICAL_PRIVATE_TESTS: 1184
+  PUBLIC_CORE_TESTS: 176
+  PUBLIC_LOCAL_EVIDENCE_TESTS: 0
+  PRIVATE_ONLY_TESTS: 1008
+  PUBLIC_MIGRATION_GUARD_TESTS: 9
+  PUBLIC_STAGING_TOTAL_TESTS: 185
+interpretation:
+  PUBLIC_CORE_TESTS: canonical-derived tests that require no external scientific data
+  PUBLIC_LOCAL_EVIDENCE_TESTS: full scientific tests enabled only after a lawful local pack exists; none is shipped or claimed here
+  PRIVATE_ONLY_TESTS: canonical tests excluded because they depend on private scientific artifacts or later-stage implementation
+  PUBLIC_MIGRATION_GUARD_TESTS: new synthetic tests for the fail-closed local evidence-pack loader
+  PUBLIC_STAGING_TOTAL_TESTS: PUBLIC_CORE_TESTS plus PUBLIC_MIGRATION_GUARD_TESTS
+claims:
+  canonical_suite: 1184 passed in the private canonical repository
+  public_suite: reports its own collected and passed count only
+  forbidden: do not claim that the public distribution runs or passes all 1184 tests
+local_evidence_policy:
+  marker_or_command: future Release Task 2 concern; no external pack was supplied in this migration
+  expected_environment_variable: KRYPTON_LOCAL_EVIDENCE_PACK
+  missing_pack_behavior: fail closed with an actionable error when explicitly requested

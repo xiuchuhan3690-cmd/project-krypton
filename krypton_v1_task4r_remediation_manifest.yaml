@@ -1,0 +1,78 @@
+{
+  "schema_version": "krypton-v1-task4r-remediation-manifest-1",
+  "software_version": "1.0.0",
+  "original_task4_gate": "RELEASE_TASK4_REQUIRES_REMEDIATION",
+  "remediation_defect": "DOCUMENTATION_REPRODUCTION_GAP",
+  "gate": "RELEASE_TASK4R_PASS",
+  "change_scope": "source/installed Project-authored public resource parity only",
+  "resource_contract": {
+    "api": "krypton.resources using importlib.resources",
+    "physical_source_root": "src/krypton/resources",
+    "editable_and_wheel_layout_equal": true,
+    "repository_root_guessing": false,
+    "working_directory_guessing": false,
+    "manual_runtime_copy": false,
+    "private_path_lookup": false
+  },
+  "moved_rights_safe_resources": [
+    "synthetic public fixtures",
+    "public Draft 2020-12 schemas",
+    "synthetic mock model registry record"
+  ],
+  "synchronized_build_inputs": [
+    "requirements.lock",
+    "krypton_v1_release_metadata.yaml"
+  ],
+  "scientific_state_changed": false,
+  "external_scientific_data_added": false,
+  "clean_editable": {
+    "install": "PASS",
+    "pip_check": "PASS",
+    "python_module_info": "PASS",
+    "console_info": "PASS",
+    "python_module_demo": "PASS",
+    "console_demo": "PASS",
+    "public_tests": "211 PASS",
+    "resource_location": "clean source src/krypton/resources",
+    "documentation_reproduction_gap": false
+  },
+  "clean_wheel": {
+    "install": "PASS",
+    "pip_check": "PASS",
+    "import": "PASS",
+    "python_module_info": "PASS",
+    "console_info": "PASS",
+    "python_module_demo": "PASS",
+    "console_demo": "PASS",
+    "public_tests": "211 PASS",
+    "resource_location": "isolated environment site-packages/krypton/resources"
+  },
+  "deterministic_demo": {
+    "baseline_auc_mg_h_per_L": 10,
+    "edited_auc_mg_h_per_L": 25,
+    "delta_auc_mg_h_per_L": 15,
+    "workflow_digest": "65463be3bbf2709324c6ebeeeebe7915776232a882ffdcc809e05bb8455b4bfc"
+  },
+  "task3_artifacts": {
+    "wheel_sha256": "5398ef06bf072c6d6903d09baa20d054aba7a9c779bc79f5952fbcc7bb4125c9",
+    "sdist_sha256": "21ee24680b710486badc3d671c262e6667a5ca6bcc15fd16b2cfe2e944579ac0"
+  },
+  "task4r_artifacts": {
+    "wheel": {
+      "filename": "project_krypton-1.0.0-py3-none-any.whl",
+      "file_count": 72,
+      "size_bytes": 87215,
+      "sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469"
+    },
+    "sdist": {
+      "filename": "project_krypton-1.0.0.tar.gz",
+      "file_count": 130,
+      "size_bytes": 97132,
+      "sha256": "dbdf9916f119a653ad32da3bc5c00c78205389f652ed577d041a1f8fd356b33e"
+    }
+  },
+  "artifact_change_reason": "runtime resources moved from build-time root force-includes into the physical package resource tree; parity tests, verifier, and synchronized source copies were added",
+  "public_boundary": "PASS",
+  "docker_runtime": "DOCKER_RUNTIME_UNAVAILABLE_NOT_A_TASK4R_CONDITION",
+  "next_authorized_action": "RERUN Release Task 4 from a new clean room"
+}

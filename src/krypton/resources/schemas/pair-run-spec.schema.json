@@ -1,0 +1,488 @@
+{
+  "$defs": {
+    "AgeRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_years": {
+          "minimum": 0,
+          "title": "Maximum Years",
+          "type": "number"
+        },
+        "minimum_years": {
+          "minimum": 0,
+          "title": "Minimum Years",
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum_years",
+        "maximum_years"
+      ],
+      "title": "AgeRange",
+      "type": "object"
+    },
+    "ApplicabilityContext": {
+      "additionalProperties": false,
+      "description": "A set of allowed labels/ranges, or a candidate context for assessment.",
+      "properties": {
+        "age_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AgeRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "developmental_stage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Developmental Stage",
+          "type": "array"
+        },
+        "disease_status": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Disease Status",
+          "type": "array"
+        },
+        "environmental_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Environmental Tags",
+          "type": "array"
+        },
+        "experimental_system": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Experimental System",
+          "type": "array"
+        },
+        "medications": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Medications",
+          "type": "array"
+        },
+        "population_ancestry": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Population Ancestry",
+          "type": "array"
+        },
+        "sex": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sex",
+          "type": "array"
+        },
+        "tissue": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Tissue",
+          "type": "array"
+        }
+      },
+      "title": "ApplicabilityContext",
+      "type": "object"
+    },
+    "DistributionType": {
+      "enum": [
+        "fixed",
+        "interval",
+        "normal",
+        "lognormal",
+        "beta"
+      ],
+      "title": "DistributionType",
+      "type": "string"
+    },
+    "EditDerivedParameterChange": {
+      "additionalProperties": false,
+      "properties": {
+        "baseline": {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        "edited": {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        "mapping_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Mapping Digest",
+          "type": "string"
+        },
+        "mapping_id": {
+          "minLength": 1,
+          "title": "Mapping Id",
+          "type": "string"
+        },
+        "mapping_version": {
+          "minLength": 1,
+          "title": "Mapping Version",
+          "type": "string"
+        },
+        "parameter_id": {
+          "minLength": 1,
+          "title": "Parameter Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameter_id",
+        "baseline",
+        "edited",
+        "mapping_id",
+        "mapping_version",
+        "mapping_digest"
+      ],
+      "title": "EditDerivedParameterChange",
+      "type": "object"
+    },
+    "NamedQuantity": {
+      "additionalProperties": false,
+      "properties": {
+        "parameter_id": {
+          "minLength": 1,
+          "title": "Parameter Id",
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "#/$defs/QuantityValue"
+        }
+      },
+      "required": [
+        "parameter_id",
+        "quantity"
+      ],
+      "title": "NamedQuantity",
+      "type": "object"
+    },
+    "QuantityValue": {
+      "additionalProperties": false,
+      "description": "A unit-bearing scalar or supported C0 probability distribution.\n\n``mean`` and ``standard_deviation`` use linear-space parameters for normal\nquantities and log-space parameters for lognormal quantities.",
+      "properties": {
+        "alpha": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alpha"
+        },
+        "beta": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beta"
+        },
+        "correlation_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Correlation Group"
+        },
+        "distribution": {
+          "$ref": "#/$defs/DistributionType"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "mean": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mean"
+        },
+        "semantic_kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Semantic Kind"
+        },
+        "standard_deviation": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Standard Deviation"
+        },
+        "uncertainty": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/UncertaintyAnnotation"
+          },
+          "title": "Uncertainty",
+          "type": "array"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "distribution",
+        "unit"
+      ],
+      "title": "QuantityValue",
+      "type": "object"
+    },
+    "SharedSetting": {
+      "additionalProperties": false,
+      "description": "Immutable named environment or initial-condition value.",
+      "properties": {
+        "key": {
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QuantityValue"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "title": "SharedSetting",
+      "type": "object"
+    },
+    "UncertaintyAnnotation": {
+      "additionalProperties": false,
+      "description": "A qualitative uncertainty annotation; numerical uncertainty is in QuantityValue.",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/UncertaintyType"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "UncertaintyAnnotation",
+      "type": "object"
+    },
+    "UncertaintyType": {
+      "enum": [
+        "measurement_uncertainty",
+        "biological_variability",
+        "parameter_uncertainty",
+        "model_uncertainty",
+        "evidence_uncertainty"
+      ],
+      "title": "UncertaintyType",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One immutable source from which both counterfactual branches are derived.",
+  "properties": {
+    "adapter_artifact_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Adapter Artifact Digest",
+      "type": "string"
+    },
+    "adapter_id": {
+      "minLength": 1,
+      "title": "Adapter Id",
+      "type": "string"
+    },
+    "authorized_changes": {
+      "items": {
+        "$ref": "#/$defs/EditDerivedParameterChange"
+      },
+      "title": "Authorized Changes",
+      "type": "array"
+    },
+    "context": {
+      "$ref": "#/$defs/ApplicabilityContext"
+    },
+    "edit_id": {
+      "minLength": 1,
+      "title": "Edit Id",
+      "type": "string"
+    },
+    "edited_input_overrides": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/NamedQuantity"
+      },
+      "title": "Edited Input Overrides",
+      "type": "array"
+    },
+    "environment": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/SharedSetting"
+      },
+      "title": "Environment",
+      "type": "array"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "initial_conditions": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/SharedSetting"
+      },
+      "title": "Initial Conditions",
+      "type": "array"
+    },
+    "model_contract_id": {
+      "minLength": 1,
+      "title": "Model Contract Id",
+      "type": "string"
+    },
+    "model_contract_version": {
+      "minLength": 1,
+      "title": "Model Contract Version",
+      "type": "string"
+    },
+    "seed": {
+      "title": "Seed",
+      "type": "integer"
+    },
+    "shared_inputs": {
+      "items": {
+        "$ref": "#/$defs/NamedQuantity"
+      },
+      "title": "Shared Inputs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "edit_id",
+    "model_contract_id",
+    "model_contract_version",
+    "adapter_id",
+    "adapter_artifact_digest",
+    "seed",
+    "context",
+    "shared_inputs",
+    "authorized_changes"
+  ],
+  "title": "PairRunSpec",
+  "type": "object"
+}

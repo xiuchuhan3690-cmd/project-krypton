@@ -1,0 +1,41 @@
+schema_version: krypton-v1-task3-artifact-digests-1
+algorithm: sha256
+scope: Task-3 public documentation, citation, representative demo description, and consistency tests
+task2_relationship:
+  baseline_task2_artifacts: 14
+  unchanged_task2_artifacts: 11
+  intentionally_superseded_task2_artifacts: 3
+  superseded:
+    - path: pyproject.toml
+      task2_hash: 951795550954828f7d3a97d1f850cdf7bb00ca1480724aa93d00026c31d1de25
+      task3_hash: 63adfe41e4eab955c7c9a9408b3924795ba349a196e747172ea96d2759f6f130
+      reason: include public citation, policy, changelog, and security/contribution documents in the sdist
+    - path: krypton_v1_release_metadata.yaml
+      task2_hash: de47f34ba83ff64baf123ceb5fc9a79abc41c0c21533c241dfba69ada2f34e02
+      task3_hash: 9dea3904c47b4b9e9f10592261cd357a38eef96bfa8bce0613b8e94d5d34e1f3
+      reason: add documentation test counts and citation status without changing scientific state
+    - path: krypton_v1_package_contents_manifest.yaml
+      task2_hash: b2a6e1b8bc7e0b54fe8f2cf4a7ad264b0266a34fe419eae50025f439134a2c9d
+      task3_hash: e4c4b4d6051779a9c4ea5761912926abecde18cc84be01538e339fd37163a735
+      reason: account for Task-3 public documentation, tests, and manifests in the sdist inventory
+  private_canonical_hashes_changed: false
+artifacts:
+  README.md: 8cf180ef938d4c13e0f8d2a490681aceb16cef96cc779f27a9975d1241257ede
+  CITATION.cff: 6869704aa44cfc27dfec04cdec562581e229979751059c66e006cef37936eca5
+  CONTRIBUTING.md: 05f5f02c512ff343846c32933bd5ef3258d7e47bd70e7718519371c3fc3cd885
+  SECURITY.md: 7c9605b29dd47e98c611d0c308c5cd71de33e41aa82498fbcc69326f3f0a1f86
+  CHANGELOG.md: e2a08e8d5de867b625f04b443a25f9c41270df14c80583dd273a18f8ab9057b7
+  docs/architecture.md: 8b0f28f1371d322d053b6f48f8ada970d2f2dda8935515886041d455dbcf37c4
+  docs/scientific-scope.md: d5b67d53c94bc41c5d8439ee51e517ad9205a7829e831ee8e6e3c8a43facc58c
+  docs/scientific-reproduction.md: 53389ed3ab1abd1e69d60f2274c87fdf9823118f9ba50b24d80d67737d21b035
+  docs/representative-demo.md: 28da2b341d7a25b6dbc3267f839e5d296a98f47385d93eab33802320afcde0f1
+  docs/artifact-index.md: 9a788cc681a3d6853c6c80152edae99bfe1f778b808b8f868b8295800e7d97b2
+  docs/release-notes-v1.0.0.md: 6e3f64f51e92820d9891e106165a3d5923850d9aae7be564fd3959f7803ecdf4
+  docs/data-sources.md: 8766176696e372fb5adf586441af52513cb96c361cae8ff3f60fbac789238e0e
+  docs/public-private-boundary.md: 4c2cb79b7a14b2622a5e5dca2f8a801d7dd6ab64ea6bb115630e79d3dca03fd9
+  tests/documentation/test_public_documentation.py: 1ad17a0a087e4b5e21b4813f88ef91b840e4756f2b2bcb73f5cf80adb28d4c51
+  krypton_v1_documentation_test_manifest.yaml: d7938c13f50fb977818df24797f28ee970c0079fda1b6ec34617eab6a73eff78
+  krypton_v1_release_metadata.yaml: 9dea3904c47b4b9e9f10592261cd357a38eef96bfa8bce0613b8e94d5d34e1f3
+  pyproject.toml: 63adfe41e4eab955c7c9a9408b3924795ba349a196e747172ea96d2759f6f130
+  krypton_v1_package_contents_manifest.yaml: e4c4b4d6051779a9c4ea5761912926abecde18cc84be01538e339fd37163a735
+  scripts/verify_task3_artifact_digests.py: e10a80096fa397d85b45449bd13d4c0205e5be0d0b5d02d34f5e4b5a21566d72

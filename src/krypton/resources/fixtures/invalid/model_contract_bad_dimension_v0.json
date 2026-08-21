@@ -1,0 +1,35 @@
+{
+  "schema_version": "model-contract-v0",
+  "id": "contract:bad-dimension",
+  "metadata": {
+    "model_name": "Invalid fixture",
+    "model_version": "1.0.0",
+    "source": "internal-test",
+    "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "license": "Internal test",
+    "validation_scope": ["Negative fixture"],
+    "limitations": ["Intentionally invalid"],
+    "applicability": {}
+  },
+  "inputs": [
+    {
+      "id": "dose",
+      "biological_meaning": "Amount",
+      "quantity_kind": "dose_amount",
+      "data_type": "float",
+      "canonical_unit": "mg",
+      "physical_dimension": "[length]",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "result",
+      "biological_meaning": "Result",
+      "quantity_kind": "result",
+      "canonical_unit": "dimensionless",
+      "physical_dimension": "dimensionless",
+      "time_semantics": "instantaneous"
+    }
+  ]
+}

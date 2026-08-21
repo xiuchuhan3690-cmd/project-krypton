@@ -1,0 +1,35 @@
+schema_version: krypton-v1-dependency-license-manifest-1
+generated_from: requirements.lock
+audit_date: 2026-08-20
+all_vendored: false
+dependencies:
+  - {package: annotated-types, version: 0.8.0, license: MIT, upstream_url: https://github.com/annotated-types/annotated-types, vendored: false}
+  - {package: attrs, version: 26.1.0, license: MIT, upstream_url: https://github.com/python-attrs/attrs, vendored: false}
+  - {package: colorama, version: 0.4.6, license: BSD-3-Clause, upstream_url: https://github.com/tartley/colorama, vendored: false}
+  - {package: flexcache, version: '0.3', license: BSD-3-Clause, upstream_url: https://github.com/hgrecco/flexcache, vendored: false}
+  - {package: flexparser, version: '0.4', license: BSD-3-Clause, upstream_url: https://github.com/hgrecco/flexparser, vendored: false}
+  - {package: hatchling, version: 1.27.0, license: MIT, upstream_url: https://github.com/pypa/hatch, vendored: false}
+  - {package: iniconfig, version: 2.3.0, license: MIT, upstream_url: https://github.com/pytest-dev/iniconfig, vendored: false}
+  - {package: jsonschema, version: 4.25.1, license: MIT, upstream_url: https://github.com/python-jsonschema/jsonschema, vendored: false}
+  - {package: jsonschema-specifications, version: 2025.9.1, license: MIT, upstream_url: https://github.com/python-jsonschema/jsonschema-specifications, vendored: false}
+  - {package: networkx, version: 3.6.1, license: BSD-3-Clause, upstream_url: https://github.com/networkx/networkx, vendored: false}
+  - {package: numpy, version: 2.5.2, license: BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0, upstream_url: https://github.com/numpy/numpy, vendored: false}
+  - {package: packaging, version: '26.3', license: Apache-2.0 OR BSD-2-Clause, upstream_url: https://github.com/pypa/packaging, vendored: false}
+  - {package: pathspec, version: 0.12.1, license: MPL-2.0, upstream_url: https://github.com/cpburnz/python-pathspec, vendored: false}
+  - {package: pint, version: 0.25.3, license: BSD-3-Clause, upstream_url: https://github.com/hgrecco/pint, vendored: false}
+  - {package: platformdirs, version: 4.11.3, license: MIT, upstream_url: https://github.com/tox-dev/platformdirs, vendored: false}
+  - {package: pluggy, version: 1.6.0, license: MIT, upstream_url: https://github.com/pytest-dev/pluggy, vendored: false}
+  - {package: pydantic, version: 2.13.4, license: MIT, upstream_url: https://github.com/pydantic/pydantic, vendored: false}
+  - {package: pydantic-core, version: 2.46.4, license: MIT, upstream_url: https://github.com/pydantic/pydantic-core, vendored: false}
+  - {package: Pygments, version: 2.20.0, license: BSD-2-Clause, upstream_url: https://github.com/pygments/pygments, vendored: false}
+  - {package: pytest, version: 8.4.2, license: MIT, upstream_url: https://github.com/pytest-dev/pytest, vendored: false}
+  - {package: referencing, version: 0.37.0, license: MIT, upstream_url: https://github.com/python-jsonschema/referencing, vendored: false}
+  - {package: rpds-py, version: 2026.6.3, license: MIT, upstream_url: https://github.com/crate-py/rpds, vendored: false}
+  - {package: scipy, version: 1.18.0, license: BSD-3-Clause AND bundled component notices, upstream_url: https://github.com/scipy/scipy, vendored: false}
+  - {package: typing-inspection, version: 0.4.4, license: MIT, upstream_url: https://github.com/pydantic/typing-inspection, vendored: false}
+  - {package: typing-extensions, version: 4.16.0, license: PSF-2.0, upstream_url: https://github.com/python/typing_extensions, vendored: false}
+  - {package: trove-classifiers, version: 2025.5.9.12, license: Apache-2.0, upstream_url: https://github.com/pypa/trove-classifiers, vendored: false}
+notes:
+  - package license strings are audit metadata; upstream license files and notices control
+  - numpy and scipy include bundled components under additional compatible notices
+  - requirements.lock is retained as the audited canonical lock pending Release Task 2 packaging minimization

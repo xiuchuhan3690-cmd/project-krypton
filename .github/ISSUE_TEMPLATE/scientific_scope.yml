@@ -1,0 +1,22 @@
+name: Scientific-scope clarification
+description: Ask whether a claim or use is within the frozen public v1.0 scope.
+title: "[Scope]: "
+labels: [scientific-scope]
+body:
+  - type: markdown
+    attributes:
+      value: This tracker is not a clinical service. Do not submit patient data, genotype data, treatment questions, unpublished datasets, private evidence packs, or copyrighted source files.
+  - type: textarea
+    id: question
+    attributes:
+      label: Scope question
+      description: Frame the question using public documentation and synthetic examples only.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Boundary acknowledgement
+      options:
+        - label: I have not included patient-specific, private, or external scientific data.
+          required: true

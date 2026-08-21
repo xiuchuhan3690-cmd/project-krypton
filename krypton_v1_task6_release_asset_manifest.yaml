@@ -1,0 +1,12 @@
+{
+  "schema_version": "krypton-v1-task6-release-asset-manifest-1",
+  "status": "PREPUBLICATION_RELEASE_CANDIDATE",
+  "storage_boundary": "external sibling directory; not part of public source repository payload",
+  "asset_directory_name": "project-krypton-public-v1-prepublish-release-assets",
+  "assets": [
+    {"filename": "project_krypton-1.0.0-py3-none-any.whl", "kind": "wheel", "size_bytes": 87251, "member_count": 72, "sha256": "3f9354c117b6e322ecd6ed9ed425365d39e2d44aacc424c1e033b529e89cebd0"},
+    {"filename": "project_krypton-1.0.0.tar.gz", "kind": "sdist", "size_bytes": 117172, "member_count": 145, "sha256": "e8d69f07e93f2e168ffe48aa1aecf0b910148fd5cf0706d2e479aa9d614cd57b"},
+    {"filename": "distribution-audit.json", "kind": "distribution_audit", "size_bytes": 14919, "member_count": 217, "member_count_semantics": "72 wheel members plus 145 sdist members recorded", "sha256": "10858b6ede469f3f6cad10548c7e7a8d5981182b3ed219dbcce0b7349dd4a00d"}
+  ],
+  "historical_task5_assets_preserved": {"project_krypton-1.0.0-py3-none-any.whl": "57500cd0c2edc0a008e9ef2f890acb5c570392c4d9cb4862383b004960a6d3fd", "project_krypton-1.0.0.tar.gz": "374e2087f137dd0bd2e92fc04fa9bb3077fd493c032c0dd469c869573517dfc1"}
+}

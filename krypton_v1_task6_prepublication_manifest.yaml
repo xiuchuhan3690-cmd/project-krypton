@@ -1,0 +1,21 @@
+{
+  "schema_version": "krypton-v1-task6-prepublication-manifest-1",
+  "gate": "RELEASE_TASK6_PASS_WITH_ACTIONS",
+  "lineage": ["Task 4 candidate", "Independent Rights Audit", "Task 5 governance candidate", "Task 6 pre-publication freeze"],
+  "source_lineage": "POST_TASK5_CANDIDATE",
+  "task5_gate": "RELEASE_TASK5_PASS_WITH_RESTRICTIONS",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "author": {"display": "XIU CHUHAN", "family": "Xiu", "given": "Chuhan", "orcid": "NOT_YET_DECIDED", "affiliation": "NOT_SPECIFIED", "public_contact": "NOT_FINALIZED"},
+  "copyright": {"year": 2026, "holder": "XIU CHUHAN"},
+  "active_metadata_and_governance_changed_files": [
+    ".github/workflows/ci.yml", "CITATION.cff", "CONTRIBUTING.md", "krypton_v1_release_metadata.yaml", "NOTICE", "pyproject.toml", "README.md", "scripts/verify_public_boundary.py", "scripts/verify_task6_prepublication.py", "src/krypton/resources/krypton_v1_release_metadata.yaml", "tests/documentation/test_public_documentation.py", "tests/packaging/test_release_metadata.py"
+  ],
+  "task6_freeze_artifacts": ["krypton_v1_task6_pre_task6_inventory.yaml", "krypton_v1_task6_prepublication_manifest.yaml", "krypton_v1_task6_repository_inventory.yaml", "krypton_v1_task6_release_asset_manifest.yaml", "krypton_v1_task6_verification.yaml", "krypton_v1_task6_digests.yaml"],
+  "scientific_state": {"C0": "COMPLETE", "C1": "COMPLETE", "C2": "COMPLETE", "C3A": "COMPLETE", "C3B": "RESTRICTED_COMPLETE", "route_gate": "USABLE_WITH_STATED_SCOPE", "validation_maturity": "EXTERNAL_DESCRIPTIVE_SUPPORT", "row_30": "BLOCKED", "row_31": "BLOCKED", "model_contradiction": "NO", "C4": "NOT_INCLUDED"},
+  "repository_payload": "source, tests, docs, governance, and provenance manifests",
+  "release_assets": "wheel, sdist, and distribution audit stored outside repository payload",
+  "repository_state": {"initialized": true, "branch": "main", "commit_count": 0, "remote_count": 0, "tag_count": 0, "imported_private_history": false},
+  "remaining_human_actions": ["review/sign owner provenance-authority attestation", "decide ORCID publication", "decide public email/contact strategy", "decide Git commit email/GitHub noreply strategy", "create GitHub repository", "freeze repository URL", "enable private security reporting path", "perform actual initial commit and push", "observe GitHub Actions", "apply branch protection"],
+  "next_authorized_technical_task": "Release Task 7 — GitHub Repository Publication and Live CI / Protection Validation"
+}

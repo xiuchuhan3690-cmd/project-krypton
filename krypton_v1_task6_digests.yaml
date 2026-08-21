@@ -1,0 +1,30 @@
+{
+  "schema_version": "krypton-v1-task6-digests-1",
+  "status": "FROZEN",
+  "self_reference_policy": "this digest file is excluded from the repository inventory and does not claim its own digest",
+  "prepublication_source_freeze": {
+    "file_count": 158,
+    "aggregate_sha256": "946ea94b471769f01f8a77aa1bea47dfbeb1f175a4196aebaab918d6093344ba",
+    "inventory_file_sha256": "da8459f131948ab23c379ac037c54d81e3f224a57119edae49df2cce27d63163"
+  },
+  "task6_sidecars": {
+    "krypton_v1_task6_pre_task6_inventory.yaml": "b9aef94c11b82e0d856ce76d2b3514d1602819eb2be7cddef15c47d2f413705c",
+    "krypton_v1_task6_prepublication_manifest.yaml": "28cd2c584695643d0b7581cef06cf51060ffb2212ef8f152e54c37eb7fa93682",
+    "krypton_v1_task6_repository_inventory.yaml": "da8459f131948ab23c379ac037c54d81e3f224a57119edae49df2cce27d63163",
+    "krypton_v1_task6_release_asset_manifest.yaml": "8b6f8f0c5d47aba1b6ae4abc8ad82640aa9c0b4e3e4fcc45152b5a0cef6e30fe",
+    "krypton_v1_task6_verification.yaml": "01c70aefd833aae4d7fc16998254a67014215b0880385aa17a49dfa154903b23"
+  },
+  "prepublication_release_assets": {
+    "project_krypton-1.0.0-py3-none-any.whl": "3f9354c117b6e322ecd6ed9ed425365d39e2d44aacc424c1e033b529e89cebd0",
+    "project_krypton-1.0.0.tar.gz": "e8d69f07e93f2e168ffe48aa1aecf0b910148fd5cf0706d2e479aa9d614cd57b",
+    "distribution-audit.json": "10858b6ede469f3f6cad10548c7e7a8d5981182b3ed219dbcce0b7349dd4a00d"
+  },
+  "historical_task5": {
+    "source_inventory_aggregate_sha256": "7422f3a73d5f225e2a7c326fa7607bfd0f2f08372011ca15d9c75ac7f4d76909",
+    "post_task5_wheel_sha256": "57500cd0c2edc0a008e9ef2f890acb5c570392c4d9cb4862383b004960a6d3fd",
+    "post_task5_sdist_sha256": "374e2087f137dd0bd2e92fc04fa9bb3077fd493c032c0dd469c869573517dfc1",
+    "krypton_v1_task5_ci_governance_manifest.yaml": "39fcbc235bbcf0b372a74cf578243a128edd740510b6c4ee184d1648dc596ea3",
+    "krypton_v1_task5_ci_verification.yaml": "3aa1cd344878ffc1d2cf7716170303336757f6491b4e1e812b7acfe6b148b4f2",
+    "krypton_v1_task5_digests.yaml": "ba2f67964e7d84151b5a4bbadb050994e741884952117305d30c95eef9323338"
+  }
+}

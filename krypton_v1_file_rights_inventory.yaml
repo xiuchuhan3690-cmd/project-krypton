@@ -1,0 +1,327 @@
+{
+  "schema_version": "krypton-v1-independent-file-rights-inventory-1",
+  "audit_date": "2026-08-21",
+  "audited_release_payload_file_count": 140,
+  "new_audit_artifact_count": 4,
+  "coverage_rule": "Every pre-existing candidate file is named in exactly one homogeneous group; the four additive audit artifacts are listed separately.",
+  "groups": [
+    {
+      "id": "project-package-source",
+      "origin": "PROJECT_AUTHORED",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "src/krypton/__init__.py",
+        "src/krypton/__main__.py",
+        "src/krypton/_version.py",
+        "src/krypton/adapters/__init__.py",
+        "src/krypton/adapters/mock.py",
+        "src/krypton/demo.py",
+        "src/krypton/domain/__init__.py",
+        "src/krypton/domain/applicability.py",
+        "src/krypton/domain/categorical.py",
+        "src/krypton/domain/consequence.py",
+        "src/krypton/domain/edit.py",
+        "src/krypton/domain/evidence.py",
+        "src/krypton/domain/provenance.py",
+        "src/krypton/domain/quantity.py",
+        "src/krypton/evidence_pack.py",
+        "src/krypton/keg/__init__.py",
+        "src/krypton/keg/models.py",
+        "src/krypton/keg/validation.py",
+        "src/krypton/models/__init__.py",
+        "src/krypton/models/contract.py",
+        "src/krypton/mpt/__init__.py",
+        "src/krypton/mpt/models.py",
+        "src/krypton/mpt/registry.py",
+        "src/krypton/mpt/translator.py",
+        "src/krypton/orchestration/__init__.py",
+        "src/krypton/orchestration/c0_mock.py",
+        "src/krypton/orchestration/pair_runner.py",
+        "src/krypton/registry/__init__.py",
+        "src/krypton/registry/models.py",
+        "src/krypton/resources.py"
+      ],
+      "basis": "Complete implementation review found only standard-library, declared dependency, and internal Krypton imports; no copied/adapted/vendored marker, foreign copyright header, or upstream source comment was found. Five canonical commits use one AI-agent identity, so unrecorded external input cannot be ruled out technically."
+    },
+    {
+      "id": "project-public-tests",
+      "origin": "PROJECT_AUTHORED",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "tests/contract/test_adapter_replaceability.py",
+        "tests/documentation/test_public_documentation.py",
+        "tests/e2e/test_mock_e2e.py",
+        "tests/packaging/test_release_metadata.py",
+        "tests/resource_parity/test_public_resource_parity.py",
+        "tests/unit/test_applicability_context.py",
+        "tests/unit/test_edit_object.py",
+        "tests/unit/test_evidence_pack.py",
+        "tests/unit/test_evidence_record.py",
+        "tests/unit/test_keg.py",
+        "tests/unit/test_mock_adapter.py",
+        "tests/unit/test_model_contract.py",
+        "tests/unit/test_model_registry.py",
+        "tests/unit/test_mpt.py",
+        "tests/unit/test_package_import.py",
+        "tests/unit/test_pair_runner.py",
+        "tests/unit/test_phenotype_consequence.py",
+        "tests/unit/test_provenance.py",
+        "tests/unit/test_quantity_value.py"
+      ],
+      "basis": "Tests exercise Project contracts and synthetic fixtures; no external test corpus, copied reference implementation, or third-party scientific record was found."
+    },
+    {
+      "id": "project-scripts",
+      "origin": "AUDIT_OR_VERIFICATION_ARTIFACT",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "scripts/export_public_schemas.py",
+        "scripts/verify_distribution.py",
+        "scripts/verify_public_artifact_digests.py",
+        "scripts/verify_public_boundary.py",
+        "scripts/verify_task2_artifact_digests.py",
+        "scripts/verify_task3_artifact_digests.py",
+        "scripts/verify_task4_publication.py",
+        "scripts/verify_task4r_artifact_digests.py"
+      ],
+      "basis": "Project-specific standard-library scripts; secret/local-path regex literals are detector signatures, not embedded secrets or local paths."
+    },
+    {
+      "id": "synthetic-fixtures",
+      "origin": "PROJECT_SYNTHETIC",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "src/krypton/resources/fixtures/invalid/edit_legacy_1_based.json",
+        "src/krypton/resources/fixtures/invalid/keg_cycle_v0.json",
+        "src/krypton/resources/fixtures/invalid/keg_dangling_and_unresolved_v0.json",
+        "src/krypton/resources/fixtures/invalid/model_contract_bad_dimension_v0.json",
+        "src/krypton/resources/fixtures/invalid/model_registry_unknown_adapter_v0.json",
+        "src/krypton/resources/fixtures/invalid/mpt_expression_mapping_v0.json",
+        "src/krypton/resources/fixtures/invalid/mpt_unresolved_evidence_request_v0.json",
+        "src/krypton/resources/fixtures/invalid/pair_run_spec_unauthorized_dose_v0.json",
+        "src/krypton/resources/fixtures/invalid/phenotype_consequence_bad_delta_v0.json",
+        "src/krypton/resources/fixtures/invalid/provenance_manifest_bad_digest_v0.json",
+        "src/krypton/resources/fixtures/reference/c0_mock_expected_v0.json",
+        "src/krypton/resources/fixtures/reference/c0_parameter_effect_golden_v0.json",
+        "src/krypton/resources/fixtures/reference/c0_quantity_value_golden_v0.json",
+        "src/krypton/resources/fixtures/valid/edit_insertion_0_based.json",
+        "src/krypton/resources/fixtures/valid/edit_snv_0_based.json",
+        "src/krypton/resources/fixtures/valid/keg_mock_v0.json",
+        "src/krypton/resources/fixtures/valid/mpt_request_v0.json",
+        "src/krypton/resources/fixtures/valid/mpt_scale_mapping_v0.json",
+        "src/krypton/resources/fixtures/valid/pair_run_spec_mock_v0.json",
+        "src/krypton/resources/fixtures/valid/phenotype_consequence_mock_v0.json",
+        "src/krypton/resources/fixtures/valid/provenance_manifest_mock_v0.json"
+      ],
+      "basis": "Every value and structure was inspected. Files use explicit mock/internal-test labels, artificial identifiers and digest placeholders, a chr22 mock coordinate unrelated to the private CYP2C19 route, and the fixed 10/25/+15 architecture example. No DOI, PMID, external accession, named scientific source, or source-derived data table appears."
+    },
+    {
+      "id": "generated-project-schemas",
+      "origin": "PROJECT_GENERATED",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "src/krypton/resources/schemas/applicability-context.schema.json",
+        "src/krypton/resources/schemas/edit-object.schema.json",
+        "src/krypton/resources/schemas/evidence-record.schema.json",
+        "src/krypton/resources/schemas/keg-document.schema.json",
+        "src/krypton/resources/schemas/model-contract.schema.json",
+        "src/krypton/resources/schemas/mpt-mapping.schema.json",
+        "src/krypton/resources/schemas/mpt-result.schema.json",
+        "src/krypton/resources/schemas/pair-run-spec.schema.json",
+        "src/krypton/resources/schemas/phenotype-consequence.schema.json",
+        "src/krypton/resources/schemas/provenance-manifest.schema.json",
+        "src/krypton/resources/schemas/quantity-value.schema.json"
+      ],
+      "basis": "All eleven files matched in-memory Pydantic model_json_schema output plus the Draft 2020-12 $schema identifier. They are generated from Project model code and are not copies of third-party application schemas."
+    },
+    {
+      "id": "synthetic-mock-registry",
+      "origin": "PROJECT_SYNTHETIC",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "src/krypton/resources/registry/models/mock_pk_v1.json"
+      ],
+      "basis": "The model is explicitly internal-mock, uses the artificial equation AUC=dose/clearance, and states that it is not biological or clinical evidence."
+    },
+    {
+      "id": "synchronized-package-metadata-resources",
+      "origin": "PROJECT_GENERATED",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "src/krypton/resources/krypton_v1_release_metadata.yaml",
+        "src/krypton/resources/requirements.lock"
+      ],
+      "basis": "Byte-synchronized package copies of Project release metadata and the dependency reference lock."
+    },
+    {
+      "id": "project-documentation",
+      "origin": "PROJECT_AUTHORED",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "README.md",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "SECURITY.md",
+        "CITATION.cff",
+        "docs/architecture.md",
+        "docs/artifact-index.md",
+        "docs/data-sources.md",
+        "docs/packaging.md",
+        "docs/public-private-boundary.md",
+        "docs/release-notes-v1.0.0.md",
+        "docs/representative-demo.md",
+        "docs/scientific-reproduction.md",
+        "docs/scientific-scope.md"
+      ],
+      "basis": "Complete prose review found bounded Project explanations rather than copied article/database/specification prose. Four exact-phrase web samples found no matching source. This does not prove origin; final human provenance attestation remains required for AI-assisted material."
+    },
+    {
+      "id": "license-and-notice-files",
+      "origin": "THIRD_PARTY_CONTENT",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "members": [
+        "LICENSE",
+        "NOTICE",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "basis": "LICENSE contains the Apache-2.0 terms through Sections 1-9 and END OF TERMS; omission of the application appendix is permitted by SPDX matching rules. NOTICE and THIRD_PARTY_NOTICES accurately limit Apache-2.0 to Project material and preserve external dependency/source boundaries."
+    },
+    {
+      "id": "packaging-build-and-lock-configuration",
+      "origin": "PROJECT_AUTHORED",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        ".dockerignore",
+        ".gitignore",
+        "Dockerfile",
+        "pyproject.toml",
+        "requirements.lock"
+      ],
+      "basis": "Project packaging/configuration with dependency names and versions as THIRD_PARTY_DEPENDENCY_REFERENCE; no dependency source is copied or bundled."
+    },
+    {
+      "id": "external-scientific-source-reference-metadata",
+      "origin": "THIRD_PARTY_METADATA_ONLY",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "members": [
+        "evidence_metadata/krypton_v1_external_source_reference_manifest.yaml"
+      ],
+      "basis": "Contains source names, citations, identifiers, versions, URLs, roles, retrieval instructions, and private relative locators only. It contains no extracted numerical value, table cell, article prose, figure, assay record, database export, or source digest capable of reconstructing excluded datasets."
+    },
+    {
+      "id": "external-data-deny-by-default-guards",
+      "origin": "PROJECT_AUTHORED",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "external_data/.gitignore",
+        "external_data/DO_NOT_COMMIT_EXTERNAL_SCIENTIFIC_DATA.md"
+      ],
+      "basis": "Guard files only; no external dataset is present."
+    },
+    {
+      "id": "synthetic-example",
+      "origin": "PROJECT_SYNTHETIC",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "examples/c0_mock/run.py"
+      ],
+      "basis": "Project wrapper around the same public synthetic demo; no external input or copied example was found."
+    },
+    {
+      "id": "pre-existing-release-audit-and-verification-metadata",
+      "origin": "AUDIT_OR_VERIFICATION_ARTIFACT",
+      "provenance_confidence": "STRONGLY_SUPPORTED",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "members": [
+        "krypton_v1_artifact_publication_manifest.yaml",
+        "krypton_v1_clean_room_manifest.yaml",
+        "krypton_v1_dependency_boundary.yaml",
+        "krypton_v1_dependency_license_manifest.yaml",
+        "krypton_v1_documentation_test_manifest.yaml",
+        "krypton_v1_package_contents_manifest.yaml",
+        "krypton_v1_packaging_test_manifest.yaml",
+        "krypton_v1_public_artifact_digests.yaml",
+        "krypton_v1_public_migration_manifest.yaml",
+        "krypton_v1_public_test_manifest.yaml",
+        "krypton_v1_publication_manifest.yaml",
+        "krypton_v1_release_metadata.yaml",
+        "krypton_v1_resource_parity_test_manifest.yaml",
+        "krypton_v1_task2_artifact_digests.yaml",
+        "krypton_v1_task3_artifact_digests.yaml",
+        "krypton_v1_task4_publication_digests.yaml",
+        "krypton_v1_task4r_artifact_digests.yaml",
+        "krypton_v1_task4r_remediation_manifest.yaml",
+        "krypton_v1_third_party_code_audit.yaml"
+      ],
+      "basis": "Project-generated release/audit metadata. Prior conclusions were not treated as authoritative; files were separately checked for data leakage, secrets, personal paths, and false licensing claims. Dependency records are references, not bundled dependency content."
+    },
+    {
+      "id": "exact-build-artifacts",
+      "origin": "BUILD_GENERATED",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "members": [
+        "dist/distribution-audit.json",
+        "dist/project_krypton-1.0.0-py3-none-any.whl",
+        "dist/project_krypton-1.0.0.tar.gz"
+      ],
+      "basis": "Exact archive digests verified. Wheel has 68 byte-identical source/license files plus four build-generated metadata files. Sdist has 130 byte-identical candidate files plus PKG-INFO. No unsafe path, link, hidden Git data, unexpected binary, credential, personal path, or external scientific dataset was found."
+    }
+  ],
+  "new_audit_artifacts": [
+    {
+      "path": "krypton_v1_independent_rights_audit.yaml",
+      "origin": "AUDIT_OR_VERIFICATION_ARTIFACT",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR"
+    },
+    {
+      "path": "krypton_v1_file_rights_inventory.yaml",
+      "origin": "AUDIT_OR_VERIFICATION_ARTIFACT",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR"
+    },
+    {
+      "path": "krypton_v1_dependency_license_audit.yaml",
+      "origin": "AUDIT_OR_VERIFICATION_ARTIFACT",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "krypton_v1_rights_audit_digests.yaml",
+      "origin": "AUDIT_OR_VERIFICATION_ARTIFACT",
+      "provenance_confidence": "CONFIRMED",
+      "rights_classification": "CLEAR"
+    }
+  ],
+  "unknown_origin_substantive_files": [],
+  "provenance_limit": "Technical evidence cannot establish contractual output rights, copyrightability, ability to license, or absence of unrecorded external prompt/input material for AI-assisted development."
+}

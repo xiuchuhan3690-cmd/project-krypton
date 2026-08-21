@@ -1,0 +1,152 @@
+schema_version: krypton-v1-external-source-reference-manifest-1
+policy: REFERENCE_ONLY_NO_EXTERNAL_SCIENTIFIC_DATA_DISTRIBUTED
+retrieval_date: 2026-08-20
+local_pack_environment_variable: KRYPTON_LOCAL_EVIDENCE_PACK
+representation_contract:
+  manifest: evidence-pack-manifest.json
+  schema_version: krypton-local-evidence-pack-v1
+  verification: relative path plus lowercase SHA-256 for every local artifact
+  prohibited: [publisher PDFs, copied tables, article figures, supplements, frozen database extracts, exact extracted datasets]
+sources:
+  - id: ncbi-dbsnp-rs4244285
+    citation: dbSNP rs4244285 record
+    url: https://www.ncbi.nlm.nih.gov/snp/rs4244285/
+    accession: rs4244285
+    version: dbSNP-release-20260205170148
+    role: genomic identifier and coordinate reference
+    canonical_private_locator: evidence/c1/evidence_cyp2c19_coordinate_grch38.json
+  - id: pharmvar-cyp2c19-star-definition
+    citation: PharmVar CYP2C19 allele definitions
+    url: https://www.pharmvar.org/download
+    version: PharmVar-2026-07-31
+    role: pinned star-allele definition source
+    canonical_private_locator: evidence/c1/evidence_cyp2c19_star_definition_2026.json
+  - id: clinpgx-cyp2c19-reference-materials
+    citation: ClinPGx CYP2C19 reference materials
+    url: https://www.clinpgx.org/page/cyp2c19RefMaterials
+    version: accessed-2026-08-16
+    role: categorical function consensus
+    canonical_private_locator: evidence/c1/evidence_cyp2c19_function_consensus_2026.json
+  - id: de-morais-1994
+    citation: de Morais SMF et al., 1994
+    pmid: '8195181'
+    url: https://pubmed.ncbi.nlm.nih.gov/8195181/
+    version: version-of-record
+    role: CYP2C19 splicing mechanism support
+    canonical_private_locator: evidence/c1/evidence_cyp2c19_splicing_human_1994.json
+  - id: shirasaka-2016
+    citation: Shirasaka Y et al. Pharmacogenomics Journal 2016
+    doi: 10.1038/tpj.2015.58
+    url: https://doi.org/10.1038/tpj.2015.58
+    version: 2016-04-version-of-record;online-2015-09-01
+    role: human-liver categorical and quantitative supporting evidence
+    canonical_private_locator: evidence/c2/evidence_cyp2c19_smephenytoin_activity_shirasaka_2016.json
+  - id: dejong-2023
+    citation: de Jong LM et al. Frontiers in Pharmacology 2023
+    doi: 10.3389/fphar.2023.1201906
+    pmid: '37361233'
+    url: https://doi.org/10.3389/fphar.2023.1201906
+    version: 2023-06-08-version-of-record
+    role: phenoconversion evidence and quantitative group-summary calibration source
+    canonical_private_locator: evidence/c2/evidence_cyp2c19_smephenytoin_kinetics_dejong_2023.json
+  - id: lasker-1998
+    citation: Lasker JM et al. Archives of Biochemistry and Biophysics 1998
+    doi: 10.1006/abbi.1998.0615
+    pmid: '9578596'
+    url: https://pubmed.ncbi.nlm.nih.gov/9578596/
+    version: 1998-05-01-version-of-record
+    role: probe-selectivity support
+    canonical_private_locator: evidence/c2/evidence_cyp2c19_smephenytoin_selectivity_lasker_1998.json
+  - id: balian-1995
+    citation: Balian JD et al. Clinical Pharmacology and Therapeutics 1995
+    doi: 10.1016/0009-9236(95)90229-5
+    pmid: '7781266'
+    url: https://doi.org/10.1016/0009-9236(95)90229-5
+    version: 1995-06-version-of-record
+    role: probe cross-validation support
+    canonical_private_locator: evidence/c2/evidence_cyp2c19_probe_crossvalidation_balian_1995.json
+  - id: gawronska-szklarz-2012
+    citation: Gawrońska-Szklarz B et al. European Journal of Clinical Pharmacology 2012
+    doi: 10.1007/s00228-012-1252-3
+    url: https://doi.org/10.1007/s00228-012-1252-3
+    version: 2012-version-of-record
+    role: pantoprazole PK structural calibration
+    canonical_private_locator: evidence/c3a/evidence_gawronska_2012.json
+  - id: tanaka-1997
+    citation: Tanaka M et al. Clinical Pharmacology and Therapeutics 1997
+    doi: 10.1016/S0009-9236(97)90081-3
+    url: https://doi.org/10.1016/S0009-9236(97)90081-3
+    version: 1997-version-of-record
+    role: pantoprazole genotype-direction support
+    canonical_private_locator: evidence/c3a/evidence_tanaka_1997.json
+  - id: hunfeld-2010
+    citation: Hunfeld NGM et al. Alimentary Pharmacology and Therapeutics 2010
+    doi: 10.1111/j.1365-2036.2009.04150.x
+    url: https://doi.org/10.1111/j.1365-2036.2009.04150.x
+    version: 2010-version-of-record
+    role: pantoprazole PK/PD external descriptive support; nonindependence possible
+    canonical_private_locator: evidence/c3a/evidence_hunfeld_2010.json
+  - id: cho-2024
+    citation: Cho et al., 2024
+    pmid: '38150171'
+    url: https://pubmed.ncbi.nlm.nih.gov/38150171/
+    version: 2024-version-of-record
+    role: literature benchmark support
+    canonical_private_locator: evidence/c3a/evidence_cho_2024.json
+  - id: ferron-2001
+    citation: Ferron GM et al., 2001
+    doi: 10.1177/00912700122009953
+    pmid: '11210394'
+    url: https://pubmed.ncbi.nlm.nih.gov/11210394/
+    version: c3b-evidence-release-v1
+    role: irreversible target-turnover structural calibration
+    canonical_private_locator: evidence/c3b/evidence_ferron_2001.json
+  - id: shin-2002
+    citation: Shin JM et al., 2002
+    doi: 10.1053/gast.2002.36593
+    pmid: '12404233'
+    url: https://pubmed.ncbi.nlm.nih.gov/12404233/
+    version: c3b-evidence-release-v1
+    role: separate recovery sensitivity anchor
+    canonical_private_locator: evidence/c3b/evidence_shin_2002.json
+  - id: hunfeld-2008
+    citation: Hunfeld NGM et al. British Journal of Clinical Pharmacology 2008
+    doi: 10.1111/j.1365-2125.2007.03094.x
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC2432487/
+    version: c3b-evidence-release-v1
+    role: observation calibration; exact extracted cells remain private
+    canonical_private_locator: evidence/c3b/evidence_hunfeld_2008.json
+  - id: hunfeld-2010-c3b
+    citation: Hunfeld NGM et al. Alimentary Pharmacology and Therapeutics 2010
+    doi: 10.1111/j.1365-2036.2009.04150.x
+    url: https://repub.eur.nl/pub/27823
+    version: c3b-evidence-release-v1
+    role: external reconstruction/nonindependent validation candidate
+    canonical_private_locator: evidence/c3b/evidence_hunfeld_2010.json
+  - id: miner-label-huang-2002
+    citation: Huang J-Q et al., 2002 (discovery shorthand Miner 2002)
+    doi: 10.1046/j.1365-2036.2002.01168.x
+    pmid: '11876695'
+    url: https://pubmed.ncbi.nlm.nih.gov/11876695/
+    version: c3b-evidence-release-v1
+    role: day-1 supporting benchmark
+    canonical_private_locator: evidence/c3b/evidence_miner_2002.json
+  - id: ehrlich-1999
+    citation: Ehrlich A et al., 1999
+    doi: 10.1358/mf.1999.21.1.527018
+    pmid: '10222447'
+    url: https://pubmed.ncbi.nlm.nih.gov/10222447/
+    version: c3b-evidence-release-v1
+    role: supporting benchmark
+    canonical_private_locator: evidence/c3b/evidence_ehrlich_1999.json
+retrieval_and_regeneration:
+  - obtain each source lawfully from its DOI, database, publisher, or institutional access URL
+  - record the source version and retrieval date without copying publisher prose or layout
+  - extract required facts into a private local artifact following the canonical semantic contract
+  - run the Project Krypton-authored transformation locally
+  - list each generated artifact in evidence-pack-manifest.json with its SHA-256
+  - load through KRYPTON_LOCAL_EVIDENCE_PACK; digest mismatch fails closed
+digest_namespaces:
+  PRIVATE_CANONICAL_HASH: retained only in the private research record and migration audit
+  PUBLIC_METADATA_HASH: digest of redistributable reference metadata
+  LOCAL_REGENERATION_HASH: digest computed by the user for a lawfully regenerated local artifact

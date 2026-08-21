@@ -1,0 +1,118 @@
+{
+  "$defs": {
+    "EditMode": {
+      "enum": [
+        "germline",
+        "somatic"
+      ],
+      "title": "EditMode",
+      "type": "string"
+    },
+    "EditType": {
+      "enum": [
+        "snv",
+        "insertion",
+        "deletion",
+        "delins"
+      ],
+      "title": "EditType",
+      "type": "string"
+    },
+    "Zygosity": {
+      "enum": [
+        "heterozygous",
+        "homozygous",
+        "hemizygous"
+      ],
+      "title": "Zygosity",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One GRCh38 edit in canonical 0-based interbase coordinates.\n\n``start`` and ``end`` describe the half-open reference interval\n``[start, end)``. Insertions have ``start == end`` and an empty reference\nallele; deletions have an empty edited allele. External coordinate systems\nsuch as VCF's 1-based anchored representation are adapter concerns.",
+  "properties": {
+    "assembly": {
+      "const": "GRCh38",
+      "default": "GRCh38",
+      "title": "Assembly",
+      "type": "string"
+    },
+    "cell_fraction": {
+      "exclusiveMinimum": 0,
+      "maximum": 1,
+      "title": "Cell Fraction",
+      "type": "number"
+    },
+    "delivery_modeled": {
+      "default": false,
+      "title": "Delivery Modeled",
+      "type": "boolean"
+    },
+    "edit_type": {
+      "$ref": "#/$defs/EditType"
+    },
+    "edited_allele": {
+      "maxLength": 50,
+      "title": "Edited Allele",
+      "type": "string"
+    },
+    "edited_tissues": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Edited Tissues",
+      "type": "array"
+    },
+    "end": {
+      "minimum": 0,
+      "title": "End",
+      "type": "integer"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "mode": {
+      "$ref": "#/$defs/EditMode"
+    },
+    "off_target_modeled": {
+      "default": false,
+      "title": "Off Target Modeled",
+      "type": "boolean"
+    },
+    "reference_allele": {
+      "maxLength": 50,
+      "title": "Reference Allele",
+      "type": "string"
+    },
+    "sequence_id": {
+      "title": "Sequence Id",
+      "type": "string"
+    },
+    "start": {
+      "minimum": 0,
+      "title": "Start",
+      "type": "integer"
+    },
+    "zygosity": {
+      "$ref": "#/$defs/Zygosity"
+    }
+  },
+  "required": [
+    "id",
+    "sequence_id",
+    "start",
+    "end",
+    "reference_allele",
+    "edited_allele",
+    "edit_type",
+    "zygosity",
+    "mode",
+    "edited_tissues",
+    "cell_fraction"
+  ],
+  "title": "EditObject",
+  "type": "object"
+}

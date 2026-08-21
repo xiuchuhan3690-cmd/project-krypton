@@ -1,0 +1,96 @@
+{
+  "schema_version": "krypton-v1-clean-room-manifest-1",
+  "software_version": "1.0.0",
+  "result": "PASS",
+  "runtime": {
+    "python": "3.12.13",
+    "platform": "Windows AMD64"
+  },
+  "environment_isolation": {
+    "fresh_temporary_source": true,
+    "fresh_editable_environment": true,
+    "fresh_build_environment": true,
+    "fresh_wheel_environment": true,
+    "canonical_project_environment_used": false,
+    "canonical_source_on_import_path": false,
+    "existing_build_reused": false,
+    "PYTHONPATH_unset": true,
+    "KRYPTON_LOCAL_EVIDENCE_PACK_unset": true
+  },
+  "source_origin": "rights-safe public staging candidate copied into a fresh source tree",
+  "excluded_items": [
+    ".git",
+    "dist",
+    "build",
+    ".venv*",
+    "__pycache__",
+    ".pytest_cache",
+    "coverage artifacts",
+    "IDE files",
+    "temporary task artifacts",
+    "private evidence packs"
+  ],
+  "commands": {
+    "dependency_install": "python -m pip install -r requirements.lock",
+    "readme_editable_install": "python -m pip install -e .[test]",
+    "dependency_check": "python -m pip check",
+    "module_info": "python -m krypton",
+    "console_info": "krypton-info",
+    "module_demo": "python -m krypton.demo",
+    "console_demo": "krypton-demo",
+    "tests": "python -m pytest -q",
+    "build": "python -m hatchling build",
+    "distribution_audit": "python scripts/verify_distribution.py",
+    "boundary_audit": "python scripts/verify_public_boundary.py"
+  },
+  "results": {
+    "readme_only_editable_install": "PASS",
+    "editable_pip_check": "PASS",
+    "editable_info_commands": "PASS",
+    "editable_demo_commands": "PASS",
+    "editable_public_tests": "211 PASS",
+    "clean_wheel_build": "PASS",
+    "clean_sdist_build": "PASS",
+    "wheel_install": "PASS",
+    "wheel_pip_check": "PASS",
+    "wheel_info_commands": "PASS",
+    "wheel_demo_commands": "PASS",
+    "installed_public_tests": "211 PASS",
+    "resource_parity": "PASS",
+    "evidence_pack_fail_closed": "PASS",
+    "public_boundary": "PASS",
+    "wheel_audit": "PASS",
+    "sdist_audit": "PASS",
+    "citation_validation": "PASS"
+  },
+  "resource_locations": {
+    "editable": "clean-source/src/krypton/resources",
+    "installed_wheel": "isolated-runtime/site-packages/krypton/resources",
+    "obsolete_repository_root_runtime_trees": "ABSENT"
+  },
+  "public_test_count": 211,
+  "demo_result": {
+    "baseline_auc_mg_h_per_L": 10,
+    "edited_auc_mg_h_per_L": 25,
+    "delta_auc_mg_h_per_L": 15,
+    "workflow_digest": "65463be3bbf2709324c6ebeeeebe7915776232a882ffdcc809e05bb8455b4bfc"
+  },
+  "build_result": {
+    "wheel": {
+      "filename": "project_krypton-1.0.0-py3-none-any.whl",
+      "file_count": 72,
+      "size_bytes": 87215,
+      "sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469"
+    },
+    "sdist": {
+      "filename": "project_krypton-1.0.0.tar.gz",
+      "file_count": 131,
+      "size_bytes": 98493,
+      "sha256": "3ed9a075c88fbda86c52d13a21ed8616be80c1693fb952dde65e6a354c8eacc8"
+    }
+  },
+  "docker": {
+    "status": "DOCKER_RUNTIME_UNAVAILABLE",
+    "linux_amd64": "UNVERIFIED"
+  }
+}

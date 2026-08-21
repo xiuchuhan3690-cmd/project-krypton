@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: If you use this software, cite it using the metadata in this file; an archival DOI is pending public release and deposition.
+title: Project Krypton
+type: software
+version: 1.0.0
+authors:
+  - family-names: Xiu
+    given-names: Chuhan
+abstract: >-
+  A rights-safe, evidence-gated, provenance-aware, and applicability-aware
+  mechanistic pharmacogenomic research-software prototype. Public v1.0
+  demonstrates the generic architecture with synthetic inputs; external
+  scientific data and complete C1-C3B route artifacts are not distributed.
+license: Apache-2.0
+repository-code: https://github.com/xiuchuhan3690-cmd/project-krypton
+keywords:
+  - research software
+  - pharmacogenomics
+  - counterfactual modeling
+  - provenance
+  - applicability

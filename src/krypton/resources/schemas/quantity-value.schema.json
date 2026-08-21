@@ -1,0 +1,192 @@
+{
+  "$defs": {
+    "DistributionType": {
+      "enum": [
+        "fixed",
+        "interval",
+        "normal",
+        "lognormal",
+        "beta"
+      ],
+      "title": "DistributionType",
+      "type": "string"
+    },
+    "UncertaintyAnnotation": {
+      "additionalProperties": false,
+      "description": "A qualitative uncertainty annotation; numerical uncertainty is in QuantityValue.",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/UncertaintyType"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "UncertaintyAnnotation",
+      "type": "object"
+    },
+    "UncertaintyType": {
+      "enum": [
+        "measurement_uncertainty",
+        "biological_variability",
+        "parameter_uncertainty",
+        "model_uncertainty",
+        "evidence_uncertainty"
+      ],
+      "title": "UncertaintyType",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A unit-bearing scalar or supported C0 probability distribution.\n\n``mean`` and ``standard_deviation`` use linear-space parameters for normal\nquantities and log-space parameters for lognormal quantities.",
+  "properties": {
+    "alpha": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Alpha"
+    },
+    "beta": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Beta"
+    },
+    "correlation_group": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Correlation Group"
+    },
+    "distribution": {
+      "$ref": "#/$defs/DistributionType"
+    },
+    "lower": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lower"
+    },
+    "mean": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Mean"
+    },
+    "semantic_kind": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Semantic Kind"
+    },
+    "standard_deviation": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Standard Deviation"
+    },
+    "uncertainty": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/UncertaintyAnnotation"
+      },
+      "title": "Uncertainty",
+      "type": "array"
+    },
+    "unit": {
+      "minLength": 1,
+      "title": "Unit",
+      "type": "string"
+    },
+    "upper": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Upper"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value"
+    }
+  },
+  "required": [
+    "distribution",
+    "unit"
+  ],
+  "title": "QuantityValue",
+  "type": "object"
+}

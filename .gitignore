@@ -1,0 +1,13 @@
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+external_data/*
+!external_data/.gitignore
+!external_data/DO_NOT_COMMIT_EXTERNAL_SCIENTIFIC_DATA.md

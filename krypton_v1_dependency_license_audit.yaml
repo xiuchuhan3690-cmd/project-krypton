@@ -1,0 +1,296 @@
+{
+  "schema_version": "krypton-v1-independent-dependency-license-audit-1",
+  "audit_date": "2026-08-21",
+  "scope": "exact requirements.lock, pyproject.toml, wheel METADATA, installed distribution metadata, and authoritative upstream metadata where local metadata was unavailable",
+  "conclusion": "CLEAR_WITH_ATTRIBUTION",
+  "severity": "INFO",
+  "dependency_usage_boundary": {
+    "dependency_code_vendored": false,
+    "dependency_distributions_bundled_in_wheel_or_sdist": false,
+    "dependencies_installed_externally": true,
+    "project_apache_license_relicenses_dependencies": false,
+    "lock_package_count": 24,
+    "wheel_runtime_requirements": [
+      "networkx>=3.4,<4",
+      "pint>=0.24,<1",
+      "pydantic>=2.11,<3"
+    ],
+    "optional_test_requirements": [
+      "jsonschema>=4.25,<5",
+      "pytest>=8.3,<9"
+    ],
+    "build_requirement": "hatchling==1.27.0"
+  },
+  "records": [
+    {
+      "name": "annotated-types",
+      "version_or_range": "0.8.0",
+      "purpose": "pydantic transitive runtime support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed distribution License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "lock-only transitive dependency"
+    },
+    {
+      "name": "attrs",
+      "version_or_range": "26.1.0",
+      "purpose": "jsonschema transitive test support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed distribution License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "lock-only transitive dependency"
+    },
+    {
+      "name": "colorama",
+      "version_or_range": "0.4.6",
+      "purpose": "pytest transitive Windows console support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "BSD-3-Clause",
+      "authoritative_license_basis": "installed dist-info/licenses/LICENSE.txt; PyPI exact-version metadata identifies BSD licensing",
+      "redistribution_obligation": "retain copyright, conditions, and disclaimer if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency"
+    },
+    {
+      "name": "flexcache",
+      "version_or_range": "0.3",
+      "purpose": "Pint transitive runtime support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "BSD-3-Clause",
+      "authoritative_license_basis": "installed dist-info/LICENSE; PyPI exact-version metadata identifies BSD licensing",
+      "redistribution_obligation": "retain copyright, conditions, and disclaimer if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "runtime transitive dependency"
+    },
+    {
+      "name": "flexparser",
+      "version_or_range": "0.4",
+      "purpose": "Pint transitive runtime support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "BSD-3-Clause",
+      "authoritative_license_basis": "installed License-Expression and dist-info/LICENSE",
+      "redistribution_obligation": "retain copyright, conditions, and disclaimer if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "runtime transitive dependency"
+    },
+    {
+      "name": "hatchling",
+      "version_or_range": "1.27.0",
+      "purpose": "build backend",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "https://pypi.org/pypi/hatchling/1.27.0/json exact-version classifier and upstream project metadata",
+      "redistribution_obligation": "retain MIT terms if the build backend is redistributed; it is installed only for builds and is absent from Krypton artifacts",
+      "notes": "direct build dependency"
+    },
+    {
+      "name": "iniconfig",
+      "version_or_range": "2.3.0",
+      "purpose": "pytest transitive test support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency"
+    },
+    {
+      "name": "jsonschema",
+      "version_or_range": "4.25.1; project range >=4.25,<5",
+      "purpose": "public schema validation tests",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/COPYING",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "direct optional test dependency"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version_or_range": "2025.9.1",
+      "purpose": "jsonschema transitive test support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/COPYING",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency"
+    },
+    {
+      "name": "networkx",
+      "version_or_range": "3.6.1; project range >=3.4,<4",
+      "purpose": "KEG MultiDiGraph runtime and DAG validation",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "BSD-3-Clause",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE.txt",
+      "redistribution_obligation": "retain copyright, conditions, and disclaimer if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "direct runtime dependency"
+    },
+    {
+      "name": "packaging",
+      "version_or_range": "26.3",
+      "purpose": "Hatchling and test/build transitive support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "authoritative_license_basis": "installed License-Expression plus LICENSE, LICENSE.APACHE, and LICENSE.BSD",
+      "redistribution_obligation": "honor the selected upstream license if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "build/test transitive dependency"
+    },
+    {
+      "name": "pathspec",
+      "version_or_range": "0.12.1",
+      "purpose": "Hatchling transitive build support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MPL-2.0",
+      "authoritative_license_basis": "https://pypi.org/pypi/pathspec/0.12.1/json exact-version classifier and license section; https://www.mozilla.org/en-US/MPL/2.0/",
+      "redistribution_obligation": "MPL file-level source and notice duties apply if pathspec is redistributed or modified; it is externally installed, unmodified, and absent from Krypton artifacts",
+      "notes": "build-only transitive dependency; does not change the Project license"
+    },
+    {
+      "name": "pint",
+      "version_or_range": "0.25.3; project range >=0.24,<1",
+      "purpose": "unit validation and conversion runtime",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "BSD-3-Clause",
+      "authoritative_license_basis": "installed dist-info/licenses/LICENSE; PyPI exact-version metadata identifies BSD licensing",
+      "redistribution_obligation": "retain copyright, conditions, and disclaimer if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "direct runtime dependency"
+    },
+    {
+      "name": "platformdirs",
+      "version_or_range": "4.11.3",
+      "purpose": "pytest transitive test support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency"
+    },
+    {
+      "name": "pluggy",
+      "version_or_range": "1.6.0",
+      "purpose": "pytest and Hatchling plugin support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "build/test transitive dependency"
+    },
+    {
+      "name": "pydantic",
+      "version_or_range": "2.13.4; project range >=2.11,<3",
+      "purpose": "typed immutable runtime contracts and validation",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "direct runtime dependency"
+    },
+    {
+      "name": "pydantic-core",
+      "version_or_range": "2.46.4",
+      "purpose": "Pydantic transitive runtime validation core",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "runtime transitive dependency; installed binary is not bundled"
+    },
+    {
+      "name": "Pygments",
+      "version_or_range": "2.20.0",
+      "purpose": "pytest transitive terminal formatting",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "BSD-2-Clause",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain copyright, conditions, and disclaimer if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency"
+    },
+    {
+      "name": "pytest",
+      "version_or_range": "8.4.2; project range >=8.3,<9",
+      "purpose": "public test runner",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "direct optional test dependency"
+    },
+    {
+      "name": "referencing",
+      "version_or_range": "0.37.0",
+      "purpose": "jsonschema transitive test support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/COPYING",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency"
+    },
+    {
+      "name": "rpds-py",
+      "version_or_range": "2026.6.3",
+      "purpose": "referencing/jsonschema transitive support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "test-environment transitive dependency; installed binary is not bundled"
+    },
+    {
+      "name": "typing-inspection",
+      "version_or_range": "0.4.4",
+      "purpose": "Pydantic transitive runtime support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "MIT",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain MIT terms if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "runtime transitive dependency"
+    },
+    {
+      "name": "typing-extensions",
+      "version_or_range": "4.16.0",
+      "purpose": "Pydantic and typing transitive runtime support",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "PSF-2.0",
+      "authoritative_license_basis": "installed License-Expression and dist-info/licenses/LICENSE",
+      "redistribution_obligation": "retain the PSF license and required notices if this dependency itself is redistributed; no dependency payload is redistributed here",
+      "notes": "runtime transitive dependency"
+    },
+    {
+      "name": "trove-classifiers",
+      "version_or_range": "2025.5.9.12",
+      "purpose": "Hatchling transitive build metadata validation",
+      "vendored": false,
+      "externally_installed": true,
+      "license": "Apache-2.0",
+      "authoritative_license_basis": "https://pypi.org/pypi/trove-classifiers/2025.5.9.12/json exact-version classifier and license-file metadata",
+      "redistribution_obligation": "retain Apache-2.0 terms and applicable notices if this dependency itself is redistributed; it is absent from Krypton artifacts",
+      "notes": "build-only transitive dependency"
+    }
+  ],
+  "historical_manifest_correction": {
+    "numpy": "not present in the current public requirements.lock or wheel requirements",
+    "scipy": "not present in the current public requirements.lock or wheel requirements",
+    "effect": "the earlier dependency-license manifest is historical evidence, not the current dependency boundary"
+  },
+  "blocking_issues": []
+}

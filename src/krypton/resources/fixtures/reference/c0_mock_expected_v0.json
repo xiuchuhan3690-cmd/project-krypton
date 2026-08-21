@@ -1,0 +1,28 @@
+{
+  "edit_id": "edit:mock-snv",
+  "evidence_id": "evidence:mock",
+  "baseline_activity": 1.0,
+  "edited_activity": 0.4,
+  "baseline_clearance_L_per_h": 10.0,
+  "edited_clearance_L_per_h": 4.0,
+  "dose_mg": 100.0,
+  "baseline_auc_mg_h_per_L": 10.0,
+  "edited_auc_mg_h_per_L": 25.0,
+  "delta_auc_mg_h_per_L": 15.0,
+  "authorized_differences": ["clearance"],
+  "unexpected_differences": [],
+  "keg_path_node_ids": [
+    "node:edit",
+    "node:activity",
+    "node:clearance",
+    "node:auc"
+  ],
+  "keg_path_edge_ids": [
+    "edge:edit-activity",
+    "edge:activity-clearance",
+    "edge:clearance-auc"
+  ],
+  "mapping_id": "mapping:activity-clearance",
+  "model_contract_id": "contract:mock-pk",
+  "seed": 42
+}

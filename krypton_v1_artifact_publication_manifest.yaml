@@ -1,0 +1,173 @@
+{
+  "schema_version": "krypton-v1-artifact-publication-manifest-1",
+  "software_version": "1.0.0",
+  "classifications": {
+    "REQUIRED_FOR_PUBLIC_RELEASE": "must accompany the public source release",
+    "RECOMMENDED_FOR_PUBLIC_RELEASE": "audit or reproduction evidence recommended with the release",
+    "OPTIONAL": "rights-safe supporting material that may be published",
+    "BUILD_OUTPUT": "verified binary/source distribution candidate",
+    "DO_NOT_PUBLISH": "private, local, transient, or otherwise excluded material"
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "public installation, scope, and reproduction contract",
+      "sha256": "4e5485353402ed366a423ba189e7a38a3fcb1e05dfb4f3cc77c67f97ad23f269"
+    },
+    {
+      "path": "LICENSE",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "Apache-2.0 license",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "NOTICE",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "project notices and data boundary",
+      "sha256": "f23ff0c3bc8656f703c97bb8f078cf3be495727bd5e31db20f9b4a89d58b7a4f"
+    },
+    {
+      "path": "CITATION.cff",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "CFF 1.2.0 citation metadata",
+      "sha256": "6869704aa44cfc27dfec04cdec562581e229979751059c66e006cef37936eca5"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "third-party dependency and source notices",
+      "sha256": "9fe3cafaccfbc2a09c50769bd3090f54b7284751752772b43046983d329ef83b"
+    },
+    {
+      "path": "pyproject.toml",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "build and package metadata",
+      "sha256": "b3ca3f501dd41bf6d2c1079794871df7540d9ac1bd1ab7f5135f0264e87dda26"
+    },
+    {
+      "path": "src",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "Project-authored public source and package resources tree digest",
+      "sha256": "1048e8f00c17a8b65285e0d594c015c0c268c46bfe24c6191ae19e280f781a1f"
+    },
+    {
+      "path": "docs",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "public documentation tree digest",
+      "sha256": "2f84eac3e1f1dbbcb183cacc58ea21d147006f57a8a6e3f50f2bcacdc7340199"
+    },
+    {
+      "path": "tests",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "211-test public verification suite tree digest",
+      "sha256": "3c3730271206d6d10c6ef6bcbf76a9610c630feaf7b86915c768313ab32e9368"
+    },
+    {
+      "path": "krypton_v1_release_metadata.yaml",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "public release metadata",
+      "sha256": "cbe203c9581fc599a708c3ba7f48fd9d68734f5809696372664ff0a276dabed4"
+    },
+    {
+      "path": "evidence_metadata/krypton_v1_external_source_reference_manifest.yaml",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "provenance-only external source reference manifest",
+      "sha256": "89e1b24683ce8dcad92603dc4c1f9d1680fd4c7d3952be23b35e5fedc285487a"
+    },
+    {
+      "path": "docs/public-private-boundary.md",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "public/private and external-data boundary",
+      "sha256": "4c2cb79b7a14b2622a5e5dca2f8a801d7dd6ab64ea6bb115630e79d3dca03fd9"
+    },
+    {
+      "path": "krypton_v1_publication_manifest.yaml",
+      "classification": "REQUIRED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "final Task-4 publication decision",
+      "sha256": "7ea807c2ea30d78def9125ebf872a034a2a85bc4e7bc797402abc6d53d0c700a"
+    },
+    {
+      "path": "krypton_v1_clean_room_manifest.yaml",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "fresh source/editable/wheel reproduction proof",
+      "sha256": "4f13ef58569c03ae2fdac9efcaf470b935efb28787219582690a479ac3bb5301"
+    },
+    {
+      "path": "krypton_v1_public_migration_manifest.yaml",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "rights-safe representation migration proof",
+      "sha256": "8e37eb36f9846eaf9f9451c8da96fdcb45f9bf3472df9a620cfa49ec46b9688a"
+    },
+    {
+      "path": "krypton_v1_package_contents_manifest.yaml",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "expected distribution contents",
+      "sha256": "eb0ff4a3f5c4a7a4f7a361cf35f728cd1d7a998572a524d42d707423fb0a3b95"
+    },
+    {
+      "path": "krypton_v1_task4r_remediation_manifest.yaml",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "Task-4R resource parity remediation provenance",
+      "sha256": "34c8108326baf0a746fa0c908930b6a2e2a9dc262356d569ad69ed04356660e6"
+    },
+    {
+      "path": "krypton_v1_resource_parity_test_manifest.yaml",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "source/installed resource parity coverage",
+      "sha256": "417c6673d0bf084a85ee0ad4763d6281d790f4649218e0d075147452618b7250"
+    },
+    {
+      "path": "krypton_v1_task4r_artifact_digests.yaml",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "historical Task-4R artifact freeze",
+      "sha256": "aef89c61cafd06af76ae938a34d9ac7c82f540bbe5195f25ba95fdae2b9eecfd"
+    },
+    {
+      "path": "scripts/verify_task4_publication.py",
+      "classification": "RECOMMENDED_FOR_PUBLIC_RELEASE",
+      "rights_safe": true,
+      "role": "Task-4 publication proof verifier",
+      "sha256": "a1bbe834c1d4079627f00495696d661b5f58cc2a04b675c131cdca2542ce7ff1"
+    },
+    {
+      "path": "dist/project_krypton-1.0.0-py3-none-any.whl",
+      "classification": "BUILD_OUTPUT",
+      "rights_safe": true,
+      "role": "TASK4_VERIFIED_RELEASE_CANDIDATE wheel",
+      "sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469"
+    },
+    {
+      "path": "dist/project_krypton-1.0.0.tar.gz",
+      "classification": "BUILD_OUTPUT",
+      "rights_safe": true,
+      "role": "TASK4_VERIFIED_RELEASE_CANDIDATE source distribution",
+      "sha256": "3ed9a075c88fbda86c52d13a21ed8616be80c1693fb952dde65e6a354c8eacc8"
+    }
+  ],
+  "do_not_publish": [
+    "canonical private repository and Git history",
+    "private evidence packs and external scientific datasets",
+    "local virtual environments, caches, coverage data, IDE state, and temporary task trees",
+    "credentials, private keys, environment files, and local absolute paths"
+  ]
+}

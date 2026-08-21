@@ -1,0 +1,61 @@
+{
+  "id": "pair:invalid-dose-change",
+  "edit_id": "edit:mock-snv",
+  "model_contract_id": "contract:mock-pk",
+  "model_contract_version": "1.0.0",
+  "adapter_id": "krypton.adapters.mock:MockPKAdapter",
+  "adapter_artifact_digest": "09b1bbefaef9b9a44abea8422d3c504b17e26f2b7436fb82340a12a905a63b5e",
+  "seed": 42,
+  "context": {
+    "tissue": ["liver"],
+    "experimental_system": ["internal_mock"]
+  },
+  "environment": [
+    {"key": "simulation_mode", "value": "deterministic"}
+  ],
+  "initial_conditions": [
+    {"key": "state", "value": "mock-steady-state"}
+  ],
+  "shared_inputs": [
+    {
+      "parameter_id": "dose",
+      "quantity": {
+        "distribution": "fixed",
+        "unit": "mg",
+        "semantic_kind": "dose_amount",
+        "value": 100.0
+      }
+    }
+  ],
+  "authorized_changes": [
+    {
+      "parameter_id": "clearance",
+      "baseline": {
+        "distribution": "fixed",
+        "unit": "L/h",
+        "semantic_kind": "clearance",
+        "value": 10.0
+      },
+      "edited": {
+        "distribution": "fixed",
+        "unit": "L/h",
+        "semantic_kind": "clearance",
+        "value": 4.0
+      },
+      "mapping_id": "mapping:activity-clearance",
+      "mapping_version": "1.0.0",
+      "mapping_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "edited_input_overrides": [
+    {
+      "parameter_id": "dose",
+      "quantity": {
+        "distribution": "fixed",
+        "unit": "mg",
+        "semantic_kind": "dose_amount",
+        "value": 120.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+schema_version: krypton-v1-documentation-test-manifest-1
+software_version: 1.0.0
+source_of_truth: krypton_v1_release_metadata.yaml
+counts:
+  PUBLIC_CORE_TESTS: 176
+  PUBLIC_MIGRATION_GUARD_TESTS: 9
+  PUBLIC_PACKAGING_TESTS: 10
+  PUBLIC_DOCUMENTATION_TESTS: 12
+  PUBLIC_RESOURCE_PARITY_TESTS: 4
+  PUBLIC_CI_GOVERNANCE_TESTS: 10
+  PUBLIC_TOTAL_TESTS: 221
+  PRIVATE_CANONICAL_REFERENCE_TESTS: 1184
+documentation_tests:
+  file: tests/documentation/test_public_documentation.py
+  coverage:
+    - README, runtime, release metadata, and citation version consistency
+    - frozen milestone status visibility
+    - Rows 30 and 31 visible BLOCKED debt
+    - public/private test-count separation
+    - external-data and fail-closed local-pack policy
+    - research/clinical limitation visibility
+    - positive overclaim guard
+    - platform and Docker status consistency
+    - citation identity without invented DOI or repository URL
+    - changelog and release-note consistency
+    - representative synthetic demo values and claim boundary
+    - local Markdown link/file resolution
+representative_demo:
+  command: python -m krypton.demo
+  input_class: synthetic public architecture inputs
+  external_data_required: false
+  expected:
+    baseline_auc_mg_h_per_L: 10
+    edited_auc_mg_h_per_L: 25
+    delta_auc_mg_h_per_L: 15
+  scientific_validation_claim: false
+clean_documentation_walkthrough:
+  steps: [wheel install, krypton-info, krypton-demo, public tests]
+  result: PASS
+  installed_import_source: isolated venv site-packages
+  pip_check: PASS
+  task3_public_tests: 207 passed
+  synthetic_demo: baseline 10, edited 25, delta +15
+documentation_boundaries:
+  citation_author: entity-style Project Krypton project owner attribution
+  citation_schema_validation: CFF 1.2.0 PASS with cffconvert 2.0.0
+  archival_doi: pending
+  repository_url: pending
+  docker_runtime: unverified

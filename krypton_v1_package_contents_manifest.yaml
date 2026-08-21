@@ -1,0 +1,44 @@
+schema_version: krypton-v1-package-contents-manifest-1
+software_version: 1.0.0
+distribution_strategy: HYBRID
+wheel:
+  filename_pattern: project_krypton-1.0.0-py3-none-any.whl
+  purpose: repository-independent generic public-core package
+  included:
+    - krypton Python package
+    - package-owned runtime resource tree shared by editable and wheel installs
+    - synthetic C0 fixtures
+    - synthetic mock model registry entry
+    - eleven public Draft 2020-12 schemas
+    - public release metadata
+    - exact developer/reproduction lock used by synthetic provenance
+    - Apache-2.0 LICENSE, NOTICE, and THIRD_PARTY_NOTICES in dist-info/licenses
+  excluded:
+    - external scientific data and source-specific values
+    - evidence, artifacts, vocabularies, calibrations, and scientific registries
+    - C1-C3B private workflows and regression fixtures
+    - tests, docs, scripts, private Git history, local evidence packs, build environments
+  expected_file_count: 72
+  content_inventory: dist/distribution-audit.json
+sdist:
+  filename_pattern: project_krypton-1.0.0.tar.gz
+  purpose: complete rights-safe public source distribution
+  included:
+    - public source, tests, schemas, scripts, examples, docs, audit/reference metadata, Dockerfile, and packaging metadata
+  excluded:
+    - external scientific data
+    - canonical private artifacts and Git history
+    - local environments, caches, and build outputs
+    - Task-4R and final Task-4 checksum sidecars that accompany and freeze the archives
+  expected_file_count: 131
+  content_inventory: dist/distribution-audit.json
+repository:
+  public_git_history_present: false
+  external_data_directory_policy: deny-by-default
+  build_artifacts_committed: false
+allowlist_authority:
+  wheel: pyproject.toml package src/krypton, including its physical resources tree
+  sdist: pyproject.toml tool.hatch.build.targets.sdist.include
+validation:
+  verifier: scripts/verify_distribution.py
+  status: PASS

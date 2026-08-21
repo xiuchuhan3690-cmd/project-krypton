@@ -1,0 +1,19 @@
+{
+  "id": "mapping:unsafe-expression",
+  "version": "1.0.0",
+  "mapping_type": "expression",
+  "source_quantity_kind": "relative_activity",
+  "source_unit": "dimensionless",
+  "target": {
+    "contract_id": "contract:mock-pk",
+    "contract_version": "1.0.0",
+    "parameter_id": "clearance",
+    "biological_meaning": "Artificial total clearance",
+    "quantity_kind": "clearance",
+    "canonical_unit": "L/h",
+    "physical_dimension": "[length] ** 3 / [time]"
+  },
+  "evidence_ids": ["evidence:mock"],
+  "applicability": {},
+  "expression": "__import__('os').system('unsafe')"
+}

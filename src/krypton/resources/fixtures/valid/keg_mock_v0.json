@@ -1,0 +1,145 @@
+{
+  "schema_version": "keg-v0",
+  "id": "keg:mock-v0",
+  "edit": {
+    "id": "edit:mock-snv",
+    "assembly": "GRCh38",
+    "sequence_id": "chr22",
+    "start": 100000,
+    "end": 100001,
+    "reference_allele": "A",
+    "edited_allele": "G",
+    "edit_type": "snv",
+    "zygosity": "heterozygous",
+    "mode": "germline",
+    "edited_tissues": ["all"],
+    "cell_fraction": 1.0,
+    "delivery_modeled": false,
+    "off_target_modeled": false
+  },
+  "nodes": [
+    {
+      "id": "node:edit",
+      "node_type": "genomic_edit",
+      "label": "Mock DNA edit",
+      "edit_reference": "edit:mock-snv"
+    },
+    {
+      "id": "node:activity",
+      "node_type": "molecular_quantity",
+      "label": "Mock enzyme activity",
+      "quantity_kind": "relative_enzyme_activity",
+      "quantity": {
+        "distribution": "fixed",
+        "unit": "dimensionless",
+        "semantic_kind": "relative_activity",
+        "value": 0.4
+      }
+    },
+    {
+      "id": "node:clearance",
+      "node_type": "model_parameter",
+      "label": "Mock clearance",
+      "quantity_kind": "clearance",
+      "quantity": {
+        "distribution": "fixed",
+        "unit": "L/h",
+        "value": 4.0
+      },
+      "model_contract_reference": "contract:mock-pk",
+      "model_contract_version": "1.0.0",
+      "model_parameter_id": "clearance"
+    },
+    {
+      "id": "node:auc",
+      "node_type": "phenotype_endpoint",
+      "label": "Mock AUC",
+      "quantity_kind": "auc",
+      "quantity": {
+        "distribution": "fixed",
+        "unit": "mg*h/L",
+        "value": 25.0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:edit-activity",
+      "source": "node:edit",
+      "target": "node:activity",
+      "relation_type": "alters",
+      "transformation_reference": "mapping:edit-activity",
+      "units": {
+        "source_unit": "dimensionless",
+        "target_unit": "dimensionless"
+      },
+      "tissue": "liver",
+      "time_scale": "steady_state",
+      "evidence_ids": ["evidence:mock"],
+      "applicability_reference": "applicability:mock",
+      "uncertainty_note": "Artificial architecture fixture.",
+      "mapping_version": "1.0.0",
+      "validation_status": "validated"
+    },
+    {
+      "id": "edge:activity-clearance",
+      "source": "node:activity",
+      "target": "node:clearance",
+      "relation_type": "translates_to",
+      "transformation_reference": "mapping:activity-clearance",
+      "units": {
+        "source_unit": "dimensionless",
+        "target_unit": "L/h"
+      },
+      "tissue": "liver",
+      "time_scale": "steady_state",
+      "evidence_ids": ["evidence:mock"],
+      "applicability_reference": "applicability:mock",
+      "mapping_version": "1.0.0",
+      "model_version": "1.0.0",
+      "validation_status": "validated"
+    },
+    {
+      "id": "edge:clearance-auc",
+      "source": "node:clearance",
+      "target": "node:auc",
+      "relation_type": "produces",
+      "transformation_reference": "mapping:clearance-auc",
+      "units": {
+        "source_unit": "L/h",
+        "target_unit": "mg*h/L"
+      },
+      "time_scale": "steady_state",
+      "evidence_ids": ["evidence:mock"],
+      "applicability_reference": "applicability:mock",
+      "mapping_version": "1.0.0",
+      "model_version": "1.0.0",
+      "validation_status": "validated"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence:mock",
+      "evidence_class": "mechanistic_model_assumption",
+      "source": "internal-mock",
+      "identifier": "mock-keg-chain",
+      "version": "1.0.0",
+      "claim": "Artificial values exercise KEG architecture only.",
+      "applicability_reference": "applicability:mock",
+      "confidence": "low",
+      "limitations": ["Not biological evidence."],
+      "retrieval_timestamp": "2026-08-16T00:00:00Z",
+      "curation": {
+        "curator": "project-krypton",
+        "curated_at": "2026-08-16T00:00:00Z"
+      }
+    }
+  ],
+  "applicability_contexts": {
+    "applicability:mock": {
+      "tissue": ["liver"],
+      "experimental_system": ["internal_mock"]
+    }
+  },
+  "result_node_ids": ["node:auc"]
+}

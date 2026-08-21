@@ -1,0 +1,48 @@
+schema_version: krypton-v1-dependency-boundary-1
+software_version: 1.0.0
+strategy:
+  package_metadata: compatible ranges for interoperable wheel installation
+  developer_reproduction_lock: exact versions in requirements.lock
+  dependency_hashes: deferred; clean build is verified from exact versions, but requirements.lock does not claim hash pinning
+classifications:
+  PUBLIC_RUNTIME_REQUIRED:
+    - {package: networkx, package_range: '>=3.4,<4', locked_version: 3.6.1, reason: KEG graph runtime}
+    - {package: pint, package_range: '>=0.24,<1', locked_version: 0.25.3, reason: unit validation and conversion}
+    - {package: pydantic, package_range: '>=2.11,<3', locked_version: 2.13.4, reason: typed immutable contracts}
+  PUBLIC_TEST_REQUIRED:
+    - {package: jsonschema, package_range: '>=4.25,<5', locked_version: 4.25.1}
+    - {package: pytest, package_range: '>=8.3,<9', locked_version: 8.4.2}
+  BUILD_REQUIRED:
+    - {package: hatchling, locked_version: 1.27.0}
+  PRIVATE_SCIENTIFIC_ONLY:
+    - {package: numpy, prior_locked_version: 2.5.2, public_lock_action: removed}
+    - {package: scipy, prior_locked_version: 1.18.0, public_lock_action: removed}
+  TRANSITIVE_PUBLIC_LOCK:
+    - annotated-types
+    - attrs
+    - colorama
+    - flexcache
+    - flexparser
+    - iniconfig
+    - jsonschema-specifications
+    - packaging
+    - pathspec
+    - platformdirs
+    - pluggy
+    - pydantic_core
+    - Pygments
+    - referencing
+    - rpds-py
+    - typing-inspection
+    - typing_extensions
+    - trove-classifiers
+  UNNECESSARY: []
+vendoring: false
+notice_policy:
+  dependencies_keep_their_upstream_licenses: true
+  dependency_source_or_bundled_notices_copied_into_project: false
+  numpy_scipy_composite_notices_required_in_wheel: false
+  reason: NumPy and SciPy are not public wheel dependencies and no dependency source is vendored
+task1_manifest_relationship:
+  krypton_v1_dependency_license_manifest_yaml: historical audit of the original 26-package migration lock
+  current_authority: this Task-2 boundary plus requirements.lock and wheel METADATA

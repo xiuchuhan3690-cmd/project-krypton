@@ -1,0 +1,158 @@
+{
+  "$defs": {
+    "ArtifactReference": {
+      "additionalProperties": false,
+      "properties": {
+        "digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Digest",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "digest"
+      ],
+      "title": "ArtifactReference",
+      "type": "object"
+    },
+    "VersionedReference": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "title": "VersionedReference",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "container_image_digest": {
+      "anyOf": [
+        {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Container Image Digest"
+    },
+    "dataset_versions": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/VersionedReference"
+      },
+      "title": "Dataset Versions",
+      "type": "array"
+    },
+    "dependency_lock_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Dependency Lock Digest",
+      "type": "string"
+    },
+    "dirty_worktree": {
+      "title": "Dirty Worktree",
+      "type": "boolean"
+    },
+    "edit_object": {
+      "$ref": "#/$defs/ArtifactReference"
+    },
+    "environment_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Environment Digest",
+      "type": "string"
+    },
+    "git_commit": {
+      "pattern": "^(?:[0-9a-f]{40,64}|unborn|unknown)$",
+      "title": "Git Commit",
+      "type": "string"
+    },
+    "keg": {
+      "$ref": "#/$defs/ArtifactReference"
+    },
+    "krypton_package_version": {
+      "minLength": 1,
+      "title": "Krypton Package Version",
+      "type": "string"
+    },
+    "model_artifact": {
+      "$ref": "#/$defs/ArtifactReference"
+    },
+    "mpt": {
+      "$ref": "#/$defs/ArtifactReference"
+    },
+    "pair_run_spec": {
+      "$ref": "#/$defs/ArtifactReference"
+    },
+    "python_version": {
+      "minLength": 1,
+      "title": "Python Version",
+      "type": "string"
+    },
+    "random_seed": {
+      "title": "Random Seed",
+      "type": "integer"
+    },
+    "run_id": {
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "provenance-manifest-v0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_id",
+    "timestamp",
+    "krypton_package_version",
+    "git_commit",
+    "dirty_worktree",
+    "edit_object",
+    "keg",
+    "mpt",
+    "model_artifact",
+    "pair_run_spec",
+    "environment_digest",
+    "python_version",
+    "dependency_lock_digest",
+    "random_seed"
+  ],
+  "title": "ProvenanceManifest",
+  "type": "object"
+}

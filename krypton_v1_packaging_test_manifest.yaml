@@ -1,0 +1,46 @@
+schema_version: krypton-v1-packaging-test-manifest-1
+software_version: 1.0.0
+counts:
+  PUBLIC_CORE_TESTS: 176
+  PUBLIC_MIGRATION_GUARD_TESTS: 9
+  PUBLIC_PACKAGING_TESTS: 10
+  PUBLIC_TOTAL_TESTS: 195
+  PRIVATE_CANONICAL_REFERENCE_TESTS: 1184
+packaging_tests:
+  file: tests/packaging/test_release_metadata.py
+  coverage:
+    - single-source version consistency
+    - distribution/import name consistency
+    - Apache-2.0 metadata and full license text
+    - immutable restricted scientific status
+    - private provenance identifier semantics
+    - no-pack fail-closed behavior
+    - package-resource traversal rejection
+    - explicit wheel resource allowlist
+    - private scientific dependency exclusion
+    - frozen Task-1 LICENSE digest
+host_source_suite:
+  command: python -m pytest -q
+  result: 195 passed
+clean_wheel:
+  environment: isolated Python 3.12 venv created for Task 2
+  host_or_canonical_package_reuse: false
+  install: exact public requirements.lock plus built wheel with no dependency fallback
+  pip_check: PASS
+  import_path: isolated venv site-packages
+  package_import: PASS
+  version_consistency: PASS
+  package_resource_lookup: PASS
+  synthetic_demo: PASS
+  missing_local_evidence_pack: EVIDENCE_PACK_REQUIRED
+  private_numpy_scipy_absent: PASS
+  full_public_suite: 195 passed
+distribution_audit:
+  wheel_contents: PASS
+  sdist_contents: PASS
+  external_data_and_local_path_scan: PASS
+docker:
+  dockerfile_static_boundary: PASS
+  executable_detection: BLOCKED_DOCKER_NOT_AVAILABLE
+  image_build: NOT_RUN
+  linux_amd64_runtime: UNVERIFIED

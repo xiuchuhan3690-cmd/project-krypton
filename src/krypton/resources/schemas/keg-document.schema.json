@@ -1,0 +1,959 @@
+{
+  "$defs": {
+    "AgeRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_years": {
+          "minimum": 0,
+          "title": "Maximum Years",
+          "type": "number"
+        },
+        "minimum_years": {
+          "minimum": 0,
+          "title": "Minimum Years",
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum_years",
+        "maximum_years"
+      ],
+      "title": "AgeRange",
+      "type": "object"
+    },
+    "ApplicabilityContext": {
+      "additionalProperties": false,
+      "description": "A set of allowed labels/ranges, or a candidate context for assessment.",
+      "properties": {
+        "age_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AgeRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "developmental_stage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Developmental Stage",
+          "type": "array"
+        },
+        "disease_status": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Disease Status",
+          "type": "array"
+        },
+        "environmental_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Environmental Tags",
+          "type": "array"
+        },
+        "experimental_system": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Experimental System",
+          "type": "array"
+        },
+        "medications": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Medications",
+          "type": "array"
+        },
+        "population_ancestry": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Population Ancestry",
+          "type": "array"
+        },
+        "sex": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sex",
+          "type": "array"
+        },
+        "tissue": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Tissue",
+          "type": "array"
+        }
+      },
+      "title": "ApplicabilityContext",
+      "type": "object"
+    },
+    "CategoricalValue": {
+      "additionalProperties": false,
+      "description": "A non-numerical value identified by an external or project vocabulary.\n\nThe public core deliberately contains no biological vocabulary members. A\nlocal evidence pack is responsible for validating values against its pinned\nvocabulary before constructing this object.",
+      "properties": {
+        "kind": {
+          "const": "categorical",
+          "title": "Kind",
+          "type": "string"
+        },
+        "value": {
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        },
+        "vocabulary_id": {
+          "minLength": 1,
+          "title": "Vocabulary Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "vocabulary_id",
+        "value"
+      ],
+      "title": "CategoricalValue",
+      "type": "object"
+    },
+    "ConfidenceLevel": {
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "indeterminate"
+      ],
+      "title": "ConfidenceLevel",
+      "type": "string"
+    },
+    "CurationMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "curated_at": {
+          "format": "date-time",
+          "title": "Curated At",
+          "type": "string"
+        },
+        "curator": {
+          "minLength": 1,
+          "title": "Curator",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "curator",
+        "curated_at"
+      ],
+      "title": "CurationMetadata",
+      "type": "object"
+    },
+    "DistributionType": {
+      "enum": [
+        "fixed",
+        "interval",
+        "normal",
+        "lognormal",
+        "beta"
+      ],
+      "title": "DistributionType",
+      "type": "string"
+    },
+    "EdgeUnits": {
+      "additionalProperties": false,
+      "properties": {
+        "source_unit": {
+          "minLength": 1,
+          "title": "Source Unit",
+          "type": "string"
+        },
+        "target_unit": {
+          "minLength": 1,
+          "title": "Target Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_unit",
+        "target_unit"
+      ],
+      "title": "EdgeUnits",
+      "type": "object"
+    },
+    "EditMode": {
+      "enum": [
+        "germline",
+        "somatic"
+      ],
+      "title": "EditMode",
+      "type": "string"
+    },
+    "EditObject": {
+      "additionalProperties": false,
+      "description": "One GRCh38 edit in canonical 0-based interbase coordinates.\n\n``start`` and ``end`` describe the half-open reference interval\n``[start, end)``. Insertions have ``start == end`` and an empty reference\nallele; deletions have an empty edited allele. External coordinate systems\nsuch as VCF's 1-based anchored representation are adapter concerns.",
+      "properties": {
+        "assembly": {
+          "const": "GRCh38",
+          "default": "GRCh38",
+          "title": "Assembly",
+          "type": "string"
+        },
+        "cell_fraction": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Cell Fraction",
+          "type": "number"
+        },
+        "delivery_modeled": {
+          "default": false,
+          "title": "Delivery Modeled",
+          "type": "boolean"
+        },
+        "edit_type": {
+          "$ref": "#/$defs/EditType"
+        },
+        "edited_allele": {
+          "maxLength": 50,
+          "title": "Edited Allele",
+          "type": "string"
+        },
+        "edited_tissues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Edited Tissues",
+          "type": "array"
+        },
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "mode": {
+          "$ref": "#/$defs/EditMode"
+        },
+        "off_target_modeled": {
+          "default": false,
+          "title": "Off Target Modeled",
+          "type": "boolean"
+        },
+        "reference_allele": {
+          "maxLength": 50,
+          "title": "Reference Allele",
+          "type": "string"
+        },
+        "sequence_id": {
+          "title": "Sequence Id",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "zygosity": {
+          "$ref": "#/$defs/Zygosity"
+        }
+      },
+      "required": [
+        "id",
+        "sequence_id",
+        "start",
+        "end",
+        "reference_allele",
+        "edited_allele",
+        "edit_type",
+        "zygosity",
+        "mode",
+        "edited_tissues",
+        "cell_fraction"
+      ],
+      "title": "EditObject",
+      "type": "object"
+    },
+    "EditType": {
+      "enum": [
+        "snv",
+        "insertion",
+        "deletion",
+        "delins"
+      ],
+      "title": "EditType",
+      "type": "string"
+    },
+    "EvidenceClass": {
+      "enum": [
+        "observed_interventional_human",
+        "observed_human_functional",
+        "observed_model_system",
+        "validated_computational_prediction",
+        "association",
+        "mechanistic_model_assumption",
+        "speculative_mapping"
+      ],
+      "title": "EvidenceClass",
+      "type": "string"
+    },
+    "EvidenceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "applicability_reference": {
+          "minLength": 1,
+          "title": "Applicability Reference",
+          "type": "string"
+        },
+        "claim": {
+          "minLength": 1,
+          "title": "Claim",
+          "type": "string"
+        },
+        "confidence": {
+          "$ref": "#/$defs/ConfidenceLevel"
+        },
+        "curation": {
+          "$ref": "#/$defs/CurationMetadata"
+        },
+        "evidence_class": {
+          "$ref": "#/$defs/EvidenceClass"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "identifier": {
+          "minLength": 1,
+          "title": "Identifier",
+          "type": "string"
+        },
+        "limitations": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "retrieval_timestamp": {
+          "format": "date-time",
+          "title": "Retrieval Timestamp",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "evidence_class",
+        "source",
+        "identifier",
+        "version",
+        "claim",
+        "applicability_reference",
+        "confidence",
+        "retrieval_timestamp",
+        "curation"
+      ],
+      "title": "EvidenceRecord",
+      "type": "object"
+    },
+    "KEGEdge": {
+      "additionalProperties": false,
+      "properties": {
+        "applicability_reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Applicability Reference"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "mapping_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mapping Version"
+        },
+        "model_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Version"
+        },
+        "relation_type": {
+          "minLength": 1,
+          "title": "Relation Type",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "time_scale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Scale"
+        },
+        "tissue": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tissue"
+        },
+        "transformation_reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transformation Reference"
+        },
+        "uncertainty_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uncertainty Note"
+        },
+        "units": {
+          "$ref": "#/$defs/EdgeUnits"
+        },
+        "validation_status": {
+          "$ref": "#/$defs/ValidationStatus",
+          "default": "unvalidated"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "target",
+        "relation_type",
+        "units"
+      ],
+      "title": "KEGEdge",
+      "type": "object"
+    },
+    "KEGNode": {
+      "additionalProperties": false,
+      "properties": {
+        "attributes": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Attributes",
+          "type": "object"
+        },
+        "baseline": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QuantityValue"
+            },
+            {
+              "$ref": "#/$defs/CategoricalValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Baseline"
+        },
+        "edit_reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Edit Reference"
+        },
+        "edited": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QuantityValue"
+            },
+            {
+              "$ref": "#/$defs/CategoricalValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Edited"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "model_contract_reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Contract Reference"
+        },
+        "model_contract_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Contract Version"
+        },
+        "model_parameter_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Parameter Id"
+        },
+        "node_type": {
+          "$ref": "#/$defs/NodeType"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QuantityValue"
+            },
+            {
+              "$ref": "#/$defs/CategoricalValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quantity"
+        },
+        "quantity_kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quantity Kind"
+        }
+      },
+      "required": [
+        "id",
+        "node_type",
+        "label"
+      ],
+      "title": "KEGNode",
+      "type": "object"
+    },
+    "NodeType": {
+      "enum": [
+        "genomic_edit",
+        "molecular_quantity",
+        "cellular_state",
+        "tissue_parameter",
+        "model_parameter",
+        "physiological_state",
+        "phenotype_endpoint"
+      ],
+      "title": "NodeType",
+      "type": "string"
+    },
+    "QuantityValue": {
+      "additionalProperties": false,
+      "description": "A unit-bearing scalar or supported C0 probability distribution.\n\n``mean`` and ``standard_deviation`` use linear-space parameters for normal\nquantities and log-space parameters for lognormal quantities.",
+      "properties": {
+        "alpha": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alpha"
+        },
+        "beta": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beta"
+        },
+        "correlation_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Correlation Group"
+        },
+        "distribution": {
+          "$ref": "#/$defs/DistributionType"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "mean": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mean"
+        },
+        "semantic_kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Semantic Kind"
+        },
+        "standard_deviation": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Standard Deviation"
+        },
+        "uncertainty": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/UncertaintyAnnotation"
+          },
+          "title": "Uncertainty",
+          "type": "array"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "distribution",
+        "unit"
+      ],
+      "title": "QuantityValue",
+      "type": "object"
+    },
+    "UncertaintyAnnotation": {
+      "additionalProperties": false,
+      "description": "A qualitative uncertainty annotation; numerical uncertainty is in QuantityValue.",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/UncertaintyType"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "UncertaintyAnnotation",
+      "type": "object"
+    },
+    "UncertaintyType": {
+      "enum": [
+        "measurement_uncertainty",
+        "biological_variability",
+        "parameter_uncertainty",
+        "model_uncertainty",
+        "evidence_uncertainty"
+      ],
+      "title": "UncertaintyType",
+      "type": "string"
+    },
+    "ValidationStatus": {
+      "enum": [
+        "unvalidated",
+        "validated",
+        "rejected"
+      ],
+      "title": "ValidationStatus",
+      "type": "string"
+    },
+    "Zygosity": {
+      "enum": [
+        "heterozygous",
+        "homozygous",
+        "hemizygous"
+      ],
+      "title": "Zygosity",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Canonical KEG v0 document; NetworkX is only a derived runtime view.",
+  "properties": {
+    "applicability_contexts": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ApplicabilityContext"
+      },
+      "title": "Applicability Contexts",
+      "type": "object"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/KEGEdge"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "edit": {
+      "$ref": "#/$defs/EditObject"
+    },
+    "evidence": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/EvidenceRecord"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/KEGNode"
+      },
+      "title": "Nodes",
+      "type": "array"
+    },
+    "result_node_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Result Node Ids",
+      "type": "array"
+    },
+    "schema_version": {
+      "default": "keg-v0",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "edit",
+    "nodes",
+    "edges",
+    "result_node_ids"
+  ],
+  "title": "KEGDocument",
+  "type": "object"
+}

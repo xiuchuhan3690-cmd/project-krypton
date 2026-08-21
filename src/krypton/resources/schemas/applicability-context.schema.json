@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "AgeRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_years": {
+          "minimum": 0,
+          "title": "Maximum Years",
+          "type": "number"
+        },
+        "minimum_years": {
+          "minimum": 0,
+          "title": "Minimum Years",
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum_years",
+        "maximum_years"
+      ],
+      "title": "AgeRange",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A set of allowed labels/ranges, or a candidate context for assessment.",
+  "properties": {
+    "age_range": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AgeRange"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "developmental_stage": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Developmental Stage",
+      "type": "array"
+    },
+    "disease_status": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Disease Status",
+      "type": "array"
+    },
+    "environmental_tags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Environmental Tags",
+      "type": "array"
+    },
+    "experimental_system": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Experimental System",
+      "type": "array"
+    },
+    "medications": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Medications",
+      "type": "array"
+    },
+    "population_ancestry": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Population Ancestry",
+      "type": "array"
+    },
+    "sex": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Sex",
+      "type": "array"
+    },
+    "tissue": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Tissue",
+      "type": "array"
+    }
+  },
+  "title": "ApplicabilityContext",
+  "type": "object"
+}

@@ -1,0 +1,51 @@
+{
+  "mapping_id": "mapping:activity-clearance",
+  "mapping_version": "1.0.0",
+  "mapping_digest": "02e0a0f6963608c9b7773f3f0e4192e57afb48d12c52fdd18f868fb65975f1b9",
+  "evidence_ids": [
+    "evidence:mock"
+  ],
+  "applicability_result": "in_domain",
+  "target": {
+    "contract_id": "contract:mock-pk",
+    "contract_version": "1.0.0",
+    "parameter_id": "clearance",
+    "biological_meaning": "Artificial total clearance",
+    "quantity_kind": "clearance",
+    "canonical_unit": "L/h",
+    "physical_dimension": "[length] ** 3 / [time]",
+    "valid_range": {
+      "minimum": 0.1,
+      "maximum": 100.0
+    }
+  },
+  "baseline": {
+    "distribution": "fixed",
+    "unit": "L/h",
+    "semantic_kind": "clearance",
+    "value": 10.0,
+    "lower": null,
+    "upper": null,
+    "mean": null,
+    "standard_deviation": null,
+    "alpha": null,
+    "beta": null,
+    "uncertainty": [],
+    "correlation_group": null
+  },
+  "edited": {
+    "distribution": "fixed",
+    "unit": "L/h",
+    "semantic_kind": "clearance",
+    "value": 4.0,
+    "lower": null,
+    "upper": null,
+    "mean": null,
+    "standard_deviation": null,
+    "alpha": null,
+    "beta": null,
+    "uncertainty": [],
+    "correlation_group": null
+  },
+  "warnings": []
+}

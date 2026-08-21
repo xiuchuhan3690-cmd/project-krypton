@@ -1,0 +1,109 @@
+schema_version: krypton-v1-public-migration-manifest-1
+migration_date: 2026-08-20
+canonical_source: private://project-krypton
+canonical_head: 8c03ec5d129bb438dfddf4b54f974349a76bf224
+canonical_branch: main
+public_staging_path: .
+owner_declaration:
+  status: CONFIRMED_BY_USER
+  project_authored_code_owner: USER
+  third_party_human_code_contributors: NONE_DECLARED_BY_USER
+included_paths:
+  - src/krypton/domain/{quantity,applicability,edit,evidence,consequence,provenance,categorical}.py
+  - src/krypton/{keg,mpt,models,registry,adapters,orchestration}/ selected generic C0 architecture
+  - tests/ selected external-data-independent C0 contracts and synthetic migration guards
+  - fixtures/{valid,invalid,reference}/ selected synthetic C0 fixtures
+  - schemas/ public-core Draft 2020-12 contracts
+  - examples/c0_mock/
+  - evidence_metadata/ reference-only source metadata
+  - scripts/ public schema export and boundary verifier
+  - registry/models/mock_pk_v1.json
+  - LICENSE, NOTICE, THIRD_PARTY_NOTICES.md, README.md, docs/, pyproject.toml, requirements.lock
+excluded_paths:
+  - canonical .git and all five private milestone commits
+  - evidence/
+  - artifacts/
+  - fixtures/c1/, fixtures/c2/, fixtures/c3a/, fixtures/c3b/
+  - registry/calibrations/, registry/mpt/, scientific model registries and frozen mappings
+  - vocabularies/c1/
+  - src/krypton/c2/, src/krypton/c3a/, src/krypton/c3b/
+  - C1-C3B scientific workflows, source-specific tests, models, outputs, and digest verifiers
+  - external source PDFs, tables, figures, supplements, datasets, and exact extracted values
+reference_only_sources:
+  manifest: evidence_metadata/krypton_v1_external_source_reference_manifest.yaml
+  policy: citations, identifiers, versions, locators, roles, and regeneration instructions only
+third_party_code_findings:
+  manifest: krypton_v1_third_party_code_audit.yaml
+  result: CLEAR
+  copied_code: NONE_FOUND
+  vendored_code: NONE_FOUND
+external_data_migrations:
+  - canonical_artifact_id: c1-cyp2c19-identifier-star-function-evidence-family
+    canonical_private_paths: [evidence/c1, artifacts/c1, fixtures/c1, vocabularies/c1]
+    public_representation_id: reference:c1-cyp2c19-source-family
+    scientific_role: genomic identity, star definition, categorical function consensus
+    reason_for_nonredistribution: owner policy excludes all external scientific data regardless of source license
+    regeneration_method: obtain the pinned database releases, reconstruct locally under canonical schemas, and verify local SHA-256
+  - canonical_artifact_id: c2-s-mephenytoin-evidence-and-derived-envelope-family
+    canonical_private_paths: [evidence/c2, artifacts/c2, fixtures/c2, registry/mpt/cyp2c19_diplotype_to_smephenytoin_relative_capacity_v0.1.0.json]
+    public_representation_id: reference:c2-s-mephenytoin-source-family
+    scientific_role: quantitative group summaries, transformations, categorical-to-quantitative mapping
+    reason_for_nonredistribution: exact paper-derived cells and digest-coupled derived scientific artifacts are private
+    regeneration_method: lawfully extract preserved decimal source values, execute canonical transformations locally, and verify local SHA-256
+  - canonical_artifact_id: c3a-pantoprazole-systemic-pk-family
+    canonical_private_paths: [evidence/c3a, artifacts/c3a, fixtures/c3a, registry/models/c3a, registry/mpt/c3a]
+    public_representation_id: reference:c3a-pantoprazole-pk-source-family
+    scientific_role: model calibration, validation, uncertainty, and canonical paired outputs
+    reason_for_nonredistribution: paper-derived parameters, summaries, and their scientific descendants are private under owner policy
+    regeneration_method: obtain cited sources, create local source artifacts, execute private verified pipeline, and validate canonical/local digests separately
+  - canonical_artifact_id: c3b-pantoprazole-gastric-pd-family
+    canonical_private_paths: [evidence/c3b, artifacts/c3b, fixtures/c3b, registry/models/c3b, registry/calibrations/c3b]
+    public_representation_id: reference:c3b-pantoprazole-gastric-source-family
+    scientific_role: target turnover, observation calibration, restricted validation, provenance, completion matrix
+    reason_for_nonredistribution: source-derived calibration/benchmark values and digest-coupled outputs are private
+    regeneration_method: lawfully reconstruct the private pack and run the unchanged restricted workflow; no full C3B demo is shipped
+digest_policy:
+  PRIVATE_CANONICAL_HASH: immutable digest recorded and verified in the private repository; not presented as a public metadata hash
+  PUBLIC_METADATA_HASH: SHA-256 of the reference-only public metadata artifact
+  LOCAL_REGENERATION_HASH: SHA-256 validated by the public local-pack loader against the user's local manifest
+  prohibition: never substitute or relabel a public metadata digest as a canonical scientific digest
+test_classification:
+  manifest: krypton_v1_public_test_manifest.yaml
+  CANONICAL_PRIVATE_TESTS: 1184
+  PUBLIC_CORE_TESTS: 176
+  PUBLIC_LOCAL_EVIDENCE_TESTS: 0
+  PRIVATE_ONLY_TESTS: 1008
+  PUBLIC_MIGRATION_GUARD_TESTS: 9
+  PUBLIC_STAGING_TOTAL_TESTS: 185
+scientific_state:
+  C0: COMPLETE
+  C1: COMPLETE
+  C2: COMPLETE
+  C3A: COMPLETE
+  C3B: RESTRICTED_COMPLETE
+  route_gate: USABLE_WITH_STATED_SCOPE
+  validation_maturity: EXTERNAL_DESCRIPTIVE_SUPPORT
+  completion_row_30: BLOCKED
+  completion_row_31: BLOCKED
+  model_contradiction: false
+  C4: NOT_INCLUDED
+history_policy:
+  decision: NEW_PUBLIC_HISTORY_RECOMMENDED
+  canonical_private_history: PRESERVE_UNCHANGED_AND_DO_NOT_PUSH
+  public_git_repository_initialized: false
+  remote_added: false
+  commit_created: false
+  tag_or_release_created: false
+license_boundary:
+  project_authored_software_and_documentation: Apache-2.0
+  external_scientific_data: NOT_DISTRIBUTED
+  external_source_metadata: citation_and_provenance_only_not_relicensed
+  external_dependencies: original_upstream_licenses
+gates:
+  rights_safe_migration: RIGHTS_SAFE_MIGRATION_PASS_WITH_RESTRICTIONS
+  release_task_1: RELEASE_TASK1_PASS_WITH_RESTRICTIONS
+restrictions:
+  - complete C1-C3B scientific reproduction requires a lawfully constructed private local evidence pack
+  - public software alone does not support a general DNA consequence prediction validation claim
+  - Rows 30 and 31 remain BLOCKED and C3B maturity remains EXTERNAL_DESCRIPTIVE_SUPPORT
+  - public history must start new; canonical private Git history must never be pushed

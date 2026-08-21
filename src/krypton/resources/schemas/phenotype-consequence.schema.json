@@ -1,0 +1,421 @@
+{
+  "$defs": {
+    "ApplicabilityResult": {
+      "enum": [
+        "in_domain",
+        "partial",
+        "out_of_domain",
+        "unknown"
+      ],
+      "title": "ApplicabilityResult",
+      "type": "string"
+    },
+    "ConfidenceLevel": {
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "indeterminate"
+      ],
+      "title": "ConfidenceLevel",
+      "type": "string"
+    },
+    "DistributionType": {
+      "enum": [
+        "fixed",
+        "interval",
+        "normal",
+        "lognormal",
+        "beta"
+      ],
+      "title": "DistributionType",
+      "type": "string"
+    },
+    "EvidenceClass": {
+      "enum": [
+        "observed_interventional_human",
+        "observed_human_functional",
+        "observed_model_system",
+        "validated_computational_prediction",
+        "association",
+        "mechanistic_model_assumption",
+        "speculative_mapping"
+      ],
+      "title": "EvidenceClass",
+      "type": "string"
+    },
+    "EvidencePathEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_class": {
+          "$ref": "#/$defs/EvidenceClass"
+        },
+        "evidence_id": {
+          "minLength": 1,
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "keg_edge_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Keg Edge Ids",
+          "type": "array"
+        },
+        "mapping_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mapping Id"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "evidence_class"
+      ],
+      "title": "EvidencePathEntry",
+      "type": "object"
+    },
+    "ModelVersionReference": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Digest",
+          "type": "string"
+        },
+        "contract_id": {
+          "minLength": 1,
+          "title": "Contract Id",
+          "type": "string"
+        },
+        "model_name": {
+          "minLength": 1,
+          "title": "Model Name",
+          "type": "string"
+        },
+        "model_version": {
+          "minLength": 1,
+          "title": "Model Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model_name",
+        "model_version",
+        "contract_id",
+        "artifact_digest"
+      ],
+      "title": "ModelVersionReference",
+      "type": "object"
+    },
+    "PredictedDirection": {
+      "enum": [
+        "increase",
+        "decrease",
+        "no_change",
+        "indeterminate"
+      ],
+      "title": "PredictedDirection",
+      "type": "string"
+    },
+    "QuantityValue": {
+      "additionalProperties": false,
+      "description": "A unit-bearing scalar or supported C0 probability distribution.\n\n``mean`` and ``standard_deviation`` use linear-space parameters for normal\nquantities and log-space parameters for lognormal quantities.",
+      "properties": {
+        "alpha": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alpha"
+        },
+        "beta": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beta"
+        },
+        "correlation_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Correlation Group"
+        },
+        "distribution": {
+          "$ref": "#/$defs/DistributionType"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "mean": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mean"
+        },
+        "semantic_kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Semantic Kind"
+        },
+        "standard_deviation": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Standard Deviation"
+        },
+        "uncertainty": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/UncertaintyAnnotation"
+          },
+          "title": "Uncertainty",
+          "type": "array"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "distribution",
+        "unit"
+      ],
+      "title": "QuantityValue",
+      "type": "object"
+    },
+    "UncertaintyAnnotation": {
+      "additionalProperties": false,
+      "description": "A qualitative uncertainty annotation; numerical uncertainty is in QuantityValue.",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/UncertaintyType"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "UncertaintyAnnotation",
+      "type": "object"
+    },
+    "UncertaintyType": {
+      "enum": [
+        "measurement_uncertainty",
+        "biological_variability",
+        "parameter_uncertainty",
+        "model_uncertainty",
+        "evidence_uncertainty"
+      ],
+      "title": "UncertaintyType",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "applicability_assessment": {
+      "$ref": "#/$defs/ApplicabilityResult"
+    },
+    "baseline": {
+      "$ref": "#/$defs/QuantityValue"
+    },
+    "confidence": {
+      "$ref": "#/$defs/ConfidenceLevel"
+    },
+    "confidence_ceiling_reasons": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Confidence Ceiling Reasons",
+      "type": "array"
+    },
+    "delta": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "delta_propagated": {
+      "default": true,
+      "title": "Delta Propagated",
+      "type": "boolean"
+    },
+    "edited": {
+      "$ref": "#/$defs/QuantityValue"
+    },
+    "endpoint": {
+      "minLength": 1,
+      "title": "Endpoint",
+      "type": "string"
+    },
+    "evidence_path": {
+      "items": {
+        "$ref": "#/$defs/EvidencePathEntry"
+      },
+      "title": "Evidence Path",
+      "type": "array"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "major_uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Major Uncertainties",
+      "type": "array"
+    },
+    "model_versions": {
+      "items": {
+        "$ref": "#/$defs/ModelVersionReference"
+      },
+      "title": "Model Versions",
+      "type": "array"
+    },
+    "out_of_domain_flags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Out Of Domain Flags",
+      "type": "array"
+    },
+    "predicted_direction": {
+      "$ref": "#/$defs/PredictedDirection"
+    },
+    "provenance_reference": {
+      "minLength": 1,
+      "title": "Provenance Reference",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "phenotype-consequence-v0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "time_horizon": {
+      "minLength": 1,
+      "title": "Time Horizon",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "endpoint",
+    "baseline",
+    "edited",
+    "delta",
+    "predicted_direction",
+    "time_horizon",
+    "confidence",
+    "applicability_assessment",
+    "major_uncertainties",
+    "evidence_path",
+    "model_versions",
+    "provenance_reference"
+  ],
+  "title": "PhenotypeConsequence",
+  "type": "object"
+}

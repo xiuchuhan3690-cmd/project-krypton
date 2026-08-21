@@ -1,0 +1,694 @@
+{
+  "$defs": {
+    "AgeRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_years": {
+          "minimum": 0,
+          "title": "Maximum Years",
+          "type": "number"
+        },
+        "minimum_years": {
+          "minimum": 0,
+          "title": "Minimum Years",
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum_years",
+        "maximum_years"
+      ],
+      "title": "AgeRange",
+      "type": "object"
+    },
+    "ApplicabilityContext": {
+      "additionalProperties": false,
+      "description": "A set of allowed labels/ranges, or a candidate context for assessment.",
+      "properties": {
+        "age_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AgeRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "developmental_stage": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Developmental Stage",
+          "type": "array"
+        },
+        "disease_status": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Disease Status",
+          "type": "array"
+        },
+        "environmental_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Environmental Tags",
+          "type": "array"
+        },
+        "experimental_system": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Experimental System",
+          "type": "array"
+        },
+        "medications": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Medications",
+          "type": "array"
+        },
+        "population_ancestry": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Population Ancestry",
+          "type": "array"
+        },
+        "sex": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sex",
+          "type": "array"
+        },
+        "tissue": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Tissue",
+          "type": "array"
+        }
+      },
+      "title": "ApplicabilityContext",
+      "type": "object"
+    },
+    "ApplicabilityResult": {
+      "enum": [
+        "in_domain",
+        "partial",
+        "out_of_domain",
+        "unknown"
+      ],
+      "title": "ApplicabilityResult",
+      "type": "string"
+    },
+    "CategoricalDirection": {
+      "enum": [
+        "increased",
+        "decreased",
+        "unchanged",
+        "indeterminate"
+      ],
+      "title": "CategoricalDirection",
+      "type": "string"
+    },
+    "CategoricalEffect": {
+      "additionalProperties": false,
+      "description": "A qualitative comparison; direction is never numerical subtraction.",
+      "properties": {
+        "applicability": {
+          "$ref": "#/$defs/ApplicabilityContext"
+        },
+        "baseline": {
+          "$ref": "#/$defs/CategoricalValue"
+        },
+        "direction": {
+          "$ref": "#/$defs/CategoricalDirection"
+        },
+        "edited": {
+          "$ref": "#/$defs/CategoricalValue"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "mapping_id": {
+          "minLength": 1,
+          "title": "Mapping Id",
+          "type": "string"
+        },
+        "mapping_version": {
+          "minLength": 1,
+          "title": "Mapping Version",
+          "type": "string"
+        },
+        "reason_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason Code"
+        },
+        "result_type": {
+          "const": "categorical_effect",
+          "title": "Result Type",
+          "type": "string"
+        },
+        "target_semantic_kind": {
+          "minLength": 1,
+          "title": "Target Semantic Kind",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "result_type",
+        "target_semantic_kind",
+        "baseline",
+        "edited",
+        "direction",
+        "mapping_id",
+        "mapping_version",
+        "evidence_ids",
+        "applicability",
+        "warnings"
+      ],
+      "title": "CategoricalEffect",
+      "type": "object"
+    },
+    "CategoricalValue": {
+      "additionalProperties": false,
+      "description": "A non-numerical value identified by an external or project vocabulary.\n\nThe public core deliberately contains no biological vocabulary members. A\nlocal evidence pack is responsible for validating values against its pinned\nvocabulary before constructing this object.",
+      "properties": {
+        "kind": {
+          "const": "categorical",
+          "title": "Kind",
+          "type": "string"
+        },
+        "value": {
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        },
+        "vocabulary_id": {
+          "minLength": 1,
+          "title": "Vocabulary Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "vocabulary_id",
+        "value"
+      ],
+      "title": "CategoricalValue",
+      "type": "object"
+    },
+    "DistributionType": {
+      "enum": [
+        "fixed",
+        "interval",
+        "normal",
+        "lognormal",
+        "beta"
+      ],
+      "title": "DistributionType",
+      "type": "string"
+    },
+    "MPTResult": {
+      "additionalProperties": false,
+      "properties": {
+        "applicability_result": {
+          "$ref": "#/$defs/ApplicabilityResult"
+        },
+        "baseline": {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        "edited": {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "mapping_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Mapping Digest",
+          "type": "string"
+        },
+        "mapping_id": {
+          "title": "Mapping Id",
+          "type": "string"
+        },
+        "mapping_version": {
+          "title": "Mapping Version",
+          "type": "string"
+        },
+        "target": {
+          "$ref": "#/$defs/TargetParameterReference"
+        },
+        "warnings": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "mapping_id",
+        "mapping_version",
+        "mapping_digest",
+        "evidence_ids",
+        "applicability_result",
+        "target",
+        "baseline",
+        "edited"
+      ],
+      "title": "MPTResult",
+      "type": "object"
+    },
+    "ParameterRange": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maximum"
+        },
+        "minimum": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum"
+        }
+      },
+      "title": "ParameterRange",
+      "type": "object"
+    },
+    "QuantitativeBiologicalEffect": {
+      "additionalProperties": false,
+      "description": "A model-independent quantitative biological comparison.",
+      "properties": {
+        "applicability_reference": {
+          "minLength": 1,
+          "title": "Applicability Reference",
+          "type": "string"
+        },
+        "applicability_result": {
+          "$ref": "#/$defs/ApplicabilityResult"
+        },
+        "baseline": {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        "edited": {
+          "$ref": "#/$defs/QuantityValue"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "mapping_id": {
+          "minLength": 1,
+          "title": "Mapping Id",
+          "type": "string"
+        },
+        "mapping_version": {
+          "minLength": 1,
+          "title": "Mapping Version",
+          "type": "string"
+        },
+        "quantitative_semantics": {
+          "$ref": "#/$defs/QuantitativeResultSemantics"
+        },
+        "result_type": {
+          "const": "quantitative_biological_effect",
+          "title": "Result Type",
+          "type": "string"
+        },
+        "target_biological_quantity_kind": {
+          "minLength": 1,
+          "title": "Target Biological Quantity Kind",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "result_type",
+        "target_biological_quantity_kind",
+        "baseline",
+        "edited",
+        "mapping_id",
+        "mapping_version",
+        "evidence_ids",
+        "applicability_result",
+        "applicability_reference",
+        "quantitative_semantics",
+        "warnings"
+      ],
+      "title": "QuantitativeBiologicalEffect",
+      "type": "object"
+    },
+    "QuantitativeResultSemantics": {
+      "additionalProperties": false,
+      "description": "Closed semantics for the approved non-distribution biological interval.",
+      "properties": {
+        "confidence_interval": {
+          "const": "not_estimated",
+          "title": "Confidence Interval",
+          "type": "string"
+        },
+        "individual_prediction_distribution": {
+          "const": "not_estimated",
+          "title": "Individual Prediction Distribution",
+          "type": "string"
+        },
+        "interval_semantics": {
+          "const": "between_study_normalized_group_mean_envelope",
+          "title": "Interval Semantics",
+          "type": "string"
+        },
+        "population_distribution": {
+          "const": "not_estimated",
+          "title": "Population Distribution",
+          "type": "string"
+        }
+      },
+      "required": [
+        "interval_semantics",
+        "population_distribution",
+        "individual_prediction_distribution",
+        "confidence_interval"
+      ],
+      "title": "QuantitativeResultSemantics",
+      "type": "object"
+    },
+    "QuantityValue": {
+      "additionalProperties": false,
+      "description": "A unit-bearing scalar or supported C0 probability distribution.\n\n``mean`` and ``standard_deviation`` use linear-space parameters for normal\nquantities and log-space parameters for lognormal quantities.",
+      "properties": {
+        "alpha": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alpha"
+        },
+        "beta": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beta"
+        },
+        "correlation_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Correlation Group"
+        },
+        "distribution": {
+          "$ref": "#/$defs/DistributionType"
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lower"
+        },
+        "mean": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mean"
+        },
+        "semantic_kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Semantic Kind"
+        },
+        "standard_deviation": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Standard Deviation"
+        },
+        "uncertainty": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/UncertaintyAnnotation"
+          },
+          "title": "Uncertainty",
+          "type": "array"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Upper"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "distribution",
+        "unit"
+      ],
+      "title": "QuantityValue",
+      "type": "object"
+    },
+    "TargetParameterReference": {
+      "additionalProperties": false,
+      "description": "MPT's narrow boundary reference to a future model contract parameter.",
+      "properties": {
+        "biological_meaning": {
+          "minLength": 1,
+          "title": "Biological Meaning",
+          "type": "string"
+        },
+        "canonical_unit": {
+          "minLength": 1,
+          "title": "Canonical Unit",
+          "type": "string"
+        },
+        "contract_id": {
+          "minLength": 1,
+          "title": "Contract Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "minLength": 1,
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "parameter_id": {
+          "minLength": 1,
+          "title": "Parameter Id",
+          "type": "string"
+        },
+        "physical_dimension": {
+          "minLength": 1,
+          "title": "Physical Dimension",
+          "type": "string"
+        },
+        "quantity_kind": {
+          "minLength": 1,
+          "title": "Quantity Kind",
+          "type": "string"
+        },
+        "valid_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ParameterRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "contract_id",
+        "contract_version",
+        "parameter_id",
+        "biological_meaning",
+        "quantity_kind",
+        "canonical_unit",
+        "physical_dimension"
+      ],
+      "title": "TargetParameterReference",
+      "type": "object"
+    },
+    "UncertaintyAnnotation": {
+      "additionalProperties": false,
+      "description": "A qualitative uncertainty annotation; numerical uncertainty is in QuantityValue.",
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/UncertaintyType"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "description"
+      ],
+      "title": "UncertaintyAnnotation",
+      "type": "object"
+    },
+    "UncertaintyType": {
+      "enum": [
+        "measurement_uncertainty",
+        "biological_variability",
+        "parameter_uncertainty",
+        "model_uncertainty",
+        "evidence_uncertainty"
+      ],
+      "title": "UncertaintyType",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "$ref": "#/$defs/MPTResult"
+    },
+    {
+      "$ref": "#/$defs/CategoricalEffect"
+    },
+    {
+      "$ref": "#/$defs/QuantitativeBiologicalEffect"
+    }
+  ],
+  "description": "Validation wrapper for the backward-compatible MPT result union.",
+  "title": "MPTResultUnion"
+}

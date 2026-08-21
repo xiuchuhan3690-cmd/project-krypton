@@ -1,0 +1,130 @@
+{
+  "$defs": {
+    "ConfidenceLevel": {
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "indeterminate"
+      ],
+      "title": "ConfidenceLevel",
+      "type": "string"
+    },
+    "CurationMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "curated_at": {
+          "format": "date-time",
+          "title": "Curated At",
+          "type": "string"
+        },
+        "curator": {
+          "minLength": 1,
+          "title": "Curator",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "curator",
+        "curated_at"
+      ],
+      "title": "CurationMetadata",
+      "type": "object"
+    },
+    "EvidenceClass": {
+      "enum": [
+        "observed_interventional_human",
+        "observed_human_functional",
+        "observed_model_system",
+        "validated_computational_prediction",
+        "association",
+        "mechanistic_model_assumption",
+        "speculative_mapping"
+      ],
+      "title": "EvidenceClass",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "applicability_reference": {
+      "minLength": 1,
+      "title": "Applicability Reference",
+      "type": "string"
+    },
+    "claim": {
+      "minLength": 1,
+      "title": "Claim",
+      "type": "string"
+    },
+    "confidence": {
+      "$ref": "#/$defs/ConfidenceLevel"
+    },
+    "curation": {
+      "$ref": "#/$defs/CurationMetadata"
+    },
+    "evidence_class": {
+      "$ref": "#/$defs/EvidenceClass"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "identifier": {
+      "minLength": 1,
+      "title": "Identifier",
+      "type": "string"
+    },
+    "limitations": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "retrieval_timestamp": {
+      "format": "date-time",
+      "title": "Retrieval Timestamp",
+      "type": "string"
+    },
+    "source": {
+      "minLength": 1,
+      "title": "Source",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "evidence_class",
+    "source",
+    "identifier",
+    "version",
+    "claim",
+    "applicability_reference",
+    "confidence",
+    "retrieval_timestamp",
+    "curation"
+  ],
+  "title": "EvidenceRecord",
+  "type": "object"
+}

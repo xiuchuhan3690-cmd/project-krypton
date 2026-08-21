@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible defect in the public software.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not upload patient data, genotype datasets, credentials, private evidence packs, publisher files, or confidential scientific data.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the observed and expected behavior using synthetic inputs.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Project Krypton version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal synthetic reproduction
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data and security check
+      options:
+        - label: This report contains no patient, genotype, private scientific, credential, or confidential material.
+          required: true

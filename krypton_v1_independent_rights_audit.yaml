@@ -1,0 +1,276 @@
+{
+  "schema_version": "krypton-v1-independent-final-rights-publication-audit-1",
+  "audit_date": "2026-08-21",
+  "software_version": "1.0.0",
+  "audit_mode": "READ_ONLY_ANALYSIS_WITH_ADDITIVE_AUDIT_ARTIFACTS_ONLY",
+  "gate": "PUBLICATION_RIGHTS_AUDIT_PASS_WITH_ACTIONS",
+  "candidate_identifiers": {
+    "pre_existing_file_count": 140,
+    "pre_existing_inventory_sha256": "ce605abd08187f17a70c32b5b8981f6b6086ecc0d965dd3733c6a5a9d3ef1f9f",
+    "wheel": {
+      "filename": "project_krypton-1.0.0-py3-none-any.whl",
+      "sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469",
+      "file_count": 72
+    },
+    "sdist": {
+      "filename": "project_krypton-1.0.0.tar.gz",
+      "sha256": "3ed9a075c88fbda86c52d13a21ed8616be80c1693fb952dde65e6a354c8eacc8",
+      "file_count": 131
+    },
+    "canonical_private_provenance": {
+      "branch": "main",
+      "commit": "8c03ec5d129bb438dfddf4b54f974349a76bf224",
+      "worktree": "clean"
+    }
+  },
+  "findings": [
+    {
+      "id": "RIGHTS-001",
+      "title": "No redistributed external scientific dataset identified",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "affected_files": [
+        "public source tree",
+        "exact wheel",
+        "exact sdist"
+      ],
+      "evidence": "Independent text, extension, binary, archive, fixture, registry, and reconstruction-risk review found only citation/provenance metadata. Scientific names and identifiers outside scope prose are confined to the source-reference manifest; no extracted values, tables, figures, PDFs, spreadsheets, databases, or private evidence artifacts are present.",
+      "remediation": "none"
+    },
+    {
+      "id": "RIGHTS-002",
+      "title": "External scientific source record is metadata-only",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "affected_files": [
+        "evidence_metadata/krypton_v1_external_source_reference_manifest.yaml"
+      ],
+      "evidence": "The manifest contains bibliographic identity, DOI/PMID/accession/URL/version, source role, retrieval instructions, and private relative locator metadata; it contains no substantive source expression or extracted scientific value.",
+      "remediation": "retain citation/provenance framing and do not add extracted values without a new rights determination"
+    },
+    {
+      "id": "RIGHTS-003",
+      "title": "No third-party or vendored source code identified",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "affected_files": [
+        "src",
+        "tests",
+        "scripts",
+        "examples",
+        "Dockerfile",
+        "pyproject.toml"
+      ],
+      "evidence": "Complete marker/import review found no copied/adapted-from statement, foreign copyright header, vendored library, embedded external license, upstream source comment, or undeclared import. Absence of markers is not treated as proof; provenance is strongly supported, not confirmed.",
+      "remediation": "none technically; owner provenance attestation remains a human action"
+    },
+    {
+      "id": "RIGHTS-004",
+      "title": "Fixtures and representative demo are synthetic",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "affected_files": [
+        "src/krypton/resources/fixtures",
+        "src/krypton/resources/registry/models/mock_pk_v1.json",
+        "src/krypton/orchestration/c0_mock.py",
+        "src/krypton/demo.py",
+        "examples/c0_mock/run.py"
+      ],
+      "evidence": "All fixture values were inspected. They use internal-mock labels, artificial identifiers, placeholders, and a chr22 mock coordinate, with explicit not-biological warnings. The deterministic 10/25/+15 output follows the artificial AUC=dose/clearance equation and contains no private route data.",
+      "remediation": "none"
+    },
+    {
+      "id": "RIGHTS-005",
+      "title": "Public schemas are generated from Project contracts",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "affected_files": [
+        "src/krypton/resources/schemas"
+      ],
+      "evidence": "All eleven schema JSON objects exactly matched in-memory Pydantic model_json_schema output plus the Draft 2020-12 identifier. No third-party application schema was copied.",
+      "remediation": "none"
+    },
+    {
+      "id": "RIGHTS-006",
+      "title": "Dependencies are references and external installations, not bundled payload",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "affected_files": [
+        "pyproject.toml",
+        "requirements.lock",
+        "wheel METADATA",
+        "krypton_v1_dependency_license_audit.yaml"
+      ],
+      "evidence": "The 24 exact lock records were audited against installed distribution metadata/license files and exact-version PyPI/upstream metadata where necessary. The wheel and sdist contain no dependency code or dependency distributions. MPL-2.0 pathspec is a build-only external install and does not impose its license on Krypton source.",
+      "remediation": "continue to keep dependencies external and preserve upstream license metadata when redistributing any dependency distribution"
+    },
+    {
+      "id": "RIGHTS-007",
+      "title": "Apache-2.0 license and notices accurately delimit the licensed work",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "affected_files": [
+        "LICENSE",
+        "NOTICE",
+        "THIRD_PARTY_NOTICES.md",
+        "wheel dist-info/licenses"
+      ],
+      "evidence": "LICENSE contains the Apache-2.0 terms through Sections 1-9 and END OF TERMS. The omitted application appendix is optional under SPDX matching guidance. NOTICE does not claim ownership of external science or dependencies, and the wheel carries all three license/notice files.",
+      "remediation": "none"
+    },
+    {
+      "id": "RIGHTS-008",
+      "title": "AI-assisted authorship legal status is not technically determinable",
+      "rights_classification": "NEEDS_CLARIFICATION",
+      "severity": "MEDIUM",
+      "affected_files": [
+        "Project-authored source",
+        "tests",
+        "scripts",
+        "schemas and fixtures",
+        "documentation"
+      ],
+      "evidence": "Canonical history contains five commits under one Codex local identity and no co-author marker. Technical inspection supports consistent Project origin but cannot establish contractual output rights, copyrightability, ability to license, or whether unrecorded external prompt material was supplied.",
+      "status_code": "AI_ASSISTED_AUTHORSHIP_LEGAL_STATUS_NOT_DETERMINED",
+      "remediation": "Before public release, the owner must attest that they supplied or controlled the inputs, have reviewed the material, know of no unlicensed third-party content, and have authority to offer the Project-authored portions under Apache-2.0. Obtain legal advice if that attestation cannot be made."
+    },
+    {
+      "id": "RIGHTS-009",
+      "title": "Public author identity and publication endpoints are intentionally unresolved",
+      "rights_classification": "NEEDS_CLARIFICATION",
+      "severity": "LOW",
+      "affected_files": [
+        "NOTICE",
+        "CITATION.cff",
+        "pyproject.toml",
+        "README.md",
+        "krypton_v1_release_metadata.yaml",
+        "wheel METADATA",
+        "future GitHub, Zenodo, and SoftwareX metadata"
+      ],
+      "evidence": "The generic entity-style name is consistent and no personal email, ORCID, repository URL, DOI, or security email is fabricated.",
+      "remediation": "Coordinate the final public/legal author identity, ORCID choice, repository URL, and security contact across all publication surfaces before public release or deposition."
+    },
+    {
+      "id": "RIGHTS-010",
+      "title": "No third-party human code contributor identified",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "affected_files": [
+        "canonical five-commit provenance",
+        "public candidate"
+      ],
+      "evidence": "One Codex local commit identity, no Co-authored-by or Signed-off-by marker, no foreign author header, and no contributor identity was found.",
+      "statement": "NO THIRD-PARTY HUMAN CODE CONTRIBUTOR IDENTIFIED",
+      "remediation": "none; this does not assert that no unrecorded contributor exists"
+    },
+    {
+      "id": "RIGHTS-011",
+      "title": "Exact archives are independently publication-boundary clean",
+      "rights_classification": "CLEAR_WITH_ATTRIBUTION",
+      "severity": "INFO",
+      "affected_files": [
+        "dist/project_krypton-1.0.0-py3-none-any.whl",
+        "dist/project_krypton-1.0.0.tar.gz"
+      ],
+      "evidence": "Wheel: 72 safe members, 68 byte-identical source/license files and 4 generated metadata files. Sdist: 131 safe members, 130 byte-identical candidate files and generated PKG-INFO. Both have no path traversal, links, Git data, dependency payload, private evidence, secret, personal path, or unexpected binary.",
+      "remediation": "none"
+    },
+    {
+      "id": "RIGHTS-012",
+      "title": "No secret or unintended personal information identified",
+      "rights_classification": "CLEAR",
+      "severity": "INFO",
+      "affected_files": [
+        "all 140 pre-existing candidate files",
+        "exact wheel and sdist contents"
+      ],
+      "evidence": "Independent secret, credential, private-key, email, account identifier, local absolute path, Windows username, environment-history, and secret-like filename scans produced no material finding. Detector regex literals were reviewed as false positives.",
+      "remediation": "none"
+    }
+  ],
+  "publication_readiness": {
+    "SOURCE_CODE_RIGHTS": {
+      "conclusion": "CLEAR subject to owner AI-assisted provenance/authority attestation",
+      "supporting_evidence": "complete source/import/marker review, archive source matching, and five-commit provenance",
+      "unresolved_issues": ["contractual output rights and absence of unrecorded external prompt content are not technically determinable"],
+      "blocks_publication": false
+    },
+    "DOCUMENTATION_RIGHTS": {
+      "conclusion": "CLEAR subject to the same owner provenance attestation",
+      "supporting_evidence": "complete prose review and exact-phrase sampling found no copied expression",
+      "unresolved_issues": ["human attestation of AI-assisted text provenance"],
+      "blocks_publication": false
+    },
+    "SCIENTIFIC_DATA_RIGHTS": {
+      "conclusion": "CLEAR",
+      "supporting_evidence": "no external scientific data; only metadata and private regeneration instructions",
+      "unresolved_issues": [],
+      "blocks_publication": false
+    },
+    "FIXTURE_SCHEMA_RIGHTS": {
+      "conclusion": "CLEAR",
+      "supporting_evidence": "fixtures are synthetic; schemas exactly regenerate from Project models",
+      "unresolved_issues": [],
+      "blocks_publication": false
+    },
+    "DEPENDENCY_LICENSE_BOUNDARY": {
+      "conclusion": "CLEAR_WITH_ATTRIBUTION",
+      "supporting_evidence": "24-record exact lock audit; dependencies external and not vendored/bundled",
+      "unresolved_issues": [],
+      "blocks_publication": false
+    },
+    "LICENSE_NOTICE_COMPLIANCE": {
+      "conclusion": "CLEAR_WITH_ATTRIBUTION",
+      "supporting_evidence": "Apache-2.0 terms and accurate NOTICE/third-party boundaries are present in source and wheel",
+      "unresolved_issues": ["generic owner attribution must be finalized before release"],
+      "blocks_publication": false
+    },
+    "ARCHIVE_RIGHTS": {
+      "conclusion": "CLEAR_WITH_ATTRIBUTION",
+      "supporting_evidence": "independent member-by-member wheel and sdist extraction audit",
+      "unresolved_issues": [],
+      "blocks_publication": false
+    },
+    "AI_ASSISTED_PROVENANCE": {
+      "conclusion": "NEEDS_CLARIFICATION",
+      "supporting_evidence": "one Codex local Git identity and owner declaration; no third-party marker",
+      "unresolved_issues": ["contractual output rights", "copyrightability", "ability to license", "unrecorded external prompt/input provenance"],
+      "blocks_publication": false
+    },
+    "PUBLIC_AUTHORSHIP_METADATA": {
+      "conclusion": "NEEDS_CLARIFICATION",
+      "supporting_evidence": "consistent generic entity-style attribution with no fabricated personal identity",
+      "unresolved_issues": ["final public/legal name", "ORCID decision", "repository URL", "security contact/path"],
+      "blocks_publication": false
+    },
+    "GITHUB_PUBLICATION": {
+      "conclusion": "RIGHTS-SUPPORTABLE AFTER REQUIRED HUMAN ACTIONS",
+      "supporting_evidence": "staging has no .git and contains no private history/object/branch/evidence payload",
+      "unresolved_issues": ["owner identity/attestation", "repository URL", "security reporting path"],
+      "blocks_publication": false
+    },
+    "ZENODO_ARCHIVAL": {
+      "conclusion": "RIGHTS-SUPPORTABLE AFTER REQUIRED HUMAN ACTIONS",
+      "supporting_evidence": "exact wheel and sdist pass redistribution boundary audit",
+      "unresolved_issues": ["owner identity/ORCID choice", "account/deposition action", "final repository/release metadata"],
+      "blocks_publication": false
+    },
+    "SOFTWARE_PAPER_PUBLICATION": {
+      "conclusion": "PUBLICATION-RIGHTS BASIS SUPPORTABLE AFTER REQUIRED HUMAN ACTIONS",
+      "supporting_evidence": "rights-safe software, bounded claims, citations, reproducibility evidence, and no excluded data in payload",
+      "unresolved_issues": ["author identity/attestation", "journal-specific declarations and accounts"],
+      "blocks_publication": false,
+      "editorial_or_scientific_acceptance_assessed": false
+    }
+  },
+  "required_human_actions_before_public_release": [
+    "Freeze the final public/legal author and copyright-owner identity consistently in NOTICE, CITATION.cff, pyproject.toml, README citation, release metadata, wheel metadata, and future GitHub/Zenodo/SoftwareX metadata.",
+    "Make and retain an owner attestation covering AI-assisted development inputs, review, absence of known unlicensed third-party content, and authority to license the Project-authored portions under Apache-2.0; seek qualified legal advice if the attestation cannot be made.",
+    "Decide whether to publish an ORCID and contact information.",
+    "After repository creation, freeze the repository URL and a private security-reporting contact/path.",
+    "Perform GitHub publication, Zenodo deposition/DOI minting, and any journal submission only through the relevant owner accounts if and when those actions are chosen."
+  ],
+  "blocking_findings": [],
+  "next_authorized_technical_task": "Release Task 5 — Continuous Integration and Repository Governance"
+}

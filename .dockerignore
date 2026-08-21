@@ -1,0 +1,12 @@
+.git
+.venv*
+__pycache__
+.pytest_cache
+external_data/*
+build
+dist
+evidence
+artifacts
+vocabularies
+*.pdf
+*.csv

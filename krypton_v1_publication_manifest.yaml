@@ -1,0 +1,93 @@
+{
+  "schema_version": "krypton-v1-publication-manifest-1",
+  "software_version": "1.0.0",
+  "scientific_scope": "restricted research prototype",
+  "release_candidate": "TASK4_VERIFIED_RELEASE_CANDIDATE",
+  "release_task4_gate": "RELEASE_TASK4_PASS_WITH_RESTRICTIONS",
+  "release_gate_inputs": {
+    "task4r_remediation": "RELEASE_TASK4R_PASS",
+    "fresh_clean_room_reproduction": "PASS",
+    "editable_reproduction": "PASS",
+    "installed_wheel_reproduction": "PASS",
+    "resource_parity": "PASS",
+    "public_boundary": "PASS",
+    "canonical_immutability": "PASS"
+  },
+  "public_source_artifacts": [
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CITATION.cff",
+    "THIRD_PARTY_NOTICES.md",
+    "pyproject.toml",
+    "src",
+    "docs",
+    "tests",
+    "scripts"
+  ],
+  "wheel": {
+    "filename": "project_krypton-1.0.0-py3-none-any.whl",
+    "file_count": 72,
+    "size_bytes": 87215,
+    "sha256": "351fd4d7a3232234dbdb40ca6c0001c4edf13cacf2ccf634269a2f0fa6120469",
+    "task4r_comparison": "BYTE_REPRODUCIBLE"
+  },
+  "sdist": {
+    "filename": "project_krypton-1.0.0.tar.gz",
+    "file_count": 131,
+    "size_bytes": 98493,
+    "sha256": "3ed9a075c88fbda86c52d13a21ed8616be80c1693fb952dde65e6a354c8eacc8",
+    "task4r_comparison": "SEMANTICALLY_REPRODUCIBLE_WITH_INTENTIONAL_TASK4_VERIFIER_ADDITION"
+  },
+  "public_test_counts": {
+    "core": 176,
+    "migration_guards": 9,
+    "packaging": 10,
+    "documentation": 12,
+    "resource_parity": 4,
+    "total": 211
+  },
+  "canonical_reference_test_count": 1184,
+  "external_data_policy": "NOT_DISTRIBUTED",
+  "license_boundary": {
+    "project_authored_code_and_docs": "Apache-2.0",
+    "external_scientific_data": "NOT_DISTRIBUTED",
+    "external_source_metadata": "PROVENANCE_ONLY",
+    "dependencies": "UPSTREAM_LICENSES"
+  },
+  "platform_verification": {
+    "python_3_12": "VERIFIED",
+    "windows_x86_64": "VERIFIED",
+    "linux_amd64_docker": "UNVERIFIED_DOCKER_RUNTIME_UNAVAILABLE",
+    "macos": "UNVERIFIED",
+    "arm": "UNVERIFIED"
+  },
+  "known_restrictions": [
+    "Docker runtime unavailable; Linux amd64 container reproduction is unverified",
+    "public repository URL pending",
+    "DOI pending",
+    "public personal/legal author identity not finalized",
+    "C1-C3B exact scientific data remain outside the public distribution",
+    "C3B completion rows 30 and 31 remain BLOCKED",
+    "C3B validation maturity remains EXTERNAL_DESCRIPTIVE_SUPPORT"
+  ],
+  "canonical_private_provenance_identifier": {
+    "branch": "main",
+    "commit": "8c03ec5d129bb438dfddf4b54f974349a76bf224"
+  },
+  "scientific_state": {
+    "C0": "COMPLETE",
+    "C1": "COMPLETE",
+    "C2": "COMPLETE",
+    "C3A": "COMPLETE",
+    "C3B": "RESTRICTED_COMPLETE",
+    "route_gate": "USABLE_WITH_STATED_SCOPE",
+    "validation_maturity": "EXTERNAL_DESCRIPTIVE_SUPPORT",
+    "row_30": "BLOCKED",
+    "row_31": "BLOCKED",
+    "model_contradiction": "NO",
+    "C4": "NOT_INCLUDED"
+  },
+  "rights_reaudit": "PUBLICATION RIGHTS RE-AUDIT RECOMMENDED BEFORE PUBLIC RELEASE",
+  "next_authorized_technical_task": "Release Task 5 — Continuous Integration and Repository Governance"
+}

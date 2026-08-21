@@ -1,0 +1,1124 @@
+{
+  "aggregate_sha256": "946ea94b471769f01f8a77aa1bea47dfbeb1f175a4196aebaab918d6093344ba",
+  "file_count": 158,
+  "files": [
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": ".dockerignore",
+      "sha256": "42dda699c89a9254f119d2ee2a0cb6f4636386965b14ea0d9998d84ae6a00a9d",
+      "size_bytes": 109,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "REPOSITORY_GOVERNANCE_CONFIGURATION",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "sha256": "ae279c4fe1d788a2a92b235f24eb8685af31819295248742546c04ac939ad25c",
+      "size_bytes": 1015,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "REPOSITORY_GOVERNANCE_CONFIGURATION",
+      "path": ".github/ISSUE_TEMPLATE/documentation.yml",
+      "sha256": "bdd460e939d6a45531f114758842022fe73be141b272b84117b97bb4bf6bb233",
+      "size_bytes": 594,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "REPOSITORY_GOVERNANCE_CONFIGURATION",
+      "path": ".github/ISSUE_TEMPLATE/scientific_scope.yml",
+      "sha256": "827ee5b090db4a825ca6553110be6e91eb624dc98ac53a93d65a5e447d2315c4",
+      "size_bytes": 833,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "REPOSITORY_GOVERNANCE_CONFIGURATION",
+      "path": ".github/dependabot.yml",
+      "sha256": "c08a43d2b2454b35c98a9c8e327d1c9382f9aa40fc9151c1c97fd3795e0c0320",
+      "size_bytes": 315,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "REPOSITORY_GOVERNANCE_CONFIGURATION",
+      "path": ".github/pull_request_template.md",
+      "sha256": "1df9096a734ad5d347e4a815a66dd615e903430a93450f49e214f3c65ed47b26",
+      "size_bytes": 900,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "REPOSITORY_GOVERNANCE_CONFIGURATION",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "3e4d386ee13baa64dc6e01e7ea00016ec0d95e3ed132e59df0e5c2f305fd19b1",
+      "size_bytes": 5116,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": ".gitignore",
+      "sha256": "700ff316e0c5b276417a0aea6dd070eba4036f8bcdddcae79b578e21b71a133d",
+      "size_bytes": 197,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "CHANGELOG.md",
+      "sha256": "e2a08e8d5de867b625f04b443a25f9c41270df14c80583dd273a18f8ab9057b7",
+      "size_bytes": 1036,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "CITATION.cff",
+      "sha256": "6873985986df49d99ac3352a685fea7f622fda0e9a91df90379d1a5b8d255081",
+      "size_bytes": 701,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "CONTRIBUTING.md",
+      "sha256": "305f2ea963cdd36dcfc7e413cbf689dece7834f87c955da2533ee2c388e3557f",
+      "size_bytes": 3452,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "Dockerfile",
+      "sha256": "44b06d5c4e58f616cd951bdf47138361c95c4a99a9fc1d5502fc496d4f070be9",
+      "size_bytes": 779,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "GOVERNANCE.md",
+      "sha256": "3879100f22ae26e66b195ebed053a096381ee07b983673201b45655c7c0377c9",
+      "size_bytes": 4124,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "LICENSE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "size_bytes": 10174,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "NOTICE",
+      "sha256": "20ae645e4e3961e6e551fd17f6e39239fbe9dd7e1ebf8c0444292f0358dcd30b",
+      "size_bytes": 389,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "README.md",
+      "sha256": "2c37fed1c84dba690219d2660fbfadc9886b29cd1ce6645857c9890e093195b7",
+      "size_bytes": 9446,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "SECURITY.md",
+      "sha256": "8b506059e947f71408cae9fc434f2599865820757d4439db1b007dcfa05f3671",
+      "size_bytes": 1737,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "9fe3cafaccfbc2a09c50769bd3090f54b7284751752772b43046983d329ef83b",
+      "size_bytes": 714,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/architecture.md",
+      "sha256": "8b0f28f1371d322d053b6f48f8ada970d2f2dda8935515886041d455dbcf37c4",
+      "size_bytes": 4207,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/artifact-index.md",
+      "sha256": "9a788cc681a3d6853c6c80152edae99bfe1f778b808b8f868b8295800e7d97b2",
+      "size_bytes": 2480,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/data-sources.md",
+      "sha256": "8766176696e372fb5adf586441af52513cb96c361cae8ff3f60fbac789238e0e",
+      "size_bytes": 1528,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/packaging.md",
+      "sha256": "650dec116069b34f82cc2044ad31ce2f7869f58525c1dc0364a32cbc088f4c2e",
+      "size_bytes": 1442,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/public-private-boundary.md",
+      "sha256": "4c2cb79b7a14b2622a5e5dca2f8a801d7dd6ab64ea6bb115630e79d3dca03fd9",
+      "size_bytes": 960,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/release-notes-v1.0.0.md",
+      "sha256": "ace06409e40a686326f4d8eec4a72f2a91162e53f3bc10b29f15c15254dba82a",
+      "size_bytes": 2455,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/representative-demo.md",
+      "sha256": "28da2b341d7a25b6dbc3267f839e5d296a98f47385d93eab33802320afcde0f1",
+      "size_bytes": 1055,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/scientific-reproduction.md",
+      "sha256": "53389ed3ab1abd1e69d60f2274c87fdf9823118f9ba50b24d80d67737d21b035",
+      "size_bytes": 2732,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "docs/scientific-scope.md",
+      "sha256": "d5b67d53c94bc41c5d8439ee51e517ad9205a7829e831ee8e6e3c8a43facc58c",
+      "size_bytes": 2602,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "evidence_metadata/krypton_v1_external_source_reference_manifest.yaml",
+      "sha256": "89e1b24683ce8dcad92603dc4c1f9d1680fd4c7d3952be23b35e5fedc285487a",
+      "size_bytes": 7567,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "examples/c0_mock/run.py",
+      "sha256": "91953b357fe9274e725e8e23598750e1fa57fcffb2a93c96882ceeaf68e419ae",
+      "size_bytes": 1571,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "external_data/.gitignore",
+      "sha256": "6f17f4b605b98faab68b55e7f8b05bdcb78144151165d4afc63846d5ff379ed2",
+      "size_bytes": 58,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION_OR_POLICY",
+      "path": "external_data/DO_NOT_COMMIT_EXTERNAL_SCIENTIFIC_DATA.md",
+      "sha256": "d3bc5cf3b44d488ce6afe0fbb23f74025f1b31727de92faa433699f5587de5d5",
+      "size_bytes": 490,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_artifact_publication_manifest.yaml",
+      "sha256": "a891288b5e85bbfb5c5b17220e43315397c0c2dfeef5f99f80c8c6603a1ff117",
+      "size_bytes": 7018,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_clean_room_manifest.yaml",
+      "sha256": "4f13ef58569c03ae2fdac9efcaf470b935efb28787219582690a479ac3bb5301",
+      "size_bytes": 3108,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_dependency_boundary.yaml",
+      "sha256": "5c70961d8ef627a22088168a78c1f778ce3fd7cab8d177340f1fc66f5294ac24",
+      "size_bytes": 2059,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_dependency_license_audit.yaml",
+      "sha256": "d077d9bcaf8ec681b5df951f6afef731f1404df72662dc87a64500ccb64aa2fa",
+      "size_bytes": 14450,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_dependency_license_manifest.yaml",
+      "sha256": "c1f080f234190911c927c39b29ab48dc696da45d83b46e1f4d7db5bf83917d24",
+      "size_bytes": 3964,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_documentation_test_manifest.yaml",
+      "sha256": "43c996f3937629a64d6b1981420caddc574b4e54142ab0ac024dcbab890e091b",
+      "size_bytes": 1871,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_file_rights_inventory.yaml",
+      "sha256": "b6ccb0a07856d7abad0bdd7cf34bc1975ab225dd352fee8a44c951d5b0bba9c5",
+      "size_bytes": 15586,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_independent_rights_audit.yaml",
+      "sha256": "a119a9c3323e24528856c242821dcbfdf77d78ef822792eda8cf61f7e640b588",
+      "size_bytes": 14699,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_package_contents_manifest.yaml",
+      "sha256": "eb0ff4a3f5c4a7a4f7a361cf35f728cd1d7a998572a524d42d707423fb0a3b95",
+      "size_bytes": 1951,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_packaging_test_manifest.yaml",
+      "sha256": "c7b585d9fa3547f955ba22f289e479dd97a5031719881183782923c97618a2ae",
+      "size_bytes": 1561,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_public_artifact_digests.yaml",
+      "sha256": "48f9d5b80db0ba7a079eee44635795502fe557668d19d683c1ac07a4145fc26e",
+      "size_bytes": 2243,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_public_migration_manifest.yaml",
+      "sha256": "8e37eb36f9846eaf9f9451c8da96fdcb45f9bf3472df9a620cfa49ec46b9688a",
+      "size_bytes": 6461,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_public_test_manifest.yaml",
+      "sha256": "b302ff7f94bc0f1056067bc1ae12f4711011e1699e55a6438c4136019ba2796e",
+      "size_bytes": 1340,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_publication_manifest.yaml",
+      "sha256": "7ea807c2ea30d78def9125ebf872a034a2a85bc4e7bc797402abc6d53d0c700a",
+      "size_bytes": 3122,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_release_metadata.yaml",
+      "sha256": "9033e2d769e02d3d549c6b677822e7b20bc361891fd1fd5d0c6a1bf1961577dd",
+      "size_bytes": 2556,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_resource_parity_test_manifest.yaml",
+      "sha256": "417c6673d0bf084a85ee0ad4763d6281d790f4649218e0d075147452618b7250",
+      "size_bytes": 985,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_rights_audit_digests.yaml",
+      "sha256": "8c309f5c66881112cd44416f226946a30cabdeed01b740a3b5eeb40493bdea58",
+      "size_bytes": 2173,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task2_artifact_digests.yaml",
+      "sha256": "4a06fa7bf3ab67f72e9bb3f22e9998a26e969ed8156c2a0385b5e41a61cfeaef",
+      "size_bytes": 1982,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task3_artifact_digests.yaml",
+      "sha256": "99719ce203d31a357c6f5237f2facb8f9f382b98fd989097b4e95484ef4a6591",
+      "size_bytes": 3086,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task4_publication_digests.yaml",
+      "sha256": "bc0109d23d50ee7aa537c1f6502e5943d22342024a6169deed64a8be7c9d5abd",
+      "size_bytes": 16404,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task4r_artifact_digests.yaml",
+      "sha256": "aef89c61cafd06af76ae938a34d9ac7c82f540bbe5195f25ba95fdae2b9eecfd",
+      "size_bytes": 8408,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task4r_remediation_manifest.yaml",
+      "sha256": "34c8108326baf0a746fa0c908930b6a2e2a9dc262356d569ad69ed04356660e6",
+      "size_bytes": 2919,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task5_ci_governance_manifest.yaml",
+      "sha256": "39fcbc235bbcf0b372a74cf578243a128edd740510b6c4ee184d1648dc596ea3",
+      "size_bytes": 4611,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task5_ci_verification.yaml",
+      "sha256": "3aa1cd344878ffc1d2cf7716170303336757f6491b4e1e812b7acfe6b148b4f2",
+      "size_bytes": 2957,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task5_digests.yaml",
+      "sha256": "ba2f67964e7d84151b5a4bbadb050994e741884952117305d30c95eef9323338",
+      "size_bytes": 18383,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task6_pre_task6_inventory.yaml",
+      "sha256": "b9aef94c11b82e0d856ce76d2b3514d1602819eb2be7cddef15c47d2f413705c",
+      "size_bytes": 44110,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task6_prepublication_manifest.yaml",
+      "sha256": "28cd2c584695643d0b7581cef06cf51060ffb2212ef8f152e54c37eb7fa93682",
+      "size_bytes": 2503,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task6_release_asset_manifest.yaml",
+      "sha256": "8b6f8f0c5d47aba1b6ae4abc8ad82640aa9c0b4e3e4fcc45152b5a0cef6e30fe",
+      "size_bytes": 1221,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_task6_verification.yaml",
+      "sha256": "01c70aefd833aae4d7fc16998254a67014215b0880385aa17a49dfa154903b23",
+      "size_bytes": 1617,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PROVENANCE_OR_RELEASE_METADATA",
+      "path": "krypton_v1_third_party_code_audit.yaml",
+      "sha256": "432403f18b06c7d186e47129b26edfc01a645d107c4f41d5ea6c2a0acf319604",
+      "size_bytes": 1295,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "pyproject.toml",
+      "sha256": "da7dcd2f2c79f483f279a9d019f70a79b56a2eff108fb07fc31a85e95e108189",
+      "size_bytes": 3020,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_CONFIGURATION",
+      "path": "requirements.lock",
+      "sha256": "3958e1e95a3fdcb360dc5895ff6029c1bd5e6bc9afa47bc8e131c1f61f0831b8",
+      "size_bytes": 461,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/export_public_schemas.py",
+      "sha256": "e8509e64c10e27f6ac68899cd32223dde398707b4c9ec663122342546c9346f1",
+      "size_bytes": 1672,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_distribution.py",
+      "sha256": "afea2ca814d985bb670ef8c0f2462da33cfb2862d210537528605ec4e02193f2",
+      "size_bytes": 5395,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_public_artifact_digests.py",
+      "sha256": "2921472e290485604b3b7be2c31300c491953ab24f64a72d71630795ddd2d15f",
+      "size_bytes": 1057,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_public_boundary.py",
+      "sha256": "f455c081ac02df480b54957126e6906b66406bf3d90cbe3079a6394733aa00d2",
+      "size_bytes": 3693,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_task2_artifact_digests.py",
+      "sha256": "67298c1994bf78f906750e1abfe7f60262e66e8a20ce3fe0d4125fe6fccefaab",
+      "size_bytes": 1148,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_task3_artifact_digests.py",
+      "sha256": "e10a80096fa397d85b45449bd13d4c0205e5be0d0b5d02d34f5e4b5a21566d72",
+      "size_bytes": 1135,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_task4_publication.py",
+      "sha256": "a1bbe834c1d4079627f00495696d661b5f58cc2a04b675c131cdca2542ce7ff1",
+      "size_bytes": 5012,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_task4r_artifact_digests.py",
+      "sha256": "043ef5b0efd6534c12eb662031cd6cd4d18624b72c58ec7a1fee00f5cd33028c",
+      "size_bytes": 4580,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_task5_ci_governance.py",
+      "sha256": "d991ab1f72bad8dbee1b3194739441f8a3a167ca711a5594abb77057fc0b67bc",
+      "size_bytes": 7704,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_VERIFICATION_SCRIPT",
+      "path": "scripts/verify_task6_prepublication.py",
+      "sha256": "dbab76a7eecc868abea9067c4218a3d021fc168ec69213c54f303800cec423d2",
+      "size_bytes": 4621,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/__init__.py",
+      "sha256": "20224de6414845d25a12547d273e6d53918b81022f1e8dc11d1c6c6ac0a2f57c",
+      "size_bytes": 139,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/__main__.py",
+      "sha256": "177f7d22c9d1880f32b680411f2d817e43f2176ed859a524c6f6501583f2528f",
+      "size_bytes": 469,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/_version.py",
+      "sha256": "e85d598945f419fec89b0a715206b3970e7c109f6c8eefde7b011d064c92ba6d",
+      "size_bytes": 85,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/adapters/__init__.py",
+      "sha256": "08f53d911c44384a2dffd81f057da666a014e303fde6552579f515881b1c1f83",
+      "size_bytes": 323,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/adapters/mock.py",
+      "sha256": "17bc746bbbffd2e8c822c49319b5b0dc040f26bcc04821de399167cee0683fcb",
+      "size_bytes": 2673,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/demo.py",
+      "sha256": "09aa8a1ffbc05602f8a9356ad5e8e02656e09f5bf8cf795a488e3f45d2fce8ac",
+      "size_bytes": 1742,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/__init__.py",
+      "sha256": "227a3142daccef0e7dcb75aba8df4353c92bc48b1efa3c20d89c077f0c7949d0",
+      "size_bytes": 1250,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/applicability.py",
+      "sha256": "3fad77a08c510aecd1009f7c4530e162d33eb779563a30d5c4bb8e322915dd8c",
+      "size_bytes": 4375,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/categorical.py",
+      "sha256": "3881220af668c767988e183355ba6aee9d92550fe6691f93a4e85ff70f0f16c7",
+      "size_bytes": 974,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/consequence.py",
+      "sha256": "1398b6546a13286bc6310307e4a603bd4336535613ec0b14ae7b7c524c31335c",
+      "size_bytes": 7455,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/edit.py",
+      "sha256": "a1b4af7630374d744be541eb66e9d42ad2986a2ec408ebf881ca2e4ebf8acc18",
+      "size_bytes": 4760,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/evidence.py",
+      "sha256": "310e4fc77c1a6704ca2006c7e83b5cfe810b1f3aa38c110179515fb72b7d3367",
+      "size_bytes": 2657,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/provenance.py",
+      "sha256": "4a529191d75517e9a96e73241f673429f5026dfd3cbb6a5a8080583e5d85bb66",
+      "size_bytes": 5411,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/domain/quantity.py",
+      "sha256": "34d8ab7a456011e629a827f01f64e684d82ef75ca46c3bcc414dcf1aad66ff06",
+      "size_bytes": 4380,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/evidence_pack.py",
+      "sha256": "95a708ecb3b939aa13a75422d1d7f40b261e1f394cb5d8842f25381f9eded2c2",
+      "size_bytes": 4337,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/keg/__init__.py",
+      "sha256": "fcd66efa41c15a1f32e5fb1263efd849ac17d42f865869f0d6cedf50d4987ceb",
+      "size_bytes": 459,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/keg/models.py",
+      "sha256": "1f2bfc6cf29357896f8781cf473b04823a9d3329ed314da74bea610beb21b694",
+      "size_bytes": 8993,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/keg/validation.py",
+      "sha256": "441385f408c5cc741e21169a7d0a2398b23ff23d979cd5382090fc0583dca7e1",
+      "size_bytes": 9457,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/models/__init__.py",
+      "sha256": "9d3b85d22a059c83bab9fbb0ee26e33393d3abb61d6db23fa4fc317e86e872b2",
+      "size_bytes": 651,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/models/contract.py",
+      "sha256": "2f072ddb23ea8cfd8641d8ef875cbe1b98eeaa22aac59a083ee4421ca6e49459",
+      "size_bytes": 11548,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/mpt/__init__.py",
+      "sha256": "0be232ee3442bbacc2b8bbd35450cd5b0551c55ad9b09f9b7a15867471019954",
+      "size_bytes": 1366,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/mpt/models.py",
+      "sha256": "a81cc285f8c8711e425921110ebfe0e28e8d8556452b8ba4801cede095c1b167",
+      "size_bytes": 16235,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/mpt/registry.py",
+      "sha256": "fad5d17b1636479c781d906f182205587a0d1dad246294b62f056578f4f8c124",
+      "size_bytes": 2140,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/mpt/translator.py",
+      "sha256": "c76e13f1bd09a869e71e6ec84f32dff0df11b5192d6c9c810ade44b8c7a776de",
+      "size_bytes": 8682,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/orchestration/__init__.py",
+      "sha256": "25a749d999bba12026cdd7d33fc939c8c42b4e5912cfe50a976b95b7e088d507",
+      "size_bytes": 926,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/orchestration/c0_mock.py",
+      "sha256": "180e7c6f5832d3d1eab94a1187723c93af52c9accedf92040e3331581f6b49da",
+      "size_bytes": 11060,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/orchestration/pair_runner.py",
+      "sha256": "9cdaeb8e9a6a560bf6d8d806ea7b39795d6d91f0c92f514b9e1e6a4f4fd3491d",
+      "size_bytes": 18914,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/registry/__init__.py",
+      "sha256": "583582d7f4d61673f5ead196e75fb2f4610a910f9f451c1ad1296fd05d64d966",
+      "size_bytes": 289,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/registry/models.py",
+      "sha256": "4bdc5eabf8db2441603e1b68a80fbd140e9cb22d977dfac296dcbd196b2b5ec1",
+      "size_bytes": 6381,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources.py",
+      "sha256": "e4c0ec0b13a9277f5285e4d177b975d3da61e800e76c167868b4890c2752ddd1",
+      "size_bytes": 1082,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/edit_legacy_1_based.json",
+      "sha256": "365cd4e2d89b668e19f2ad494c0f9ca92fcca1f9c632ae877786567c2615653b",
+      "size_bytes": 340,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/keg_cycle_v0.json",
+      "sha256": "444155475be7a503202cfe16ea4f92bc3cd1e5baef744d6857fc0f854da46a46",
+      "size_bytes": 1136,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/keg_dangling_and_unresolved_v0.json",
+      "sha256": "fc374d584ff32b0de5894835d38f8b6bc3a22df0e09245978e69f3f69483020f",
+      "size_bytes": 1369,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/model_contract_bad_dimension_v0.json",
+      "sha256": "edeb47f205983a02e3d82ae0252b29f41abaa21de89f72e1f2cfb1223f80f0ce",
+      "size_bytes": 935,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/model_registry_unknown_adapter_v0.json",
+      "sha256": "45d61123134fc4a8f845be87198c9cdf19919eecd075c4cfe7371a226ecdd6d7",
+      "size_bytes": 1288,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/mpt_expression_mapping_v0.json",
+      "sha256": "275db5a637b9a0ae90be1368cc9b1699d83ddf034b32ea66cf2448e5acb0c22f",
+      "size_bytes": 582,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/mpt_unresolved_evidence_request_v0.json",
+      "sha256": "fa920d38f08c4b3ca1348e2cb9eb1d315a03c525ab6e5583592388863e8a2b1e",
+      "size_bytes": 431,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/pair_run_spec_unauthorized_dose_v0.json",
+      "sha256": "8c1df9a7ba843bc0ef7bf464e49dfcd31d681933f684ad05bbeb9850d7dd6d85",
+      "size_bytes": 1545,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/phenotype_consequence_bad_delta_v0.json",
+      "sha256": "e3de721a2f44e923126179a2ac615b30f6d0f18fe6d3f7abe6491d6f0a91eb18",
+      "size_bytes": 1004,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/invalid/provenance_manifest_bad_digest_v0.json",
+      "sha256": "c0fbe9d3da27e87b52cd86fc8695c73f3bce4a9e60284511fc89df4d1a5565bd",
+      "size_bytes": 657,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/reference/c0_mock_expected_v0.json",
+      "sha256": "bf2631728227b30048474cdf0cc716ce607f76f4a03d49e02be938006e9770c6",
+      "size_bytes": 709,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/reference/c0_parameter_effect_golden_v0.json",
+      "sha256": "a4af75fd831b38deb6f4684ff89cf055ea7bb404b0e8d9027fdf0780996d2537",
+      "size_bytes": 1233,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/reference/c0_quantity_value_golden_v0.json",
+      "sha256": "1b69c1c0fd9a9489e02fb8e14dc95e307a5c224de982d11e9804212e728d35d6",
+      "size_bytes": 276,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/edit_insertion_0_based.json",
+      "sha256": "73514e6f48421f2fbf74a4e88c614b1333e4e62434d545edbee7db1cbf1710e9",
+      "size_bytes": 363,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/edit_snv_0_based.json",
+      "sha256": "6b864a786520f4b715e5079b15bd5b2a1036d334c43944ee132d9ee140146fd0",
+      "size_bytes": 352,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/keg_mock_v0.json",
+      "sha256": "25149df37cb6d4e1427b72482bb46502cf3fb75cb2c3296b136eadda46d7b375",
+      "size_bytes": 4061,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/mpt_request_v0.json",
+      "sha256": "2bfd188db05ac2228c2883bae43949c4df03bd7c80dbd848b1ceb6d22a0b7d13",
+      "size_bytes": 1023,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/mpt_scale_mapping_v0.json",
+      "sha256": "a47f6430299620c70c39a07bdbbd1b669bdd4980eb0beda115fbda0904bc5629",
+      "size_bytes": 677,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/pair_run_spec_mock_v0.json",
+      "sha256": "f84d8612cca5af39cfe62b2e48ffbf5e638fab859d683587aaa6c6b2742e3dc5",
+      "size_bytes": 1349,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/phenotype_consequence_mock_v0.json",
+      "sha256": "e57dbc13727b9cf292732fce81e9e4b903f02a41698e370fb3603007b2f4a6f4",
+      "size_bytes": 1171,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/fixtures/valid/provenance_manifest_mock_v0.json",
+      "sha256": "8d84c0de36aee38d2e470887e8d15040e7cc1cf8fbe493536bb1584ee0256c89",
+      "size_bytes": 1351,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/krypton_v1_release_metadata.yaml",
+      "sha256": "9033e2d769e02d3d549c6b677822e7b20bc361891fd1fd5d0c6a1bf1961577dd",
+      "size_bytes": 2556,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/registry/models/mock_pk_v1.json",
+      "sha256": "0d4c129ef8b6772f601e4681a49fb402b89935e129df32c135c00e30544443ac",
+      "size_bytes": 2040,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/requirements.lock",
+      "sha256": "3958e1e95a3fdcb360dc5895ff6029c1bd5e6bc9afa47bc8e131c1f61f0831b8",
+      "size_bytes": 461,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/applicability-context.schema.json",
+      "sha256": "76093362219feeeeb0e637874e19253005ea7d6f4493842a6af29a3ba14fdaec",
+      "size_bytes": 2294,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/edit-object.schema.json",
+      "sha256": "46edbff05c3181bf0682b167431eeb9b70d5bc7b6cc69f4e54b444628cecac55",
+      "size_bytes": 2719,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/evidence-record.schema.json",
+      "sha256": "84fdc9b116fac26387d8b38a13bce50b262daeed6eb3d807c99de81867bcc782",
+      "size_bytes": 2845,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/keg-document.schema.json",
+      "sha256": "2bda2467c574949a423d989d16f1e2369fc97efe8e68c90bfe2550fdbbd09f12",
+      "size_bytes": 23004,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/model-contract.schema.json",
+      "sha256": "ca93c266b5bad56784b0ff338fc84ed09520e53a7db8719a6509f12577cb274a",
+      "size_bytes": 8677,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/mpt-mapping.schema.json",
+      "sha256": "a99c9e97a127cb99e0366475b03de3a13c82270f0a8824d2e810325f4cf7d7f8",
+      "size_bytes": 7319,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/mpt-result.schema.json",
+      "sha256": "968e279852f0057ca9600c41cf8e0b04ab2bd48c4971bd7c1fb20e2a354482ac",
+      "size_bytes": 17811,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/pair-run-spec.schema.json",
+      "sha256": "b3b36f860c25df87685ffd1bd7a7f69c54ba6673d18d8fdb8e297be509e3b9ea",
+      "size_bytes": 11699,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/phenotype-consequence.schema.json",
+      "sha256": "fa2cb0e2ad85b0240e0bf4c73ae3406d59e2ae6f9580cd4020b51f8c577c282d",
+      "size_bytes": 9859,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/provenance-manifest.schema.json",
+      "sha256": "2ea9d0ea1c0526f78b689c7ddb47b4304db53038977d310e6288918d3ec0e0d0",
+      "size_bytes": 3605,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_PACKAGE_SOURCE_OR_RESOURCE",
+      "path": "src/krypton/resources/schemas/quantity-value.schema.json",
+      "sha256": "1075bd8c52c12d9058f8a9f286437a023b271a902800baf6897bf6c7be6a7760",
+      "size_bytes": 4044,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/contract/test_adapter_replaceability.py",
+      "sha256": "07bf6c42c4efc8bd3fabda77f32e04186c310e4f7cc6c004f88a413c58dc098b",
+      "size_bytes": 1712,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/documentation/test_public_documentation.py",
+      "sha256": "221fa9809c7549279dc836828f0eaec9cfd405778729df6302856708b9c87eb2",
+      "size_bytes": 4879,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/e2e/test_mock_e2e.py",
+      "sha256": "20525b3cd691d3c3b8cec1cd5806f651d480acb04bb01a7e2543df76617e0f14",
+      "size_bytes": 7188,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/governance/test_ci_governance.py",
+      "sha256": "6fea6619cadb593f94f2a41ab80c21a2699949110ed6880c492078c8299e55f4",
+      "size_bytes": 3486,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/packaging/test_release_metadata.py",
+      "sha256": "8bad3e97186f8fb358cada76f595363978996380410b584e8875f9d00a5b7260",
+      "size_bytes": 3671,
+      "source_lineage": "TASK6_PREPUBLICATION_CHANGE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/resource_parity/test_public_resource_parity.py",
+      "sha256": "2d9908c89f5dd2382f64c9e64618e6f41729c5ae5fc4998a58ed99a9e31c8bd1",
+      "size_bytes": 1990,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_applicability_context.py",
+      "sha256": "696179fad39a83a56fe57ed67933826356753c294506b75e192854b4efbc2015",
+      "size_bytes": 2396,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_edit_object.py",
+      "sha256": "f9dc1a76f2d608a7e0b9e164f6e508114dcde80d26bda542d4fbb3dd7cc244fd",
+      "size_bytes": 6088,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_evidence_pack.py",
+      "sha256": "d13246eea09af5867eb4487c4257356383d0d6f32a5cb10366c7cda1a564e66d",
+      "size_bytes": 3084,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_evidence_record.py",
+      "sha256": "14a3d7d1e578ee3b85d06a70868673b3c839c6be30f534926658fea20f03624a",
+      "size_bytes": 2500,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_keg.py",
+      "sha256": "a8a9813c801017c52baa68ba74a8344672662ca971e41b1527736ed530c9036a",
+      "size_bytes": 9386,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_mock_adapter.py",
+      "sha256": "f04c5f55ba1afe5e4578b0efe30d33fb730d8e825112e7a11c6ef51b587b05c2",
+      "size_bytes": 3199,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_model_contract.py",
+      "sha256": "e4d6c7be30f57e71fecbfc12f4ceea945da7e91626cba4ee92819f4e6c933546",
+      "size_bytes": 6882,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_model_registry.py",
+      "sha256": "7e1f2e7e595bec0bf51073ffa54bdf52ced0c61aca2d195e564f1c9408aa9c88",
+      "size_bytes": 3203,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_mpt.py",
+      "sha256": "70511a86b9c2aa70d0b4fa0878d56bbd0ee88e8dc1af6bd3b49a08df7ecff2a6",
+      "size_bytes": 12786,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_package_import.py",
+      "sha256": "0c385ad35212d92bb2957753d3859e3074706c11498a5d5059cfdb7a04f2eea8",
+      "size_bytes": 97,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_pair_runner.py",
+      "sha256": "0657ba1a3da1c8981edae84792adbc468a9c06286e7900fdb6ccb5154c3dcd0c",
+      "size_bytes": 9457,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_phenotype_consequence.py",
+      "sha256": "1c5ccb90259954452591ea42ae757b9a7f15597dfa74a8cf1704658e9b1a3bc8",
+      "size_bytes": 5296,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_provenance.py",
+      "sha256": "56125447f54a5abcb9eaeb1c96d2e845fd03ba2867605448a1e6f77fb93ad112",
+      "size_bytes": 5886,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "path": "tests/unit/test_quantity_value.py",
+      "sha256": "6f6fa8f49873a250f627cda8a0c7bfe0be591c3f5804b7d4e7f4bcfc8359055c",
+      "size_bytes": 2900,
+      "source_lineage": "POST_TASK5_CANDIDATE"
+    }
+  ],
+  "freeze": "PREPUBLICATION_SOURCE_FREEZE",
+  "inventory_excludes": [
+    "krypton_v1_task6_repository_inventory.yaml",
+    "krypton_v1_task6_digests.yaml",
+    ".git",
+    "external release-asset directory"
+  ],
+  "schema_version": "krypton-v1-task6-repository-inventory-1",
+  "source_lineage": "POST_TASK5_CANDIDATE",
+  "task5_post_sdist_sha256": "374e2087f137dd0bd2e92fc04fa9bb3077fd493c032c0dd469c869573517dfc1",
+  "task5_post_wheel_sha256": "57500cd0c2edc0a008e9ef2f890acb5c570392c4d9cb4862383b004960a6d3fd",
+  "task5_source_inventory_sha256": "7422f3a73d5f225e2a7c326fa7607bfd0f2f08372011ca15d9c75ac7f4d76909"
+}

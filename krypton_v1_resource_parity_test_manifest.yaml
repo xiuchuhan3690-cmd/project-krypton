@@ -1,0 +1,27 @@
+{
+  "schema_version": "krypton-v1-resource-parity-test-manifest-1",
+  "software_version": "1.0.0",
+  "counts": {
+    "PUBLIC_CORE_TESTS": 176,
+    "PUBLIC_MIGRATION_GUARD_TESTS": 9,
+    "PUBLIC_PACKAGING_TESTS": 10,
+    "PUBLIC_DOCUMENTATION_TESTS": 12,
+    "PUBLIC_RESOURCE_PARITY_TESTS": 4,
+    "PUBLIC_TOTAL_TESTS": 211,
+    "PRIVATE_CANONICAL_REFERENCE_TESTS": 1184
+  },
+  "test_file": "tests/resource_parity/test_public_resource_parity.py",
+  "coverage": [
+    "required runtime files resolve through krypton.resources",
+    "synthetic demo preserves 10/25/+15 and its canonical workflow digest",
+    "obsolete repository-root runtime resource trees are absent",
+    "package resources and synchronized build inputs are explicit"
+  ],
+  "operational_clean_reproductions": {
+    "fresh_editable_install": "211 PASS",
+    "fresh_wheel_install": "211 PASS",
+    "python_module_demo_both_modes": "PASS",
+    "console_demo_both_modes": "PASS",
+    "pip_check_both_modes": "PASS"
+  }
+}

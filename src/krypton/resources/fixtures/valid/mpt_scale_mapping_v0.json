@@ -1,0 +1,23 @@
+{
+  "id": "mapping:activity-clearance",
+  "version": "1.0.0",
+  "mapping_type": "scale",
+  "source_quantity_kind": "relative_activity",
+  "source_unit": "dimensionless",
+  "target": {
+    "contract_id": "contract:mock-pk",
+    "contract_version": "1.0.0",
+    "parameter_id": "clearance",
+    "biological_meaning": "Artificial total clearance",
+    "quantity_kind": "clearance",
+    "canonical_unit": "L/h",
+    "physical_dimension": "[length] ** 3 / [time]",
+    "valid_range": {"minimum": 0.1, "maximum": 100.0}
+  },
+  "evidence_ids": ["evidence:mock"],
+  "applicability": {
+    "tissue": ["liver"],
+    "experimental_system": ["internal_mock"]
+  },
+  "scale_factor": 10.0
+}

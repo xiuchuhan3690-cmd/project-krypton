@@ -1,0 +1,99 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "project-krypton"
+dynamic = ["version"]
+description = "Rights-safe Project Krypton research-software prototype"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "XIU CHUHAN" }]
+maintainers = [{ name = "XIU CHUHAN" }]
+keywords = ["research-software", "counterfactual", "provenance", "pharmacology"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+]
+dependencies = [
+    "networkx>=3.4,<4",
+    "pint>=0.24,<1",
+    "pydantic>=2.11,<3",
+]
+
+[project.urls]
+Repository = "https://github.com/xiuchuhan3690-cmd/project-krypton"
+
+[project.optional-dependencies]
+test = ["jsonschema>=4.25,<5", "pytest>=8.3,<9"]
+
+[project.scripts]
+krypton-demo = "krypton.demo:main"
+krypton-info = "krypton.__main__:main"
+
+[tool.hatch.version]
+path = "src/krypton/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/krypton"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/.github",
+    "/src",
+    "/tests",
+    "/scripts",
+    "/examples",
+    "/docs",
+    "/evidence_metadata",
+    "/external_data/.gitignore",
+    "/external_data/DO_NOT_COMMIT_EXTERNAL_SCIENTIFIC_DATA.md",
+    "/LICENSE",
+    "/NOTICE",
+    "/THIRD_PARTY_NOTICES.md",
+    "/README.md",
+    "/CITATION.cff",
+    "/CONTRIBUTING.md",
+    "/SECURITY.md",
+    "/GOVERNANCE.md",
+    "/CHANGELOG.md",
+    "/Dockerfile",
+    "/.dockerignore",
+    "/pyproject.toml",
+    "/requirements.lock",
+    "/krypton_v1_*.yaml",
+]
+exclude = [
+    # Task-4R sidecars freeze the archives and accompany them externally.
+    "/krypton_v1_task4r_remediation_manifest.yaml",
+    "/krypton_v1_resource_parity_test_manifest.yaml",
+    "/krypton_v1_task4r_artifact_digests.yaml",
+    # Final publication sidecars contain archive digests and accompany the
+    # archives externally to avoid a digest self-reference.
+    "/krypton_v1_publication_manifest.yaml",
+    "/krypton_v1_artifact_publication_manifest.yaml",
+    "/krypton_v1_clean_room_manifest.yaml",
+    "/krypton_v1_task4_publication_digests.yaml",
+    # Task-5 governance proof sidecars describe the post-Task-5 archives and
+    # accompany them externally to avoid an archive-digest self-reference.
+    "/krypton_v1_task5_ci_governance_manifest.yaml",
+    "/krypton_v1_task5_ci_verification.yaml",
+    "/krypton_v1_task5_digests.yaml",
+    # Task-6 freeze sidecars accompany the pre-publication archives and are
+    # excluded to avoid circular archive/source checksum claims.
+    "/krypton_v1_task6_pre_task6_inventory.yaml",
+    "/krypton_v1_task6_prepublication_manifest.yaml",
+    "/krypton_v1_task6_repository_inventory.yaml",
+    "/krypton_v1_task6_release_asset_manifest.yaml",
+    "/krypton_v1_task6_verification.yaml",
+    "/krypton_v1_task6_digests.yaml",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

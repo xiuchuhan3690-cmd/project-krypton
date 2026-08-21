@@ -1,0 +1,28 @@
+schema_version: krypton-v1-third-party-code-audit-1
+audit_date: 2026-08-20
+canonical_head: 8c03ec5d129bb438dfddf4b54f974349a76bf224
+owner_declaration:
+  status: CONFIRMED_BY_USER
+  project_authored_code_owner: USER
+  third_party_human_code_contributors: NONE_DECLARED_BY_USER
+scope: [src, tests, scripts, examples, schemas, Dockerfile, project_documentation, project_configuration]
+methods:
+  - searched all scoped text for copyright, SPDX, license, author, upstream, adapted-from, based-on, GitHub, Stack Overflow, and vendoring markers
+  - reviewed imports separately from copied source
+  - reviewed five-commit author history and repository structure/style
+findings:
+  copied_source_files: []
+  vendored_libraries: []
+  third_party_license_headers: []
+  suspicious_substantial_snippets: []
+  ordinary_dependency_imports:
+    classification: DEPENDENCY_USAGE
+    packages: [networkx, pint, pydantic, pytest, jsonschema, numpy, scipy]
+  short_standard_python_constructs:
+    classification: COMMON_IDIOM
+classification: PROJECT_AUTHORED
+third_party_code_audit: CLEAR
+hard_stop_triggered: false
+limitations:
+  - repository-text and history audit cannot prove absence of unrecorded provenance outside the repository
+  - user ownership declaration remains the controlling ownership representation

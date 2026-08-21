@@ -1,0 +1,62 @@
+{
+  "registry_version": "model-registry-v0",
+  "mechanisms": ["mock_pk", "architecture_test"],
+  "contract": {
+    "schema_version": "model-contract-v0",
+    "id": "contract:mock-pk",
+    "metadata": {
+      "model_name": "Krypton Mock PK",
+      "model_version": "1.0.0",
+      "source": "internal-mock",
+      "artifact_digest": "09b1bbefaef9b9a44abea8422d3c504b17e26f2b7436fb82340a12a905a63b5e",
+      "license": "Project Krypton internal test artifact",
+      "validation_scope": ["Software architecture verification only"],
+      "limitations": ["Artificial equation; not biological or clinical evidence"],
+      "applicability": {"experimental_system": ["internal_mock"]}
+    },
+    "inputs": [
+      {
+        "id": "dose",
+        "biological_meaning": "Administered mock amount",
+        "quantity_kind": "dose_amount",
+        "data_type": "float",
+        "canonical_unit": "mg",
+        "physical_dimension": "[mass]",
+        "required": true,
+        "valid_range": {
+          "minimum": 0.0,
+          "minimum_inclusive": false
+        }
+      },
+      {
+        "id": "clearance",
+        "biological_meaning": "Artificial total clearance",
+        "quantity_kind": "clearance",
+        "data_type": "float",
+        "canonical_unit": "L/h",
+        "physical_dimension": "[length] ** 3 / [time]",
+        "required": true,
+        "valid_range": {
+          "minimum": 0.0,
+          "minimum_inclusive": false,
+          "maximum": 100.0
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "id": "auc",
+        "biological_meaning": "Artificial area under the concentration-time curve",
+        "quantity_kind": "auc",
+        "data_type": "float",
+        "canonical_unit": "mg*h/L",
+        "physical_dimension": "[mass] * [time] / [length] ** 3",
+        "time_semantics": "total exposure over an unspecified mock horizon"
+      }
+    ]
+  },
+  "adapter": {
+    "entry_point": "krypton.adapters.mock:MockPKAdapter",
+    "artifact_digest": "09b1bbefaef9b9a44abea8422d3c504b17e26f2b7436fb82340a12a905a63b5e"
+  }
+}
