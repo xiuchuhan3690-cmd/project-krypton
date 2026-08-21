@@ -19,6 +19,7 @@ RUN python -m pip install --no-cache-dir --no-deps --no-build-isolation .
 
 FROM package AS test
 
+COPY Dockerfile ./Dockerfile
 COPY tests ./tests
 COPY examples ./examples
 COPY CITATION.cff CONTRIBUTING.md SECURITY.md CHANGELOG.md GOVERNANCE.md ./
