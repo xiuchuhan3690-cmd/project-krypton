@@ -89,6 +89,10 @@ def test_contribution_and_security_policies_keep_owner_placeholders_honest() -> 
     security = (ROOT / "SECURITY.md").read_text(encoding="utf-8")
     assert "No CLA or DCO is required" in contributing
     assert "AI-assisted work" in contributing
+    assert "python scripts/verify_public_boundary.py" in contributing
+    assert "python scripts/verify_task7a_private_candidate.py" in contributing
+    assert "python scripts/verify_distribution.py" in contributing
+    assert "python scripts/verify_task6_prepublication.py" not in contributing
     assert "SECURITY_REPORTING_ACTIVATION_REQUIRED_BEFORE_PUBLIC_READER_ACCESS" in security
     assert "not fabricated" in security
 

@@ -15,7 +15,7 @@ python -m venv .venv
 .venv\Scripts\python -m pytest -q
 ```
 
-On POSIX systems use `.venv/bin/python`. Run `python scripts/verify_public_boundary.py` and `python scripts/verify_task6_prepublication.py` before proposing a change. Packaging changes should also run `python scripts/verify_distribution.py` after rebuilding the candidate wheel and sdist.
+On POSIX systems use `.venv/bin/python`. Run `python scripts/verify_public_boundary.py` and `python scripts/verify_task7a_private_candidate.py` before proposing a change. Packaging changes should also run `python scripts/verify_distribution.py` after rebuilding the candidate wheel and sdist.
 
 ## Public/private data rule
 
