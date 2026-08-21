@@ -17,6 +17,51 @@ env:
   PYTHONDONTWRITEBYTECODE: "1"
 
 jobs:
+  windows-line-endings:
+    name: Windows checkout / line-ending parity
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Configure standard Windows Git conversion
+        shell: pwsh
+        run: git config --global core.autocrlf true
+      - name: Check out public source after conversion is configured
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Verify canonical LF checkout
+        shell: pwsh
+        run: |
+          $unexpected = git ls-files --eol | Where-Object { $_ -notmatch 'w/lf' }
+          if ($unexpected) {
+            $unexpected | Write-Error
+            throw 'Tracked files were not checked out with canonical LF bytes.'
+          }
+          $expected = '0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594'
+          $actual = (Get-FileHash -Algorithm SHA256 LICENSE).Hash.ToLowerInvariant()
+          if ($actual -ne $expected) {
+            throw "LICENSE byte digest mismatch: $actual"
+          }
+      - name: Set up Python 3.12
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - name: Install pinned public dependencies and source
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --requirement requirements.lock
+          python -m pip install -e ".[test]"
+      - name: Check dependency integrity
+        run: python -m pip check
+      - name: Run complete public test suite
+        run: python -m pytest -q
+      - name: Verify frozen bytes and public boundary
+        run: |
+          python scripts/verify_public_boundary.py
+          python scripts/verify_task7a_private_candidate.py
+      - name: Run synthetic representative demo
+        run: python -m krypton.demo
+
   source:
     name: Source tests (Python 3.12)
     runs-on: ubuntu-latest

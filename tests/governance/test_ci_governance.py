@@ -33,8 +33,20 @@ def test_actions_are_official_and_immutable() -> None:
 
 
 def test_ci_has_source_distribution_wheel_citation_and_docker_jobs() -> None:
-    for job in ("source:", "distribution:", "installed-wheel:", "citation:", "docker-build:"):
+    for job in (
+        "windows-line-endings:",
+        "source:",
+        "distribution:",
+        "installed-wheel:",
+        "citation:",
+        "docker-build:",
+    ):
         assert job in WORKFLOW
+    assert "name: Windows checkout / line-ending parity" in WORKFLOW
+    assert "runs-on: windows-latest" in WORKFLOW
+    assert "git config --global core.autocrlf true" in WORKFLOW
+    assert "git ls-files --eol" in WORKFLOW
+    assert "Tracked files were not checked out with canonical LF bytes." in WORKFLOW
     assert "python -m pytest -q" in WORKFLOW
     assert "python -m pip check" in WORKFLOW
     assert "python scripts/verify_distribution.py" in WORKFLOW

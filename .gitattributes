@@ -1,0 +1,2 @@
+# Canonical tracked text bytes use LF on every checkout platform.
+* text=auto eol=lf
