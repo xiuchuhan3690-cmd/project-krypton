@@ -19,11 +19,11 @@ A change that crosses classes uses the stricter gate. C and D changes may not be
 
 Pull requests must be scoped, explain their class, pass CI, and disclose provenance, rights, compatibility, and scientific-claim effects. Self-merge by the single owner is permitted only after the applicable gate is evidenced. Contributors cannot weaken fail-closed data, unit, applicability, provenance, or counterfactual-invariance checks merely to make a test pass.
 
-Recommended branch protection for `main` is: require pull requests; require all CI jobs; require conversation resolution; block force pushes and deletion; apply rules to administrators; and require a current branch before merge. These controls are optional non-blocking hardening for v1.0.0; force pushes and deletion of release history remain prohibited by policy even when an equivalent GitHub ruleset is absent. `CODEOWNERS` is deferred until maintainer ownership rules are separately reviewed.
+Recommended branch protection for `main` is: require pull requests; require all CI jobs; require conversation resolution; block force pushes and deletion; apply rules to administrators; and require a current branch before merge. These controls are optional non-blocking hardening for v1.0.1; force pushes and deletion of release history remain prohibited by policy even when an equivalent GitHub ruleset is absent. `CODEOWNERS` is deferred until maintainer ownership rules are separately reviewed.
 
 ## Scientific and publication state
 
-Version 1.0.0 preserves C0/C1/C2/C3A COMPLETE, C3B RESTRICTED_COMPLETE, route gate USABLE_WITH_STATED_SCOPE, validation maturity EXTERNAL_DESCRIPTIVE_SUPPORT, Rows 30 and 31 BLOCKED, no model contradiction, and C4 NOT_INCLUDED. A scientific-semantic change can require a version increase even when the Python API remains compatible.
+Version 1.0.1 preserves C0/C1/C2/C3A COMPLETE, C3B RESTRICTED_COMPLETE, route gate USABLE_WITH_STATED_SCOPE, validation maturity EXTERNAL_DESCRIPTIVE_SUPPORT, Rows 30 and 31 BLOCKED, no model contradiction, and C4 NOT_INCLUDED. A scientific-semantic change can require a version increase even when the Python API remains compatible.
 
 The public repository may contain Project software, synthetic fixtures, generated schemas, citation/provenance metadata, public tests, and reviewed release artifacts. It must not contain external scientific datasets, private evidence packs, private canonical Git history, credentials, local working files, patient or genotype data, or unreviewed source-derived datasets.
 

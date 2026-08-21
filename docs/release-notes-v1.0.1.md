@@ -1,6 +1,8 @@
-# Project Krypton 1.0.0 release notes
+# Project Krypton 1.0.1 release notes
 
-Status: released publicly on GitHub as v1.0.0. No DOI or Zenodo deposition has been created, and Project Krypton is not published on PyPI.
+Project Krypton v1.0.1 is the first formal GitHub Release of the rights-safe research-software prototype. An earlier `v1.0.0` tag was created during a controlled but halted publication attempt. A Windows Git checkout line-ending defect was found before completion, so no v1.0.0 GitHub Release or release assets were published. The tag remains unchanged as historical provenance.
+
+Version 1.0.1 corrects cross-platform Git checkout and line-ending reproducibility. It makes no scientific-semantic, model, biological, calibration, or validation change.
 
 ## Included
 
@@ -16,21 +18,7 @@ Status: released publicly on GitHub as v1.0.0. No DOI or Zenodo deposition has b
 - External scientific data, paper-derived values, source tables, database extracts, PDFs, figures, or supplements.
 - Private C1-C3B evidence, calibration, validation, canonical outputs, and regression fixtures.
 - C4 or independent-route generalization.
-- Clinical, diagnostic, treatment-selection, or medical-advice functionality.
-
-## Installation and quick check
-
-With Python 3.12 and an obtained source tree:
-
-```text
-python -m venv .venv
-.venv\Scripts\python -m pip install -e ".[test]"
-.venv\Scripts\python -m pytest -q
-python -m krypton
-python -m krypton.demo
-```
-
-The wheel may instead be installed from the v1.0.0 GitHub Release asset. The canonical public repository is <https://github.com/xiuchuhan3690-cmd/project-krypton>; no PyPI location is claimed.
+- Clinical, diagnostic, treatment-selection, patient-specific prediction, or medical-advice functionality.
 
 ## Verification status
 
@@ -41,14 +29,10 @@ The wheel may instead be installed from the v1.0.0 GitHub Release asset. The can
 - GitHub-hosted Linux amd64 Docker: verified for the current Docker CI configuration.
 - macOS and ARM: unverified.
 
-## Scientific limitations
+## Scientific and data boundary
 
-C3B remains `RESTRICTED_COMPLETE`, route gate `USABLE_WITH_STATED_SCOPE`, validation maturity `EXTERNAL_DESCRIPTIVE_SUPPORT`, with Rows 30 and 31 BLOCKED. External descriptive support is not independent quantitative external validation. The synthetic demo is not scientific validation.
-
-## External scientific data
+C3B remains `RESTRICTED_COMPLETE`, route gate `USABLE_WITH_STATED_SCOPE`, validation maturity `EXTERNAL_DESCRIPTIVE_SUPPORT`, with Rows 30 and 31 BLOCKED. C4 is `NOT_INCLUDED`. External descriptive support is not independent quantitative external validation, and the synthetic demo is not a CYP2C19 scientific result.
 
 No external scientific data are distributed. Full C1-C3B reproduction requires lawful local acquisition and a validated pack configured through `KRYPTON_LOCAL_EVIDENCE_PACK`; failure is explicit and closed.
 
-## Checksums
-
-`SHA256SUMS.txt` in the GitHub Release records the exact SHA-256 values of the uploaded v1.0.0 wheel and sdist. CI or earlier candidate artifact hashes are not release identifiers.
+Project Krypton is not published on PyPI. No DOI or Zenodo deposition exists. `SHA256SUMS.txt` in the v1.0.1 GitHub Release records the exact SHA-256 values of its uploaded wheel and sdist.

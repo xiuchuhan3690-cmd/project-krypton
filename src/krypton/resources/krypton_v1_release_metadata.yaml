@@ -1,7 +1,20 @@
 schema_version: krypton-v1-release-metadata-1
 software_name: Project Krypton
-software_version: 1.0.0
-version_meaning: first public release of the rights-safe Project Krypton research-software prototype
+software_version: 1.0.1
+version_meaning: first formal GitHub Release; patch identity records cross-platform Git checkout and line-ending reproducibility remediation with no scientific-semantic change
+release_identity:
+  formal_release_version: 1.0.1
+  first_formal_github_release: true
+  scientific_semantic_delta: NONE
+  historical_v1_0_0:
+    status: HALTED_PUBLICATION_ATTEMPT_TAG_PRESERVED_UNRELEASED
+    tag_object: 7b4e72dcd3ceb15ca65578439390fbdd08ff2004
+    target_commit: 2e194e28469741be778e912949c349c5999b1fec
+    github_release_created: false
+    release_assets_published: false
+    pypi_published: false
+    doi_created: false
+    zenodo_deposited: false
 distribution_name: project-krypton
 import_name: krypton
 license:
@@ -58,6 +71,7 @@ supported_platforms:
   macos: UNVERIFIED
   linux_arm64: UNVERIFIED
 repository_state:
+  semantics: EXPECTED_FORMAL_V1_0_1_RELEASE_STATE
   exists: true
   visibility: PUBLIC
   public_candidate_history_exists: true

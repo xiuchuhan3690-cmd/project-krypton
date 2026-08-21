@@ -1,6 +1,6 @@
 # Security policy
 
-Project Krypton 1.0.0 is a research-software prototype. Security reports may concern software vulnerabilities, dependency vulnerabilities, accidental credential/private-key exposure, path traversal, provenance-integrity failures, or accidental publication of external scientific data.
+Project Krypton 1.0.1 is a research-software prototype. Security reports may concern software vulnerabilities, dependency vulnerabilities, accidental credential/private-key exposure, path traversal, provenance-integrity failures, or accidental publication of external scientific data.
 
 ## Supported versions
 

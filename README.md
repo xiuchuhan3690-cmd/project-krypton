@@ -1,8 +1,8 @@
-# Project Krypton 1.0.0
+# Project Krypton 1.0.1
 
 Project Krypton is an evidence-gated, provenance-aware, and applicability-aware mechanistic pharmacogenomic research-software prototype. It provides typed contracts for connecting a defined genetic edit to an evidence-qualified mechanistic interpretation, a controlled model input, and a paired counterfactual consequence.
 
-The scientific development history uses a limited CYP2C19 reference route. The public distribution demonstrates the generic architecture without distributing the external scientific data used by the private scientific record. Version 1.0.0 means the first public release of this rights-safe research-software prototype; it does not mean that the platform is clinically validated or generalized across biological routes.
+The scientific development history uses a limited CYP2C19 reference route. The public distribution demonstrates the generic architecture without distributing the external scientific data used by the private scientific record. Version 1.0.1 is the first formal GitHub Release of this rights-safe research-software prototype; it does not mean that the platform is clinically validated or generalized across biological routes. The patch version records cross-platform Git checkout and line-ending reproducibility remediation, with no scientific-semantic change.
 
 > **Research-use and safety boundary:** Project Krypton 1.0 is research software. It is not clinical decision-support, diagnostic, treatment-selection, patient-specific prediction, or medical-advice software.
 
@@ -115,11 +115,11 @@ On a POSIX shell, the equivalent interpreter path is `.venv/bin/python`; that pa
 
 ### Built wheel
 
-From the directory containing the wheel downloaded from the v1.0.0 GitHub Release:
+From the directory containing the wheel downloaded from the v1.0.1 GitHub Release:
 
 ```text
 python -m venv .venv
-.venv\Scripts\python -m pip install dist/project_krypton-1.0.0-py3-none-any.whl
+.venv\Scripts\python -m pip install dist/project_krypton-1.0.1-py3-none-any.whl
 ```
 
 The wheel contains the generic public core, synthetic demo resources, public schemas, and release metadata. It does not contain the source test suite or external scientific data. Project Krypton is not published on PyPI; use the GitHub Release asset or build from the public source tree.
@@ -177,7 +177,7 @@ Mechanistic research pipelines can mix biological assumptions, evidence qualific
 
 Citation metadata is provided in [`CITATION.cff`](CITATION.cff). No DOI exists yet.
 
-> Chuhan Xiu. *Project Krypton*, version 1.0.0. GitHub release; no archival DOI assigned.
+> Chuhan Xiu. *Project Krypton*, version 1.0.1. GitHub release; no archival DOI assigned.
 
 The public author identity is frozen as XIU CHUHAN (family name Xiu, given name Chuhan). The canonical repository is <https://github.com/xiuchuhan3690-cmd/project-krypton>. ORCID, affiliation, public contact, and DOI remain absent until separately decided or created.
 
@@ -186,7 +186,7 @@ The public author identity is frozen as XIU CHUHAN (family name Xiu, given name 
 - [Contributing](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 - [Changelog](CHANGELOG.md)
-- [v1.0.0 release notes](docs/release-notes-v1.0.0.md)
+- [v1.0.1 release notes](docs/release-notes-v1.0.1.md)
 - [Public artifact index](docs/artifact-index.md)
 
 ## License

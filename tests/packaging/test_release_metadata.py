@@ -17,7 +17,7 @@ RELEASE = (ROOT / "krypton_v1_release_metadata.yaml").read_text(encoding="utf-8"
 
 
 def test_version_has_one_runtime_source_of_truth() -> None:
-    assert krypton.__version__ == "1.0.0"
+    assert krypton.__version__ == "1.0.1"
     assert PYPROJECT["project"]["dynamic"] == ["version"]
     assert PYPROJECT["tool"]["hatch"]["version"]["path"] == "src/krypton/_version.py"
 

@@ -72,7 +72,7 @@ def test_collect_provenance_reads_local_environment_and_lock() -> None:
 
     manifest = collect_provenance(**collector_arguments(lock))
 
-    assert manifest.krypton_package_version == "1.0.0"
+    assert manifest.krypton_package_version == "1.0.1"
     assert manifest.python_version.startswith("3.12")
     assert manifest.git_commit in {"unborn", "unknown"} or len(manifest.git_commit) >= 40
     git_available = shutil.which("git") is not None

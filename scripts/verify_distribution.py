@@ -81,10 +81,10 @@ def inspect_names(names: list[str], read_bytes) -> list[dict[str, str]]:
 
 def main() -> None:
     contract = load_contract()
-    wheels = sorted(DIST.glob("project_krypton-1.0.0-*.whl"))
-    sdists = sorted(DIST.glob("project_krypton-1.0.0.tar.gz"))
+    wheels = sorted(DIST.glob("project_krypton-1.0.1-*.whl"))
+    sdists = sorted(DIST.glob("project_krypton-1.0.1.tar.gz"))
     if len(wheels) != 1 or len(sdists) != 1:
-        raise SystemExit("expected exactly one Project Krypton 1.0.0 wheel and sdist")
+        raise SystemExit("expected exactly one Project Krypton 1.0.1 wheel and sdist")
     wheel, sdist = wheels[0], sdists[0]
     with zipfile.ZipFile(wheel) as archive:
         wheel_names = archive.namelist()
@@ -95,15 +95,15 @@ def main() -> None:
             "krypton/resources/registry/models/mock_pk_v1.json",
             "krypton/resources/fixtures/valid/keg_mock_v0.json",
             "krypton/resources/schemas/quantity-value.schema.json",
-            "project_krypton-1.0.0.dist-info/licenses/LICENSE",
-            "project_krypton-1.0.0.dist-info/licenses/NOTICE",
-            "project_krypton-1.0.0.dist-info/licenses/THIRD_PARTY_NOTICES.md",
+            "project_krypton-1.0.1.dist-info/licenses/LICENSE",
+            "project_krypton-1.0.1.dist-info/licenses/NOTICE",
+            "project_krypton-1.0.1.dist-info/licenses/THIRD_PARTY_NOTICES.md",
         }
         missing = sorted(required - set(wheel_names))
-        metadata_name = "project_krypton-1.0.0.dist-info/METADATA"
+        metadata_name = "project_krypton-1.0.1.dist-info/METADATA"
         metadata = BytesParser().parsebytes(archive.read(metadata_name))
         requirements = metadata.get_all("Requires-Dist", [])
-        if metadata["Name"] != "project-krypton" or metadata["Version"] != "1.0.0":
+        if metadata["Name"] != "project-krypton" or metadata["Version"] != "1.0.1":
             findings.append({"kind": "metadata-identity", "path": metadata_name})
         if metadata["License-Expression"] != "Apache-2.0":
             findings.append({"kind": "metadata-license", "path": metadata_name})

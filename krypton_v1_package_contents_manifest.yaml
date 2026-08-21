@@ -1,15 +1,15 @@
 {
   "schema_version": "krypton-v1-package-contents-manifest-2",
   "authority": "CURRENT_DISTRIBUTION_CONTRACT",
-  "software_version": "1.0.0",
+  "software_version": "1.0.1",
   "distribution_strategy": "HYBRID",
   "archive_hash_policy": "STRUCTURE_ONLY_NOT_FINAL_RELEASE_ASSET_CHECKSUM_FREEZE",
   "member_set_canonicalization": "SHA-256 of UTF-8 lexicographically sorted normalized member paths, one path per line with final LF",
   "wheel": {
-    "filename_pattern": "project_krypton-1.0.0-py3-none-any.whl",
+    "filename_pattern": "project_krypton-1.0.1-py3-none-any.whl",
     "purpose": "repository-independent generic public-core package",
     "expected_file_count": 72,
-    "expected_member_set_sha256": "439767abdf6a3189ab0ba542a01c0b1c5e9d9370ec88933e152daea32802be45",
+    "expected_member_set_sha256": "cd91ee86477eeedffeca55f64641f9f7f7e50fe683bf998e169524e69b59cfea",
     "required_package_resources": [
       "krypton/resources/krypton_v1_release_metadata.yaml",
       "krypton/resources/requirements.lock",
@@ -24,11 +24,11 @@
     ]
   },
   "sdist": {
-    "filename_pattern": "project_krypton-1.0.0.tar.gz",
+    "filename_pattern": "project_krypton-1.0.1.tar.gz",
     "purpose": "complete rights-safe public source distribution",
     "expected_file_count": 149,
     "member_paths_are_relative_to_versioned_archive_root": true,
-    "expected_member_set_sha256": "9cd1ea7611f4d990f0d9db1b13581357055315b6031a7eb60b98cab70cda871c",
+    "expected_member_set_sha256": "c479be0c319fe28610253b700e16e75d41b2f13b3e215e04596d0fed375049f2",
     "excluded": [
       "external scientific data",
       "canonical private artifacts and Git history",

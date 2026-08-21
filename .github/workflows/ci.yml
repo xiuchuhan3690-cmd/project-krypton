@@ -139,7 +139,7 @@ jobs:
         run: |
           python -m venv "${RUNNER_TEMP}/krypton-wheel-env"
           "${RUNNER_TEMP}/krypton-wheel-env/bin/python" -m pip install --requirement requirements.lock
-          "${RUNNER_TEMP}/krypton-wheel-env/bin/python" -m pip install --no-deps dist/project_krypton-1.0.0-py3-none-any.whl
+          "${RUNNER_TEMP}/krypton-wheel-env/bin/python" -m pip install --no-deps dist/project_krypton-1.0.1-py3-none-any.whl
       - name: Check installed dependency integrity
         run: |
           "${RUNNER_TEMP}/krypton-wheel-env/bin/python" -m pip check
@@ -175,8 +175,8 @@ jobs:
       - name: Check out public source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Build pinned-base image
-        run: docker build --target test --tag project-krypton-ci:1.0.0 .
+        run: docker build --target test --tag project-krypton-ci:1.0.1 .
       - name: Run public tests in image
-        run: docker run --rm project-krypton-ci:1.0.0 python -m pytest -q
+        run: docker run --rm project-krypton-ci:1.0.1 python -m pytest -q
       - name: Run synthetic demo in image
-        run: docker run --rm project-krypton-ci:1.0.0 python -m krypton.demo
+        run: docker run --rm project-krypton-ci:1.0.1 python -m krypton.demo
